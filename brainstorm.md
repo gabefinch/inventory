@@ -1,6 +1,6 @@
-Potluck in the Park
-Potluck
-##Basics
+###Potluck in the Park
+##Potluck
+###Basics
 - What are the main problems/issues that you want this app to solve?
 - Which problem(s) are of the most importance?
 - Who are the main users of this app?
@@ -28,7 +28,7 @@ Potluck
 - Value in knowing what the chefs would like to have in the pantry? E.g. “Chef Rick wants Cinnamon”
 	
 
-##Categories:
+###Categories:
 - Produce: Use quickly, oldest first?  Is some produce OK in freezer? Does different produce have different rate of expiration?
 - Protein: Can be frozen. Must be thawed. Oldest first. Does the state of the protein when donated affect its use.
 - Spices: Chef: What spices do we have? “Have” vs. “Want/Need” vs. “None”. 
@@ -38,12 +38,12 @@ Potluck
 - What other categories make sense?
 
 
-UX Ideas:
-http://foodstorageapp.com/
-https://itunes.apple.com/us/app/fridge-pal-shopping-lists/id496451091?mt=8
-http://flaskapp.com/freshpantry/
-http://chefplanapp.com/meal-planning-features.html
-http://su-chef.com/download/
+###UX Ideas:
+- http://foodstorageapp.com/
+- https://itunes.apple.com/us/app/fridge-pal-shopping-lists/id496451091?mt=8
+- http://flaskapp.com/freshpantry/
+- http://chefplanapp.com/meal-planning-features.html
+- http://su-chef.com/download/
 
 
 Regulation:
