@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150423210234) do
     t.integer  "lifespan"
   end
 
-  create_table "ingredients_agains", force: :cascade do |t|
+  create_table "ingredients", force: :cascade do |t|
     t.integer  "category_id"
     t.integer  "location_id"
     t.datetime "created_at"
