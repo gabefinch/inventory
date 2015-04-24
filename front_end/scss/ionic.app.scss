@@ -1,0 +1,42 @@
+
+$light:                           #fff !default;
+$positive:                        #4F6762 !default;
+$stable:                        	#95AFBA !default;
+$calm:                            #D5E1A3 !default;
+$balanced:                        #C5DECD !default;
+$energized:                       #A675A1 !default;
+$assertive:                       #A3CEF1 !default;
+$royal:                           #243D76 !default;
+$dark:                            #444 !default;
+
+
+@import url(http://fonts.googleapis.com/css?family=Lora);
+$font-stack: Lora, serif;
+
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+.title {
+	font-family: $font-stack;
+}
+
+.item-complex .item-content, .item-radio .item-content {
+	background-color: $positive;
+	color: #ddd;
+}
+
+.item {
+	margin: 3%;
+	border-color: #ddd;
+	font-family: $font-stack;
+}
+
+.ion-chevron-right {
+	margin-left: 150%;
+}
+
+
