@@ -2,11 +2,11 @@
 $light:                           #fff !default;
 $positive:                        #4F6762 !default;
 $stable:                        	#95AFBA !default;
-$calm:                            #11c1f3 !default;
-$balanced:                        #33cd5f !default;
-$energized:                       #ffc900 !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
+$calm:                            #D5E1A3 !default;
+$balanced:                        #C5DECD !default;
+$energized:                       #A675A1 !default;
+$assertive:                       #A3CEF1 !default;
+$royal:                           #243D76 !default;
 $dark:                            #444 !default;
 
 
@@ -30,9 +30,13 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 }
 
 .item {
+	margin: 3%;
 	border-color: #ddd;
 	font-family: $font-stack;
 }
 
+.ion-chevron-right {
+	margin-left: 150%;
+}
 
 

@@ -57,16 +57,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     })
 
-    .state('app.protein', {
-      url: "/protein",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/protein.html",
-          controller: 'ProteinCtrl'
-        }
-      }
-    })
-
   .state('app.single', {
     url: "/categories/:categoryId",
     views: {
