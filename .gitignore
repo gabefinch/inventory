@@ -6,9 +6,15 @@
 
 # Ignore bundler config.
 /.bundle
+/rails/.bundle
 
 # Ignore all logfiles and tempfiles.
 /log/*
+/rails/log/*
 !/log/.keep
+!/rails/log/.keep
+
 /tmp
+/rails/tmp
 .DS-store
+/rails/.DS-store

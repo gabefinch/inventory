@@ -833,3 +833,15 @@ ORDER BY c.conname
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  INSERT INTO "ingredients" ("category_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["category_id", 13], ["created_at", "2015-04-24 17:44:10.692856"], ["updated_at", "2015-04-24 17:44:10.692856"]]
   [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCategory Load (1.2ms)[0m  SELECT  "categories".* FROM "categories"  ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1[0m  [["parent_id", 1]]
+  [1m[35mCategory Load (0.4ms)[0m  SELECT  "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCategory Load (0.7ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1[0m  [["parent_id", 2]]
+  [1m[35mCategory Load (1.0ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1  [["parent_id", 3]]
+  [1m[36mCategory Load (2.3ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1[0m  [["parent_id", 4]]
+  [1m[35mCategory Load (1.1ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1  [["parent_id", 5]]
+  [1m[36mCategory Load (0.9ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1[0m  [["parent_id", 6]]
+  [1m[35mCategory Load (12.9ms)[0m  SELECT "categories".* FROM "categories" WHERE "categories"."parent_id" = $1  [["parent_id", 7]]
+  [1m[36mCategory Load (0.6ms)[0m  [1mSELECT "categories".* FROM "categories" WHERE "categories"."parent_id" IS NULL[0m
+  [1m[35mLocation Load (1.0ms)[0m  SELECT "locations".* FROM "locations" WHERE "locations"."parent_id" IS NULL
