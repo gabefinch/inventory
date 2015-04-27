@@ -32,7 +32,7 @@ class Api::CategoriesController < ApplicationController
 
   def update
     category = Category.find(params[:id])
-    if category.update(spot_params)
+    if category.update(category_params)
       head :no_content, status: :ok
     else
       render :json => category.errors, status: :unprocessable_entity

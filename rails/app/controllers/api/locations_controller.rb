@@ -32,7 +32,7 @@ class Api::LocationsController < ApplicationController
 
   def update
     location = Location.find(params[:id])
-    if location.update(spot_params)
+    if location.update(location_params)
       head :no_content, status: :ok
     else
       render :json => location.errors, status: :unprocessable_entity

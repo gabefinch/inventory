@@ -13,7 +13,7 @@ class Api::IngredientsController < ApplicationController
   # end
 
   def create
-    ingredient = Ingredient.new(category_params)
+    ingredient = Ingredient.new(ingredient_params)
     if ingredient.save
       render :json => ingredient, status: :created
     else
@@ -32,7 +32,7 @@ class Api::IngredientsController < ApplicationController
 
   def update
     ingredient = Ingredient.find(params[:id])
-    if ingredient.update(spot_params)
+    if ingredient.update(ingredient_params)
       head :no_content, status: :ok
     else
       render :json => ingredient.errors, status: :unprocessable_entity
@@ -40,7 +40,7 @@ class Api::IngredientsController < ApplicationController
   end
 
 private
-  def category_params
+  def ingredient_params
     params.require(:ingredient).permit(:category_id, :location_id)
   end
 end
