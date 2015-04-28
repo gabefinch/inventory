@@ -1,4 +1,4 @@
-var potluck = angular.module('potluck', ['ui.router']);
+var potluck = angular.module('potluck', ['ui.router', 'ngResource']);
 
 potluck.config(function($stateProvider) {
 
