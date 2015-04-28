@@ -4,24 +4,13 @@ potluck.config(function($stateProvider) {
 
   $stateProvider.state('home', {
     url: "",
-    templateUrl: "partials/home.html",
-    resolve: {
-    locationsPromise: ['locations', function(locations){
-      return locations.getAll();
-    }]
-  }
+    templateUrl: "partials/home.html"
   });
 
+  $stateProvider.state('locations', {
+    url: "/locations",
+    templateUrl: "partials/locations.html"
+  });
 
-
-  // $stateProvider.state('addReporter', {
-  //   url: "addReporter/:assignmentId",
-  //   templateUrl: "partials/addReporter.html"
-  // });
-  //
-  // $stateProvider.state('detailReporter', {
-  //   url: "detailReporter/:assignmentId/:reporterId",
-  //   templateUrl: "partials/detailReporter.html"
-  // });
 
 });
