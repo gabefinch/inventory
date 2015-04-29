@@ -1,20 +1,16 @@
 potluck.controller('LocationsCtrl',
-function($scope, $http, LocationsFactory){
+function($scope, $stateParams, LocationsFactory){
 
-  $scope.test = "Hello";
+  $scope.locations = LocationsFactory.query(); //query() returns all the entries
 
-  $http.get('http://localhost:3000/api/locations').
-        success(function(data) {
-            $scope.locations = data;
-        });
 
-  // var location = LocationsFactory.get({ id: $scope.id }, function() {
-  //   console.log(entry);
-  // }); // get() returns a single entry
+  $scope.test = $stateParams.locationId;
 
-  var locations = LocationsFactory.query(function() {
-    console.log(locations);
-  }); //query() returns all the entries
+  var location = LocationsFactory.get({ id: 1 }, function() {
+    console.log(location);
+    console.log('hello');
+  }); // get() returns a single entry
+
   //
   // $scope.entry = new Entry(); //You can instantiate resource class
   //
