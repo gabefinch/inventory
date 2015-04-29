@@ -42,7 +42,7 @@
           ]
         },
         { "id": 12,
-          "name": "leaf"
+          "name": "leaf",
           "categories": [
             { "id": 13,
               "name": "lettuce"
@@ -58,7 +58,7 @@
   "locations": [
     { "id": 1,
       "name": "fridge",
-      "categories":[
+      "locations":[
         { "id": 2,
           "name": "top"
         },
@@ -69,7 +69,7 @@
     },
     { "id": 4,
       "name": "freezer",
-      "categories":[
+      "locations":[
         { "id": 5,
           "name": "top"
         },
