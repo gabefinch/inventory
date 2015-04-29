@@ -15,6 +15,7 @@ potluck.config(function($stateProvider) {
   $stateProvider.state('categories', {
     url: "/categories",
     templateUrl: "partials/categories.html"
+
   });
 
 });
