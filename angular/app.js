@@ -12,17 +12,16 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/locations.html"
   });
 
-
-
   $stateProvider.state('everything', {
     url: "/everything",
-    templateUrl: "partials/everything.html"
+    templateUrl: "partials/everything.html",
+    controller: "EverythingCtrl"
   });
 
   $stateProvider.state('categories', {
     url: "/:categoryId",
-    templateUrl: "partials/everything.subitems.html",
-    controller: 'EverythingCtrl'
+    templateUrl: "partials/children.html",
+    controller: 'ChildrenCtrl'
   });
 
 });

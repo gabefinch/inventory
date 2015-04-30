@@ -1,36 +1,9 @@
-<div ng-controller="EverythingCtrl">
+
 	<h3>Category Names</h3>
 	<li ng-repeat="item in everything.categories">
 		<a ui-sref="categories({ categoryId: item.id })">{{item.name}}</a>
 	</li>
-	<h3>Categories</h3>
-	<li>
-		{{categories}}
-	</li>
-</div>
 
 
 
-<!-- <div ng-repeat="item in everything | filter {myFilter}">
-	<li>	
-		{{ item.name }}
-	</li>
-</div>
 
- when clicked go to the next view which is item.subItems and then repeat somehow?? 
-
- 
- filter by everything.children
-filter by protein.children
-
-logic for myFilter.. 
-itemsArray = []
-if parent_id ==== null
-push to itemsArray
-else_if parent_id === 1
-push to itemsArray
-else
-...
-end
-return itemsArray
-etc.  -->
