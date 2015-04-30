@@ -9,7 +9,12 @@ potluck.factory('EverythingFactory', function(){
 	          "name": "meat",
 	          "categories": [
 	            { "id": 3,
-	              "name": "chicken"
+	              "name": "chicken",
+		              "categories": [
+	                { "id": 17,
+	                  "name": "ground-chicken"
+	                }
+	              ]
 	            },
 	            { "id": 4,
 	              "name": "beef"
