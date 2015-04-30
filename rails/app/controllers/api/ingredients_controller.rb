@@ -15,9 +15,9 @@ class Api::IngredientsController < ApplicationController
   def create
     ingredient = Ingredient.new(ingredient_params)
     if ingredient.save
-      render :json => ingredient, status: :created
+      render json: ingredient, status: :created
     else
-      render :json => ingredient.errors, status: :unprocessable_entity
+      render json: ingredient.errors, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class Api::IngredientsController < ApplicationController
     if ingredient.destroy
       head :no_content, status: :ok
     else
-      render :json => ingredient.errors, status: :unprocessable_entity
+      render json: ingredient.errors, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class Api::IngredientsController < ApplicationController
     if ingredient.update(ingredient_params)
       head :no_content, status: :ok
     else
-      render :json => ingredient.errors, status: :unprocessable_entity
+      render json: ingredient.errors, status: :unprocessable_entity
     end
   end
 

@@ -7,16 +7,7 @@ class Category < ActiveRecord::Base
   has_many :ingredients
   validates :name, presence: true
 
-  def descendents
-    children.map do |child|
-      [child] + child.descendents
-    end.flatten
-  end
-
-  def self_and_descendents
-    [self] + descendents
+  def to_node
+    self.attributes.merge({:categories => self.children.map { |c| c.to_node }})
   end
 end
-
-# Perhaps implement faster SQL http://hashrocket.com/blog/posts/recursive-sql-in-activerecord
-# Or this gem: https://github.com/stefankroes/ancestry

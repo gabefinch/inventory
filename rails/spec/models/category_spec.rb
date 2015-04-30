@@ -13,30 +13,6 @@ describe Category do
       expect(Category.top_level).to eq([vegetables, proteins])
     end
   end
-  describe('#descendents') do
-    it('returns descendents of a category') do
-      proteins = Category.create(name: 'Proteins')
-      meat = Category.create(name: 'Meat', parent_id: proteins.id)
-      chicken = Category.create(name: 'Chicken', parent_id: meat.id)
-      expect(proteins.descendents).to eq([meat, chicken])
-    end
-    it('returns empty array for childless') do
-      proteins = Category.create(name: 'Proteins')
-      expect(proteins.descendents).to eq([])
-    end
-  end
-  describe('#self_and_descendents') do
-    it('returns self and descendents of a category') do
-      proteins = Category.create(name: 'Proteins')
-      meat = Category.create(name: 'Meat', parent_id: proteins.id)
-      chicken = Category.create(name: 'Chicken', parent_id: meat.id)
-      expect(proteins.self_and_descendents).to eq([proteins, meat, chicken])
-    end
-    it('returns array of self only for a childless category') do
-      proteins = Category.create(name: 'Proteins')
-      expect(proteins.descendents).to eq([])
-    end
-  end
   describe('#children') do
     it('returns children of a category') do
       proteins = Category.create(name: 'Proteins')

@@ -1,4 +1,4 @@
-class LocationSerializer < ActiveModel::Serializer
+class CategorySerializer < ActiveModel::Serializer
   attributes :name, :parent_id, :created_at, :id
   
   has_many :children

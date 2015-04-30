@@ -1,7 +1,7 @@
 class Api::LocationsController < ApplicationController
 
   def index
-    render json: Location.all
+    render json: Location.top_level
   end
 
   def show
@@ -15,9 +15,9 @@ class Api::LocationsController < ApplicationController
   def create
     location = Location.new(location_params)
     if location.save
-      render :json => location, status: :created
+      render json: location, status: :created
     else
-      render :json => location.errors, status: :unprocessable_entity
+      render json: location.errors, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class Api::LocationsController < ApplicationController
     if location.destroy
       head :no_content, status: :ok
     else
-      render :json => location.errors, status: :unprocessable_entity
+      render json: location.errors, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class Api::LocationsController < ApplicationController
     if location.update(location_params)
       head :no_content, status: :ok
     else
-      render :json => location.errors, status: :unprocessable_entity
+      render json: location.errors, status: :unprocessable_entity
     end
   end
 
