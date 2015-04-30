@@ -1,7 +1,7 @@
 class Api::CategoriesController < ApplicationController
 
   def index
-    render json: Category.all
+    render json: Category.top_level
   end
 
   def show
@@ -15,9 +15,9 @@ class Api::CategoriesController < ApplicationController
   def create
     category = Category.new(category_params)
     if category.save
-      render :json => category, status: :created
+      render json: category, status: :created
     else
-      render :json => category.errors, status: :unprocessable_entity
+      render json: category.errors, status: :unprocessable_entity
     end
   end
 
@@ -26,7 +26,7 @@ class Api::CategoriesController < ApplicationController
     if category.destroy
       head :no_content, status: :ok
     else
-      render :json => category.errors, status: :unprocessable_entity
+      render json: category.errors, status: :unprocessable_entity
     end
   end
 
@@ -35,7 +35,7 @@ class Api::CategoriesController < ApplicationController
     if category.update(category_params)
       head :no_content, status: :ok
     else
-      render :json => category.errors, status: :unprocessable_entity
+      render json: category.errors, status: :unprocessable_entity
     end
   end
 

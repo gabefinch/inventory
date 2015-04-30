@@ -13,30 +13,6 @@ describe Location do
       expect(Location.top_level).to eq([fridge, freezer])
     end
   end
-  describe('#descendents') do
-    it('returns descendents of a category') do
-      freezer = Location.create(name: 'Freezer')
-      freezer_top = Location.create(name: 'Top', parent_id: freezer.id)
-      freezer_bottom = Location.create(name: 'Bottom', parent_id: freezer.id)
-      expect(freezer.descendents).to eq([freezer_top, freezer_bottom])
-    end
-    it('returns empty array for childless') do
-      freezer = Location.create(name: 'Freezer')
-      expect(freezer.descendents).to eq([])
-    end
-  end
-  describe('#self_and_descendents') do
-    it('returns self and descendents of a category') do
-      freezer = Location.create(name: 'Freezer')
-      freezer_top = Location.create(name: 'Top', parent_id: freezer.id)
-      freezer_bottom = Location.create(name: 'Bottom', parent_id: freezer.id)
-      expect(freezer.self_and_descendents).to eq([freezer, freezer_top, freezer_bottom])
-    end
-    it('returns array of self only for a childless category') do
-      freezer = Location.create(name: 'Freezer')
-      expect(freezer.descendents).to eq([])
-    end
-  end
   describe('#children') do
     it('returns children of a category') do
       freezer = Location.create(name: 'Freezer')
