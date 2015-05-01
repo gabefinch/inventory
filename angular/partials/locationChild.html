@@ -1,2 +1,12 @@
 
-{{locationNode.name}}
+<h1>{{locationNode.name}}</h1>
+	<li ng-repeat="item in locationNode.children">
+		<!-- <div ng-if="item.children.length != 0"> -->
+				<a ui-sref="locationChild({ categoryId: categoryNode.id, locationId: item.id })">{{item.name}}</a>
+
+				I'm still not sure if this is routing to the right place.. In progress!! 
+		<!-- </div> -->
+		<div ng-if="item.children.length != 0">
+			<h1>The end</h1>
+		</div>
+	</li>
