@@ -1,0 +1,37 @@
+<h3>{{currentNode.name}}</h3>
+<ul>
+	<li ng-repeat="item in currentNode.children">
+
+		<div ng-if="item.children.length != 0">
+			<a ui-sref="categoryChild({categoryId: item.id})">
+				{{item.name}}
+			</a>
+			<span class="badge">
+				0
+			</span>
+		</div>
+
+		<div ng-if="item.children.length == 0">
+			<em>
+				<a ui-sref="store({categoryId: item.id})">
+					{{item.name}}
+				</a>
+				<span class="badge">
+					0
+				</span>
+			</em>
+		</div>
+
+	</li>
+
+	<li>
+		<em>
+			<a ui-sref="store({categoryId: currentNode.id})">
+				{{currentNode.name}} Misc.
+			</a>
+		</em>
+		<span class="badge">
+			0
+		</span>
+	</li>
+</ul>

@@ -11,13 +11,13 @@ potluck.config(function($stateProvider) {
 
   $stateProvider.state('categoryTop', {
     url: "/categories",
-    templateUrl: "partials/categoryNode.html",
+    templateUrl: "partials/categoryBranch.html",
     controller: "CategoryTopCtrl"
   });
 
   $stateProvider.state('categoryChild', {
     url: "categories/:categoryId",
-    templateUrl: "partials/categoryNode.html",
+    templateUrl: "partials/categoryBranch.html",
     controller: 'CategoryChildCtrl'
   });
 
