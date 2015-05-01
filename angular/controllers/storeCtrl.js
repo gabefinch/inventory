@@ -1,5 +1,5 @@
 potluck.controller('StoreCtrl',
-	function($scope, $cacheFactory, $stateParams, UtilitiesFactory, HomeFactory){
+	function($scope, $cacheFactory,$stateParams, UtilitiesFactory){
 
 		var cache = $cacheFactory.get('potluck');
 
