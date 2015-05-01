@@ -4,6 +4,6 @@ potluck.controller('StoreCtrl',
 		var cache = $cacheFactory.get('potluck');
 
     // the category doesn't seem to be found correctly by the below call...?
-		var categoryNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId)
+		$scope.categoryNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
 
 	});
