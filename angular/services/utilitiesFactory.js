@@ -32,10 +32,10 @@ potluck.factory('UtilitiesFactory', function() {
     return nodeIds;
   };
 
-  factory.countFromIds = function(collection, ids) {
+  factory.categoryCountFromIds = function(collection, ids) {
     var count = 0;
     for (var i=0; i<=collection.length-1; i++) {
-      if (ids.indexOf(collection[i].id) != -1) {
+      if (ids.indexOf(collection[i].category_id) != -1) {
         count = count + 1;
       }
     }

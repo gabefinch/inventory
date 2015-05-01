@@ -12,6 +12,6 @@ potluck.controller('CategoryChildCtrl',
 		$scope.ingredients = cache.get('ingredients')
 
 		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
-		$scope.countFromIds = UtilitiesFactory.countFromIds;
+		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
 
 	});
