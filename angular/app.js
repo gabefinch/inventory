@@ -33,11 +33,16 @@ potluck.config(function($stateProvider) {
     controller: "LocationsCtrl"
   });
 
-  $stateProvider.state('categories.locations', {
+  $stateProvider.state('locationChild', {
     url: "/categories/:categoryId/locations/:locationId",
-    templateUrl: "partials/categories.locations.html",
+    templateUrl: "partials/locationChild.html",
     controller: "LocationsCtrl"
   });
 
+  $stateProvider.state('ingredientSummary', {
+    url: "/ingredient/:categoryId/:locationId",
+    templateUrl: "partials/ingredientSummary.html",
+    controller: "IngredientCtrl"
+  });
 
 });

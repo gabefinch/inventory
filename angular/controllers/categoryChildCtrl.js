@@ -1,6 +1,7 @@
 potluck.controller('CategoryChildCtrl',
 	function($scope, $cacheFactory, $stateParams, UtilitiesFactory){
 
+
 		var cache = $cacheFactory.get('potluck');
 
 		$scope.currentNode = UtilitiesFactory.findById(
