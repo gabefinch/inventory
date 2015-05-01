@@ -1,7 +1,7 @@
 class LocationSerializer < ActiveModel::Serializer
   attributes :name, :parent_id, :created_at, :id
 
-  has_many :children, root: :locations
+  has_many :children
 
   def created_at
     object.created_at.to_f * 1000

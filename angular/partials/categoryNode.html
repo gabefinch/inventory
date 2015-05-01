@@ -1,0 +1,6 @@
+<h3>{{currentNodeName}}</h3>
+<ul>
+	<li ng-repeat="item in childNodes">
+		<a ui-sref="categoryChild({ categoryId: item.id })">{{item.name}}</a>
+	</li>
+</ul>

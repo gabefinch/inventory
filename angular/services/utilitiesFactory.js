@@ -4,7 +4,7 @@ potluck.factory('UtilitiesFactory', function() {
     for (var i = 0; i < collection.length-1; i++) {
       var currentNode = collection[i]
           currentId = currentNode.id
-          currentChildren = currentNode.categories;
+          currentChildren = currentNode.children;
       if (currentId == id) {
         return currentNode;
       }

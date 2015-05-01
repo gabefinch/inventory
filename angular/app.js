@@ -1,27 +1,24 @@
-var potluck = angular.module('potluck', ['ui.router', 'ngResource']);
+var potluck = angular.module('potluck', ['ui.router']);
 
 potluck.config(function($stateProvider) {
 
   $stateProvider.state('home', {
     url: "",
-    templateUrl: "partials/home.html"
+    templateUrl: "partials/home.html",
+    controller: 'HomeCtrl'
   });
 
-  $stateProvider.state('locations', {
-    url: "/locations",
-    templateUrl: "partials/locations.html"
+
+  $stateProvider.state('categoryTop', {
+    url: "/categories",
+    templateUrl: "partials/categoryNode.html",
+    controller: "CategoryTopCtrl"
   });
 
-  $stateProvider.state('everything', {
-    url: "/everything",
-    templateUrl: "partials/everything.html",
-    controller: "EverythingCtrl"
-  });
-
-  $stateProvider.state('categories', {
-    url: "/:categoryId",
-    templateUrl: "partials/children.html",
-    controller: 'ChildrenCtrl'
+  $stateProvider.state('categoryChild', {
+    url: "categories/:categoryId",
+    templateUrl: "partials/categoryNode.html",
+    controller: 'CategoryChildCtrl'
   });
 
 });
