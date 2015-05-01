@@ -1,91 +1,219 @@
 {
-  "categories": [
-    { "id": 1,
-      "name": "protein",
-      "categories":[
-        { "id": 2,
-          "name": "meat",
-          "categories": [
-            { "id": 3,
-              "name": "chicken",
-              "categories": [
-                { "id": 17,
-                  "name": "ground-chicken"
+    "categories": [
+        {
+            "name": "Proteins",
+            "parent_id": null,
+            "created_at": 1429897450570.0159,
+            "id": 1,
+            "children": [
+                {
+                    "name": "Meat",
+                    "parent_id": 1,
+                    "created_at": 1429897450577.617,
+                    "id": 2,
+                    "children": [
+                        {
+                            "name": "Chicken",
+                            "parent_id": 2,
+                            "created_at": 1429897450580.706,
+                            "id": 3,
+                            "children": []
+                        },
+                        {
+                            "name": "Beef",
+                            "parent_id": 2,
+                            "created_at": 1429897450583.716,
+                            "id": 4,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Seafood",
+                    "parent_id": 1,
+                    "created_at": 1429897450586.5547,
+                    "id": 5,
+                    "children": [
+                        {
+                            "name": "Fish",
+                            "parent_id": 5,
+                            "created_at": 1429897450589.196,
+                            "id": 6,
+                            "children": []
+                        },
+                        {
+                            "name": "Shellfish",
+                            "parent_id": 5,
+                            "created_at": 1429897450592.032,
+                            "id": 7,
+                            "children": []
+                        }
+                    ]
                 }
-              ]
-            },
-            { "id": 4,
-              "name": "beef"
-            }
-          ]
+            ]
         },
-        { "id": 5,
-          "name": "seafood",
-          "categories": [
-            { "id": 6,
-              "name": "fish"
-            },
-            { "id": 7,
-              "name": "shellfish"
-            }
-          ]
+        {
+            "name": "Vegetable",
+            "parent_id": null,
+            "created_at": 1429897450594.826,
+            "id": 8,
+            "children": [
+                {
+                    "name": "Roots",
+                    "parent_id": 8,
+                    "created_at": 1429897450597.577,
+                    "id": 9,
+                    "children": [
+                        {
+                            "name": "Potato",
+                            "parent_id": 9,
+                            "created_at": 1429897450600.307,
+                            "id": 10,
+                            "children": []
+                        },
+                        {
+                            "name": "Carrots",
+                            "parent_id": 9,
+                            "created_at": 1429897450603.088,
+                            "id": 11,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Leaves",
+                    "parent_id": 8,
+                    "created_at": 1429897450605.8098,
+                    "id": 12,
+                    "children": [
+                        {
+                            "name": "Lettuce",
+                            "parent_id": 12,
+                            "created_at": 1429897450608.511,
+                            "id": 13,
+                            "children": []
+                        },
+                        {
+                            "name": "Collards",
+                            "parent_id": 12,
+                            "created_at": 1429897450611.327,
+                            "id": 14,
+                            "children": []
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    { "id": 8,
-      "name": "vegetable",
-      "categories":[
-        { "id": 9,
-          "name": "root",
-          "categories": [
-            { "id": 10,
-              "name": "potato"
-            },
-            { "id": 11,
-              "name": "carrot"
-            }
-          ]
+    ],
+    "locations": [
+        {
+            "name": "Fridge",
+            "parent_id": null,
+            "created_at": 1429897450626.166,
+            "id": 1,
+            "children": [
+                {
+                    "name": "Top",
+                    "parent_id": 1,
+                    "created_at": 1429897450630.203,
+                    "id": 2,
+                    "children": []
+                },
+                {
+                    "name": "Bottom",
+                    "parent_id": 1,
+                    "created_at": 1429897450633.2842,
+                    "id": 3,
+                    "children": []
+                }
+            ]
         },
-        { "id": 12,
-          "name": "leaf",
-          "categories": [
-            { "id": 13,
-              "name": "lettuce"
-            },
-            { "id": 14,
-              "name": "collards"
-            }
-          ]
+        {
+            "name": "Freezer",
+            "parent_id": null,
+            "created_at": 1429897450636.123,
+            "id": 4,
+            "children": [
+                {
+                    "name": "Top",
+                    "parent_id": 4,
+                    "created_at": 1429897450638.798,
+                    "id": 5,
+                    "children": []
+                },
+                {
+                    "name": "Bottom",
+                    "parent_id": 4,
+                    "created_at": 1429897450641.679,
+                    "id": 6,
+                    "children": []
+                }
+            ]
         }
-      ]
-    }
-  ],
-  "locations": [
-    { "id": 1,
-      "name": "fridge",
-      "locations":[
-        { "id": 2,
-          "name": "top"
+    ],
+    "ingredients": [
+        {
+            "id": 1,
+            "category_id": 3,
+            "location_id": null,
+            "created_at": "2015-04-24T17:44:10.682Z",
+            "updated_at": "2015-04-24T17:44:10.682Z"
         },
-        { "id": 3,
-          "name": "bottom"
+        {
+            "id": 2,
+            "category_id": 4,
+            "location_id": null,
+            "created_at": "2015-04-24T17:44:10.687Z",
+            "updated_at": "2015-04-24T17:44:10.687Z"
+        },
+        {
+            "id": 3,
+            "category_id": 11,
+            "location_id": null,
+            "created_at": "2015-04-24T17:44:10.689Z",
+            "updated_at": "2015-04-24T17:44:10.689Z"
+        },
+        {
+            "id": 4,
+            "category_id": 13,
+            "location_id": null,
+            "created_at": "2015-04-24T17:44:10.692Z",
+            "updated_at": "2015-04-24T17:44:10.692Z"
+        },
+        {
+            "id": 5,
+            "category_id": 3,
+            "location_id": null,
+            "created_at": "2015-04-27T19:00:27.629Z",
+            "updated_at": "2015-04-27T19:00:27.629Z"
+        },
+        {
+            "id": 6,
+            "category_id": 6,
+            "location_id": 3,
+            "created_at": "2015-04-27T19:00:57.513Z",
+            "updated_at": "2015-04-27T19:00:57.513Z"
+        },
+        {
+            "id": 7,
+            "category_id": 6,
+            "location_id": 4,
+            "created_at": "2015-04-27T19:01:22.013Z",
+            "updated_at": "2015-04-27T19:01:22.013Z"
+        },
+        {
+            "id": 8,
+            "category_id": 6,
+            "location_id": 5,
+            "created_at": "2015-04-27T19:01:35.357Z",
+            "updated_at": "2015-04-27T19:01:35.357Z"
+        },
+        {
+            "id": 9,
+            "category_id": 6,
+            "location_id": 5,
+            "created_at": "2015-04-27T19:01:59.928Z",
+            "updated_at": "2015-04-27T19:01:59.928Z"
         }
-      ]
-    },
-    { "id": 4,
-      "name": "freezer",
-      "locations":[
-        { "id": 5,
-          "name": "top"
-        },
-        { "id": 6,
-          "name": "bottom"}]
-    }
-  ],
-  "ingredients":[
-    {"category_id": 3, "location_id": 3, "created_at": "1430265676000" },
-    {"category_id": 4, "location_id": 6, "created_at": "1430265676000" },
-    {"category_id": 11, "location_id": 2, "created_at": "1430265676000" },
-    {"category_id": 13, "location_id": 2, "created_at": "1430265676000" }
-  ]
+    ]
 }

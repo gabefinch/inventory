@@ -7,7 +7,7 @@
 				{{item.name}}
 			</a>
 			<span class="badge">
-				0
+				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
 			</span>
 		</div>
 
@@ -17,7 +17,7 @@
 					{{item.name}}
 				</a>
 				<span class="badge">
-					0
+					{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
 				</span>
 			</em>
 		</div>
@@ -31,7 +31,7 @@
 			</a>
 		</em>
 		<span class="badge">
-			0
+			{{countFromIds(ingredients,[currentNode.id])}}
 		</span>
 	</li>
 </ul>

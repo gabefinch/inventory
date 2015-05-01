@@ -1,5 +1,5 @@
 potluck.controller('CategoryTopCtrl',
-	function($scope, $cacheFactory){
+	function($scope, $cacheFactory, UtilitiesFactory){
 
 		var cache = $cacheFactory.get('potluck');
 
@@ -7,5 +7,13 @@ potluck.controller('CategoryTopCtrl',
 			name: 'Categories',
 			children: cache.get('categories')
 		};
+
+		$scope.ingredients = cache.get('ingredients')
+
+		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
+		$scope.countFromIds = UtilitiesFactory.countFromIds;
+
+
+
 	}
 );
