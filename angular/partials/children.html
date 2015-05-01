@@ -1,5 +1,10 @@
-<h1>{{mainCategory.name}}</h1>
+<h1>{{headerCategory.name}}</h1>
+	<li ng-repeat="item in headerCategory.children">
+		<div ng-if="item.children.length != 0">
+			<a ui-sref="categories({ categoryId: item.id })">{{item.name}}</a>
+		</div>
+		<div ng-if="item.children.length == 0">
+			<a ui-sref="store({ categoryId: item.id })">{{item.name}}</a>
+		</div>
+	</li>
 
-<li ng-repeat="item in mainCategory.categories">
-		<a ui-sref="categories({ categoryId: item.id })">{{item.name}}</a>
-</li>

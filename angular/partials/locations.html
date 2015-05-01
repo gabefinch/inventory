@@ -1,11 +1,8 @@
 <div ng-controller="LocationsCtrl">
-<<<<<<< HEAD
-=======
-  {{test}}hello
->>>>>>> 404b9fe799c21a6f13487536f163bb1852866b89
+	<h3> Storing Location Options for {{headerCategory.name}} </h3>
   <ul>
     <li ng-repeat="item in locations">
-      {{item.name}}
+				<a ui-sref="locations({ categoryId: item.id })">{{item.name}}</a>
     </li>
   </ul>
 </div>

@@ -1,14 +1,26 @@
 potluck.controller('LocationsCtrl',
-function($scope, $stateParams, LocationsFactory){
-
-  $scope.locations = LocationsFactory.query(); //query() returns all the entries
+function($scope, $stateParams, LocationsFactory, EverythingFactory, UtilitiesFactory){
 
 
-  $scope.test = $stateParams.locationId;
+  $scope.children = EverythingFactory.children;
+  $scope.locations = EverythingFactory.locations;
+
+  // Hello!! for some reason the two things below are throwing TypeError: Cannot read property 'length' of undefined errors
+
+  // $scope.headerCategory = UtilitiesFactory.findById(EverythingFactory.children, $stateParams.categoryId)
+  
+  // $scope.mainLocation = UtilitiesFactory.findById($scope.locations, $stateParams.locationId)
+
+  console.log($scope.locations.id)
+  console.log($scope.locations)
+  console.log($scope.mainLocation)
+
+
+
+
 
   var location = LocationsFactory.get({ id: 1 }, function() {
-    console.log(location);
-    console.log('hello');
+
   }); // get() returns a single entry
 
   //

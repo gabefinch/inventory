@@ -4,31 +4,35 @@ potluck.factory('EverythingFactory', function(){
 	  "categories": [
 	    { "id": 1,
 	      "name": "protein",
-	      "categories":[
+	      "children":[
 	        { "id": 2,
 	          "name": "meat",
-	          "categories": [
+	          "children": [
 	            { "id": 3,
 	              "name": "chicken",
-		              "categories": [
+		              "children": [
 	                { "id": 17,
-	                  "name": "ground-chicken"
+	                  "name": "ground-chicken",
+	              		"children": []
 	                }
 	              ]
 	            },
 	            { "id": 4,
-	              "name": "beef"
+	              "name": "beef",
+	              "children": []
 	            }
 	          ]
 	        },
 	        { "id": 5,
 	          "name": "seafood",
-	          "categories": [
+	          "children": [
 	            { "id": 6,
-	              "name": "fish"
+	              "name": "fish",
+	              "children": []
 	            },
 	            { "id": 7,
-	              "name": "shellfish"
+	              "name": "shellfish",
+	              "children": []
 	            }
 	          ]
 	        }
@@ -36,26 +40,30 @@ potluck.factory('EverythingFactory', function(){
 	    },
 	    { "id": 8,
 	      "name": "vegetable",
-	      "categories":[
+	      "children":[
 	        { "id": 9,
 	          "name": "root",
-	          "categories": [
+	          "children": [
 	            { "id": 10,
-	              "name": "potato"
+	              "name": "potato",
+	              "children": []
 	            },
 	            { "id": 11,
-	              "name": "carrot"
+	              "name": "carrot",
+	              "children": []
 	            }
 	          ]
 	        },
 	        { "id": 12,
 	          "name": "leaf",
-	          "categories": [
+	          "children": [
 	            { "id": 13,
-	              "name": "lettuce"
+	              "name": "lettuce",
+	              "children": []
 	            },
 	            { "id": 14,
-	              "name": "collards"
+	              "name": "collards",
+	              "children": []
 	            }
 	          ]
 	        }
@@ -65,7 +73,7 @@ potluck.factory('EverythingFactory', function(){
 	  "locations": [
 	    { "id": 1,
 	      "name": "fridge",
-	      "locations":[
+	      "children":[
 	        { "id": 2,
 	          "name": "top"
 	        },
@@ -76,7 +84,7 @@ potluck.factory('EverythingFactory', function(){
 	    },
 	    { "id": 4,
 	      "name": "freezer",
-	      "locations":[
+	      "children":[
 	        { "id": 5,
 	          "name": "top"
 	        },

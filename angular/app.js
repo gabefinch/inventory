@@ -7,10 +7,6 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/home.html"
   });
 
-  $stateProvider.state('locations', {
-    url: "/locations",
-    templateUrl: "partials/locations.html"
-  });
 
   $stateProvider.state('everything', {
     url: "/everything",
@@ -23,5 +19,24 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/children.html",
     controller: 'ChildrenCtrl'
   });
+
+  $stateProvider.state('store', {
+    url: "/store/:categoryId",
+    templateUrl: "partials/store.html",
+    controller: "ChildrenCtrl"
+  });
+
+  $stateProvider.state('locations', {
+    url: "/categories/:categoryId/locations",
+    templateUrl: "partials/locations.html",
+    controller: "LocationsCtrl"
+  });
+
+  $stateProvider.state('categories.locations', {
+    url: "/categories/:categoryId/locations/:locationId",
+    templateUrl: "partials/categories.locations.html",
+    controller: "LocationsCtrl"
+  });
+
 
 });

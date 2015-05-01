@@ -4,6 +4,6 @@ potluck.controller('EverythingCtrl',
 		$scope.everything = EverythingFactory;
 		$scope.categories = EverythingFactory.categories;
 		
-		console.log(EverythingFactory.categories);
+
 
 	});
