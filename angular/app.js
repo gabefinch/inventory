@@ -21,4 +21,23 @@ potluck.config(function($stateProvider) {
     controller: 'CategoryChildCtrl'
   });
 
+  $stateProvider.state('store', {
+    url: "/store/:categoryId",
+    templateUrl: "partials/store.html",
+    controller: "StoreCtrl"
+  });
+
+  $stateProvider.state('locations', {
+    url: "/categories/:categoryId/locations",
+    templateUrl: "partials/locations.html",
+    controller: "LocationsCtrl"
+  });
+
+  $stateProvider.state('categories.locations', {
+    url: "/categories/:categoryId/locations/:locationId",
+    templateUrl: "partials/categories.locations.html",
+    controller: "LocationsCtrl"
+  });
+
+
 });

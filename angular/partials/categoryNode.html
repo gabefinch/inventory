@@ -1,6 +1,11 @@
 <h3>{{currentNodeName}}</h3>
 <ul>
 	<li ng-repeat="item in childNodes">
-		<a ui-sref="categoryChild({ categoryId: item.id })">{{item.name}}</a>
+		<div ng-if="item.children.length != 0">
+			<a ui-sref="categoryChild({ categoryId: item.id })">{{item.name}}</a>
+		</div>
+		<div ng-if="item.children.length == 0">
+			<a ui-sref="store({ categoryId: item.id })">{{item.name}}</a>
+		</div>
 	</li>
 </ul>
