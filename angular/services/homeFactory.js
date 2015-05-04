@@ -9,7 +9,7 @@ potluck.factory('HomeFactory', function($http, $cacheFactory){
 		    cache.put('ingredients', data.ingredients);
 		  }).
 		  error(function(status) {
-				console.log('エラー', err);
+				console.log('エラー');
 	  });
 	return factory;
 });

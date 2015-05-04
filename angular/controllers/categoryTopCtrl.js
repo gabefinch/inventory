@@ -13,7 +13,7 @@ potluck.controller('CategoryTopCtrl',
 		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
 		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
 
-
+		console.log($scope.currentNode);
 
 	}
 );
