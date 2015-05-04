@@ -3,4 +3,5 @@ potluck.controller('HomeCtrl',
 
 		HomeFactory.reloadCache;
 		
+		
 	});
