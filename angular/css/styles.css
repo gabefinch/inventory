@@ -1,0 +1,16 @@
+body {
+	text-align: center;
+}
+
+li {
+	list-style: none;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.well {
+	background-color: aliceblue;
+	color: black;
+}
