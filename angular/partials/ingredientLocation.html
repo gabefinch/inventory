@@ -1,0 +1,8 @@
+<div ng-controller="LocationsCtrl">
+	<h3> Storing Location Options for {{findCategory(ingredientNode.category_id).name}} </h3>
+  <ul>
+    <li ng-repeat="item in locations">
+				<a ui-sref="ingredientLocationChild({ ingredientId: ingredientNode.id, locationId: item.id })">{{item.name}}</a>
+    </li>
+  </ul>
+</div>

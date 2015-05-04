@@ -20,6 +20,15 @@ potluck.factory('UtilitiesFactory', function() {
     }
   };
 
+factory.findByIdArray = function(collection, id) {
+    for (var i = 0; i < collection.length; i++) {
+      if (collection[i].id == id) {
+        return collection[i];
+      }
+    }
+    return null;
+  };
+
   factory.selfAndDescendantsIds = function(startingNode) {
     var nodeIds =  [];
     var pushId = function(node) {
