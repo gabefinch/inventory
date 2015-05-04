@@ -12,17 +12,18 @@ potluck.config(function($stateProvider) {
     controller: 'RecieveCtrl'
   });
 
+  $stateProvider.state('categoryTop', {
+    url: "/categories",
+    templateUrl: "partials/categoryBranch.html",
+    controller: "CategoryTopCtrl"
+  });
+  
   $stateProvider.state('categoryChild', {
     url: "categories/:categoryId",
     templateUrl: "partials/categoryBranch.html",
     controller: 'CategoryChildCtrl'
   });
 
-  $stateProvider.state('categoryTop', {
-    url: "/categories",
-    templateUrl: "partials/categoryBranch.html",
-    controller: "CategoryTopCtrl"
-  });
 
 
   $stateProvider.state('store', {

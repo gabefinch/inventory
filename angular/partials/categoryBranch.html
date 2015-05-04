@@ -1,17 +1,27 @@
-<h3>{{currentNode.name}}</h3>
-<ul>
-	<li ng-repeat="item in currentNode.children">
+<h3>
+	<a ui-sref="{{pathBack}}">
+		<
+	</a>
+	{{currentNode.name}}
+	<a ui-sref="home">
+    <span class="glyphicon glyphicon-home"></span>
+  </a>
+</h3>
 
-		<div ng-if="item.children.length != 0">
+<ul>
+	<div ng-repeat="item in currentNode.children">
+
+		<li ng-if="item.children.length != 0">
 			<a ui-sref="categoryChild({categoryId: item.id})">
 				{{item.name}}
 			</a>
 			<span class="badge">
 				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
 			</span>
-		</div>
-
-		<div ng-if="item.children.length == 0">
+		</li>
+	</div>
+	<div ng-repeat="item in currentNode.children" >
+		<li ng-if="item.children.length == 0">
 			<em>
 				<a ui-sref="store({categoryId: item.id})">
 					{{item.name}}
@@ -20,14 +30,14 @@
 					{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
 				</span>
 			</em>
-		</div>
+		</li>
+	</div>
 
-	</li>
 
 	<li>
 		<em>
 			<a ui-sref="store({categoryId: currentNode.id})">
-				{{currentNode.name}} Misc.
+				{{currentNode.name}} Various/Misc.
 			</a>
 		</em>
 		<span class="badge">
