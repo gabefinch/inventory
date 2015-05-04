@@ -3,6 +3,8 @@ potluck.controller('CategoryTopCtrl',
 
 		var cache = $cacheFactory.get('potluck');
 
+		$scope.pathBack= 'recieve';
+
 		$scope.currentNode = {
 			name: 'Categories',
 			children: cache.get('categories')
@@ -12,8 +14,6 @@ potluck.controller('CategoryTopCtrl',
 
 		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
 		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
-
-		console.log($scope.currentNode);
 
 	}
 );
