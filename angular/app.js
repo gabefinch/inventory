@@ -50,10 +50,27 @@ potluck.config(function($stateProvider) {
   });
 
   $stateProvider.state('unstoredItems', {
-    url: "/unstored/:categoryId",
+    url: "/unstored",
     templateUrl: "partials/unstoredItems.html",
     controller: "StoreCtrl"
   });
 
+  $stateProvider.state('ingredientLocation', {
+    url: "/ingredient/:ingredientId/locations",
+    templateUrl: "partials/ingredientLocation.html",
+    controller: "LocationsCtrl"
+  });
+
+  $stateProvider.state('ingredientLocationChild', {
+    url: "/ingredients/:ingredientId/locations/:locationId",
+    templateUrl: "partials/ingredientLocationChild.html",
+    controller: "LocationsCtrl"
+  });
+
+  $stateProvider.state('unstoredIngredientSummary', {
+    url: "/ingredient/:ingredientId/:locationId",
+    templateUrl: "partials/unstoredIngredientSummary.html",
+    controller: "IngredientCtrl"
+  });
 
 });

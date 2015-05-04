@@ -7,9 +7,7 @@ potluck.controller('CategoryChildCtrl',
 			cache.get('categories'),
 			$stateParams.categoryId
 		);
-		console.log($scope.currentNode);
-		console.log(cache);
-		console.log("hello");
+
 
 		$scope.ingredients = cache.get('ingredients')
 
