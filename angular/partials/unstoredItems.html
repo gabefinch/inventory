@@ -1,0 +1,8 @@
+<h3>Choose an Unstored Item to Store</h3>
+  <ul>
+    <div ng-repeat="item in unstoredItems">
+    	<li ng-if="item.location_id == null">
+				<a ui-sref="locations">{{findCategory(item.id)}}</a>
+			</li>
+    </div>
+  </ul>

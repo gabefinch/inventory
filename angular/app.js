@@ -49,4 +49,11 @@ potluck.config(function($stateProvider) {
     controller: "IngredientCtrl"
   });
 
+  $stateProvider.state('unstoredItems', {
+    url: "/unstored/:categoryId",
+    templateUrl: "partials/unstoredItems.html",
+    controller: "StoreCtrl"
+  });
+
+
 });
