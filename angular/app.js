@@ -2,17 +2,14 @@ var potluck = angular.module('potluck', ['ui.router']);
 
 potluck.config(function($stateProvider) {
 
-  $stateProvider.state('home', {
-    url: "",
+  $stateProvider.state('home', { url: "",
     templateUrl: "partials/home.html",
     controller: 'HomeCtrl'
   });
 
-
-  $stateProvider.state('categoryTop', {
-    url: "/categories",
-    templateUrl: "partials/categoryBranch.html",
-    controller: "CategoryTopCtrl"
+  $stateProvider.state('recieve', { url: "recieve",
+    templateUrl: "partials/recieve.html",
+    controller: 'RecieveCtrl'
   });
 
   $stateProvider.state('categoryChild', {
@@ -20,6 +17,13 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/categoryBranch.html",
     controller: 'CategoryChildCtrl'
   });
+
+  $stateProvider.state('categoryTop', {
+    url: "/categories",
+    templateUrl: "partials/categoryBranch.html",
+    controller: "CategoryTopCtrl"
+  });
+
 
   $stateProvider.state('store', {
     url: "/store/:categoryId",
