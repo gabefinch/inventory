@@ -32,8 +32,8 @@
 	</div>
 
 	<div ng-repeat="item in ingredients" style="background-color: #A3FFFF;">
-		<li ng-if="item.category_id == currentNode.id" ui-sref="ingDetail({ingredient_id: item.id})">
-			<a>
+		<li ng-if="item.category_id == currentNode.id">
+			<a ui-sref="prepIng({ingredientId: item.id})">
 				Item: {{catIdToName(item.category_id)}}
 			</a>
 			<small ng-if="item.location_id != null">

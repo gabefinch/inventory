@@ -1,1 +1,18 @@
-hllo world
+<h3>
+	<a ui-sref="{{pathBack}}">
+		<?
+	</a>
+	{{catIdToCat(ingredient.category_id).name}}
+	<a ui-sref="home">
+    ^
+  </a>
+</h3>
+
+<ul>
+	<li>
+    Location: {{locIdToLoc(ingredient.location_id).name}}
+  </li>
+	<li>
+    Expires: {{catIdToCat(ingredient.category_id).lifespan}}
+  </li>
+</ul>
