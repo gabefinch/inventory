@@ -1,8 +1,0 @@
-<div ng-controller="RecLocCtrl">
-	<h3> Storing Location Options for {{findCategory(item.category_id).name}} </h3>>
-  <ul>
-    <li ng-repeat="item in locations">
-				<a ui-sref="locationChild({ categoryId: categoryNode.id, locationId: item.id })">{{item.name}}</a>
-    </li>
-  </ul>
-</div>

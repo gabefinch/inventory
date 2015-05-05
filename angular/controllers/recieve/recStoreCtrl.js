@@ -1,8 +1,9 @@
 potluck.controller('RecStoreCtrl',
-	function($scope, $cacheFactory,$stateParams, UtilitiesFactory, IngredientsFactory){
+	function($scope, $cacheFactory,$stateParams, $state, UtilitiesFactory, IngredientsFactory){
 
 		var cache = $cacheFactory.get('potluck');
 		$scope.ingredients = cache.get('ingredients');
+		$scope.ingredientNode = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId); 
 
 		$scope.findCategory = function(category_id){
 			return UtilitiesFactory.findById((cache.get('categories')), category_id);
@@ -10,6 +11,15 @@ potluck.controller('RecStoreCtrl',
 
 
 		$scope.categoryNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
+		
+		$scope.storeNow = function(category_id){
+			IngredientsFactory.postIngredient(category_id).then(function(payload){
+				$scope.ingredient = payload;
+		
+				$state.go('ingredientLocation',{ ingredientId: $scope.ingredient.id });
+			});
+		};
+
 		$scope.storeLater = IngredientsFactory.postIngredient;
 
 		$scope.queueCount = function() {
@@ -21,5 +31,7 @@ potluck.controller('RecStoreCtrl',
 		};
 
 		$scope.pathBack= 'recieve';
+
+
 
 	});

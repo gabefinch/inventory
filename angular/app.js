@@ -29,16 +29,6 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/store.html",
     controller: "RecStoreCtrl"
   })
-  .state('locations', {
-    url: "/categories/:categoryId/locations",
-    templateUrl: "partials/recieve/loc.html",
-    controller: "RecLocCtrl"
-  })
-  .state('locationChild', {
-    url: "/categories/:categoryId/locations/:locationId",
-    templateUrl: "partials/recieve/locChild.html",
-    controller: "RecLocCtrl"
-  })
   .state('ingredientSummary', {
     url: "/ingredient/:categoryId/:locationId",
     templateUrl: "partials/recieve/ingSummary.html",

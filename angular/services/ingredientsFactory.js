@@ -1,21 +1,28 @@
-potluck.factory('IngredientsFactory', function($http, $cacheFactory, UtilitiesFactory){
+potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q, UtilitiesFactory){
 	var factory = {};
 	var cache = $cacheFactory.get('potluck');
 
 	factory.postIngredient = function(category_id, location_id){
+		var dfr = $q.defer();
+
 		$http.post('http://localhost:3000/api/ingredients', {
+   
             "category_id": category_id,
             "location_id": location_id
         }).
 	  success(function(data) {
 	    var ingredients = cache.get('ingredients');
 			ingredients.push(data);
-			cache.put('ingredients',ingredients);
+			cache.put('ingredients',ingredients);	
+			dfr.resolve(data);
 	  }).
 	  error(function(status) {
 			console.log('エラー');
 			console.log(status);
+			dfr.reject();
 	  });
+
+	  return dfr.promise;
 	};
 
 	factory.patchIngredient = function(category_id, location_id, ingredient){
