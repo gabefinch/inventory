@@ -1,21 +1,28 @@
-<h3>
-  <a ui-sref="home">
-    <
-  </a>
-  Recieve/Put-Away
-  <a ui-sref="home">
-    ^
-  </a>
-</h3>
-
-<ul>
-  <li>
-    <a ui-sref="categoryTop">Recieve New Item</a>
-  </li>
-  <li>
-    <a ui-sref="unstoredItems">Unstored Items</a>
-    <span class="badge">
-      {{queueCount()}}
-    </span>
-  </li>
-</ul>
+<div class="row-fluid">
+  <div class="well col-xs-12">
+    <h3>
+      <a ui-sref="home">
+        <
+      </a>
+      Recieve/Put-Away
+      <a ui-sref="home">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </h3>
+  </div>
+  <div class="well col-xs-12">
+  <ul>
+    <li>
+      <a ui-sref="categoryTop">Recieve New Item</a>
+    </li>
+  </div>
+  <div class="well col-xs-12">
+    <li>
+      <a ui-sref="unstoredItems">Unstored Items</a>
+      <span class="badge">
+        {{queueCount()}}
+      </span>
+    </li>
+  </div>
+  </ul>
+</div>

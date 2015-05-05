@@ -2,8 +2,11 @@ body {
 	text-align: center;
 }
 
+
 li {
 	list-style: none;
+	margin-left: 0px;
+	font-size: 150%
 }
 
 .container-fluid {
@@ -14,3 +17,4 @@ li {
 	background-color: aliceblue;
 	color: black;
 }
+
