@@ -1,9 +1,28 @@
 body {
 	text-align: center;
+	background-color: lightgrey;
+	background: 
+  /* On "top" */
+  repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    #ccc 10px,
+    #ccc 20px
+  ),
+  /* on "bottom" */
+  linear-gradient(
+    to bottom,
+    #eee,
+    #999
+  );
 }
+
+
 
 ul {
 	padding-left: 0!important;
+	border: 5px;
 }
 
 
@@ -13,7 +32,6 @@ li {
 	font-size: 150%
 }
 
-
 .container-fluid {
   padding: 0;
 }
@@ -21,5 +39,12 @@ li {
 .well {
 	background-color: aliceblue;
 	color: black;
+	margin: 0px;
+	border-bottom: 2px solid lightgrey;
+}
+
+.header {
+	background-color: #96B4FF;
+	margin-top: -1%;
 }
 
