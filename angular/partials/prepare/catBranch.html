@@ -12,7 +12,7 @@
 	<div ng-repeat="item in currentNode.children">
 
 		<li ng-if="item.children.length != 0">
-			<a ui-sref="prepare/categoryChild({categoryId: item.id})">
+			<a ui-sref="prepCatChild({categoryId: item.id})">
 				{{item.name}}
 			</a>
       <span class="badge">
@@ -23,7 +23,7 @@
 	<div ng-repeat="item in currentNode.children" >
 		<li ng-if="item.children.length == 0">
 			<em>
-				<a ui-sref="prepare/category/ingredients({categoryId: item.id})">
+				<a ui-sref="prepCatIng({categoryId: item.id})">
 					{{item.name}}
 				</a>
 			</em>

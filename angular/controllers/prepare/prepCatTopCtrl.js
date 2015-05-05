@@ -3,7 +3,7 @@ potluck.controller('PrepCatTopCtrl',
 
 		var cache = $cacheFactory.get('potluck');
 
-		$scope.pathBack= 'recieve';
+		$scope.pathBack= 'prep';
 
 		$scope.currentNode = {
 			name: 'Categories',

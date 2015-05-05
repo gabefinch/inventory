@@ -65,17 +65,17 @@ potluck.config(function($stateProvider) {
     controller: "RecIngCtrl"
   })
 
-  .state('prepare', {
+  .state('prep', {
     url: "/prepare",
     templateUrl: "partials/prepare/prepare.html",
     controller: "PrepareCtrl"
   })
-  .state('prepare/categoryTop', {
+  .state('prepCatTop', {
     url: "/prepare/categories",
     templateUrl: "partials/prepare/catBranch.html",
     controller: "PrepCatTopCtrl"
   })
-  .state('prepare/categoryChild', {
+  .state('prepCatChild', {
     url: "/prepare/categories/:categoryId",
     templateUrl: "partials/prepare/catBranch.html",
     controller: "PrepCatChildCtrl"
