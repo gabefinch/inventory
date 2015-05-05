@@ -11,6 +11,6 @@ potluck.controller('StoreCtrl',
 
 		$scope.categoryNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
 		$scope.storeLater = IngredientsFactory.postIngredient;
-
+		$scope.pathBack= 'recieve';
 
 	});

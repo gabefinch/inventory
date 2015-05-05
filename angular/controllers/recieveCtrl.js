@@ -13,4 +13,5 @@ potluck.controller('RecieveCtrl',
 			return count;
 		};
 
+
 });
