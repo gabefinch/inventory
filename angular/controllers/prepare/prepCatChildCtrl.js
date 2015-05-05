@@ -12,8 +12,20 @@ potluck.controller('PrepCatChildCtrl',[
 			$scope.pathBack = 'prepCatChild({categoryId: ' + $scope.currentNode.parent_id + '})';
 		}
 
-		$scope.ingredients = cache.get('ingredients')
+		$scope.ingredients = cache.get('ingredients');
 
-		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
-		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
+		$scope.ingDescCount = function(category) {
+			return UtilitiesFactory.categoryCountFromIds(
+				cache.get('ingredients'),
+				UtilitiesFactory.selfAndDescendantsIds(category));
+		}
+
+		$scope.catIdToName = function(category_id){
+			return UtilitiesFactory.findById(cache.get('categories'),category_id).name;
+		};
+
+		$scope.locIdToName = function(location_id){
+			return UtilitiesFactory.findById(cache.get('locations'),location_id).name;
+		};
+
 }]);

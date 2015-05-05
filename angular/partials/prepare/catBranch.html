@@ -11,33 +11,34 @@
 <ul>
 	<div ng-repeat="item in currentNode.children">
 
-		<li ng-if="item.children.length != 0">
+		<li ng-if="item.children.length != 0 && ingDescCount(item) > 0">
 			<a ui-sref="prepCatChild({categoryId: item.id})">
 				{{item.name}}
 			</a>
       <span class="badge">
-				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
+				{{ingDescCount(item)}}
 			</span>
 		</li>
 	</div>
 	<div ng-repeat="item in currentNode.children" >
-		<li ng-if="item.children.length == 0">
-			<em>
-				<a ui-sref="prepCatIng({categoryId: item.id})">
-					{{item.name}}
-				</a>
-			</em>
+		<li ng-if="item.children.length == 0 && ingDescCount(item) > 0">
+					<a ui-sref="prepCatIng({categoryId: item.id})">
+						{{item.name}}
+					</a>
       <span class="badge">
-				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
+				{{ingDescCount(item)}}
 			</span>
 		</li>
 	</div>
 
-	<div ng-repeat="item in ingredients">
-		<li ng-if="item.id == current.node.id">
-			<a ui-sref="#">
-				{{item.name}}
-			</a>
-		</li>
+	<div ng-repeat="item in ingredients" style="background-color: #A3FFFF;">
+		<a ng-if="item.category_id == currentNode.id" ui-sref="ingDetail({ingredient_id: item.id})">
+			<li>
+				Assorted {{catIdToName(item.category_id)}}
+				<span ng-if="item.location_id != null">
+					-{{locIdToName(item.location_id)}}
+				</span>
+			</li>
+		</a>
 	</div>
 </ul>

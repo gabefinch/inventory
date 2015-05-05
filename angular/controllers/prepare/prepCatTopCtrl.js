@@ -10,10 +10,20 @@ potluck.controller('PrepCatTopCtrl',
 			children: cache.get('categories')
 		};
 
-		$scope.ingredients = cache.get('ingredients')
+		$scope.ingDescCount = function(category) {
+			return UtilitiesFactory.categoryCountFromIds(
+				cache.get('ingredients'),
+				UtilitiesFactory.selfAndDescendantsIds(category));
+		}
 
-		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
-		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
+		$scope.catIdToName = function(id){
+			return UtilitiesFactory.findById(cache.get('categories'),id).name;
+		};
 
+		$scope.locIdToName = function(id){
+			return UtilitiesFactory.findById(cache.get('locations'),id).name;
+		};
+
+		$scope.ingredients = cache.get('ingredients');
 	}
 );
