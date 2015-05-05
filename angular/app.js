@@ -69,6 +69,21 @@ potluck.config(function($stateProvider) {
     url: "/prepare/categories/:categoryId",
     templateUrl: "partials/prepare/catBranch.html",
     controller: "PrepCatChildCtrl"
+  })
+  .state('prepLocTop', {
+    url: "/prepare/locations",
+    templateUrl: "partials/prepare/locBranch.html",
+    controller: "PrepLocTopCtrl"
+  })
+  .state('prepLocChild', {
+    url: "/prepare/locations/:locationId",
+    templateUrl: "partials/prepare/locBranch.html",
+    controller: "PrepLocChildCtrl"
+  })
+  .state('prepIng', {
+    url: "/prepare/ingredients/:ingredientId",
+    templateUrl: "partials/prepare/ing.html",
+    controller: "PrepIngCtrl"
   });
 
 });
