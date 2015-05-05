@@ -1,33 +1,41 @@
-<h3>
-	<a ui-sref="{{pathBack}}">
-		<
-	</a>
-	{{currentNode.name}}
-	<a ui-sref="home">
-    ^
-  </a>
-</h3>
+<div class="row-fluid">
+  <div class=" well col-xs-12">
+		<h3>
+			<a ui-sref="{{pathBack}}">
+				<
+			</a>
+			{{currentNode.name}}
+			<a ui-sref="home">
+		    <span class="glyphicon glyphicon-home"></span>
+		  </a>
+		</h3>
+	</div>
+</div>
 
 <ul>
 	<div ng-repeat="item in currentNode.children">
-
-		<li ng-if="item.children.length != 0">
-			<a ui-sref="categoryChild({categoryId: item.id})">
-				{{item.name}}
-			</a>
-		</li>
-	</div>
+		<div ng-if="item.children.length != 0">
+			<div class=" well col-xs-12">
+				<li>
+					<a ui-sref="categoryChild({categoryId: item.id})">
+						{{item.name}}
+					</a>
+				</li>
+			</div>
+		</div>
+</div>
 	<div ng-repeat="item in currentNode.children" >
-		<li ng-if="item.children.length == 0">
-			<em>
+		<div ng-if="item.children.length == 0">
+		<div class=" well col-xs-12">
+			<li>
 				<a ui-sref="store({categoryId: item.id})">
 					{{item.name}}
 				</a>
-			</em>
-		</li>
+			</li>
+		</div>
 	</div>
-
-
+</div>
+<div class=" well col-xs-12">
 	<li>
 		<em>
 			<a ui-sref="store({categoryId: currentNode.id})">
@@ -36,3 +44,4 @@
 		</em>
 	</li>
 </ul>
+</div>

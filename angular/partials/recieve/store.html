@@ -1,15 +1,22 @@
-<h3>{{categoryNode.name}}</h3>
-<h3>Action</h3>
-
-<ul>
-	<li>
-		<a ng-click="storeNow(categoryNode.id)">
-			Store Now
-		</a>
-	</li>
-	<li>
-		<a ng-click="storeLater(categoryNode.id)" ui-sref="home">
-			Store Later
-		</a>
-	</li>
-</ul>
+<div class="row-fluid">
+  <div class="well col-xs-12">
+			<span><h3>You've Selected The Following: {{categoryNode.name}}</h3>
+			<h4>Do you want to...</h4></span>
+	</div>
+	<div class="well col-xs-12">
+	<ul>
+		<li>
+			<a ng-click="storeNow(categoryNode.id)">
+				Choose a Storage Location Now
+			</a>
+		</li>
+	</div>
+	<div class="well col-xs-12">
+		<li>
+			<a ng-click="storeLater(categoryNode.id)" ui-sref="home">
+				Store It Later....Not Putting It Away Yet!
+			</a>
+		</li>
+	</ul>
+	</div>
+</div>

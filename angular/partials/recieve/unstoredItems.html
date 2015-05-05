@@ -1,19 +1,26 @@
-<h3>
-	<a ui-sref="recieve">
-		<
-	</a>
-  Unstored Items
-  <span class="badge">
-    {{queueCount()}}
-  </span>
-	<a ui-sref="home">
-    ^
-  </a>
-</h3>
+<div class="row-fluid">
+  <div class="well col-xs-12">
+    <h3>
+    	<a ui-sref="recieve">
+    		<
+    	</a>
+      Unstored Items
+      <span class="badge">
+        {{queueCount()}}
+      </span>
+    	<a ui-sref="home">
+        <span class="glyphicon glyphicon-home"></span>
+      </a>
+    </h3>
+  </div>
+
   <ul>
     <div ng-repeat="item in ingredients">
-    	<li ng-if="item.location_id == null">
-				<a ui-sref="ingredientLocation({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
-			</li>
+      <li ng-if="item.location_id == null">
+        <div class="well col-xs-12">
+  				<a ui-sref="ingredientLocation({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
+        </div>
+  		</li>
     </div>
   </ul>
+</div>
