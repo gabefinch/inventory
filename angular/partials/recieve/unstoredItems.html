@@ -1,4 +1,15 @@
-<h3>Choose an Unstored Item to Store</h3>
+<h3>
+	<a ui-sref="recieve">
+		<
+	</a>
+  Unstored Items
+  <span class="badge">
+    {{queueCount()}}
+  </span>
+	<a ui-sref="home">
+    ^
+  </a>
+</h3>
   <ul>
     <div ng-repeat="item in ingredients">
     	<li ng-if="item.location_id == null">

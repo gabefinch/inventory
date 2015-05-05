@@ -2,76 +2,83 @@ var potluck = angular.module('potluck', ['ui.router']);
 
 potluck.config(function($stateProvider) {
 
-  $stateProvider.state('home', { url: "",
+  $stateProvider
+  .state('home', {
+    url: "",
     templateUrl: "partials/home.html",
     controller: 'HomeCtrl'
-  });
+  })
 
-  $stateProvider.state('recieve', { url: "recieve",
-    templateUrl: "partials/recieve.html",
+  .state('recieve', {
+    url: "/recieve",
+    templateUrl: "partials/recieve/recieve.html",
     controller: 'RecieveCtrl'
-  });
-
-  $stateProvider.state('categoryTop', {
+  })
+  .state('categoryTop', {
     url: "/categories",
-    templateUrl: "partials/categoryBranch.html",
-    controller: "CategoryTopCtrl"
-  });
-  
-  $stateProvider.state('categoryChild', {
-    url: "categories/:categoryId",
-    templateUrl: "partials/categoryBranch.html",
-    controller: 'CategoryChildCtrl'
-  });
-
-
-
-  $stateProvider.state('store', {
+    templateUrl: "partials/recieve/catBranch.html",
+    controller: "RecCatTopCtrl"
+  })
+  .state('categoryChild', {
+    url: "/categories/:categoryId",
+    templateUrl: "partials/recieve/catBranch.html",
+    controller: 'RecCatChildCtrl'
+  })
+  .state('store', {
     url: "/store/:categoryId",
-    templateUrl: "partials/store.html",
-    controller: "StoreCtrl"
-  });
-
-  $stateProvider.state('locations', {
+    templateUrl: "partials/recieve/store.html",
+    controller: "RecStoreCtrl"
+  })
+  .state('locations', {
     url: "/categories/:categoryId/locations",
-    templateUrl: "partials/locations.html",
-    controller: "LocationsCtrl"
-  });
-
-  $stateProvider.state('locationChild', {
+    templateUrl: "partials/recieve/loc.html",
+    controller: "RecLocCtrl"
+  })
+  .state('locationChild', {
     url: "/categories/:categoryId/locations/:locationId",
-    templateUrl: "partials/locationChild.html",
-    controller: "LocationsCtrl"
-  });
-
-  $stateProvider.state('ingredientSummary', {
+    templateUrl: "partials/recieve/locChild.html",
+    controller: "RecLocCtrl"
+  })
+  .state('ingredientSummary', {
     url: "/ingredient/:categoryId/:locationId",
-    templateUrl: "partials/ingredientSummary.html",
-    controller: "IngredientCtrl"
-  });
-
-  $stateProvider.state('unstoredItems', {
+    templateUrl: "partials/recieve/ingSummary.html",
+    controller: "RecIngCtrl"
+  })
+  .state('unstoredItems', {
     url: "/unstored",
-    templateUrl: "partials/unstoredItems.html",
-    controller: "StoreCtrl"
-  });
-
-  $stateProvider.state('ingredientLocation', {
+    templateUrl: "partials/recieve/unstoredItems.html",
+    controller: "RecStoreCtrl"
+  })
+  .state('ingredientLocation', {
     url: "/ingredient/:ingredientId/locations",
-    templateUrl: "partials/ingredientLocation.html",
-    controller: "LocationsCtrl"
-  });
-
-  $stateProvider.state('ingredientLocationChild', {
+    templateUrl: "partials/recieve/ingLoc.html",
+    controller: "RecLocCtrl"
+  })
+  .state('ingredientLocationChild', {
     url: "/ingredients/:ingredientId/locations/:locationId",
-    templateUrl: "partials/ingredientLocationChild.html",
-    controller: "LocationsCtrl"
-  });
-
-  $stateProvider.state('unstoredIngredientSummary', {
+    templateUrl: "partials/recieve/ingLocChild.html",
+    controller: "RecLocCtrl"
+  })
+  .state('unstoredIngredientSummary', {
     url: "/ingredient/:ingredientId/:locationId",
-    templateUrl: "partials/unstoredIngredientSummary.html",
-    controller: "IngredientCtrl"
+    templateUrl: "partials/recieve/unstoredIngSummary.html",
+    controller: "RecIngCtrl"
+  })
+
+  .state('prepare', {
+    url: "/prepare",
+    templateUrl: "partials/prepare/prepare.html",
+    controller: "PrepareCtrl"
+  })
+  .state('prepare/categoryTop', {
+    url: "/prepare/categories",
+    templateUrl: "partials/prepare/catBranch.html",
+    controller: "PrepCatTopCtrl"
+  })
+  .state('prepare/categoryChild', {
+    url: "/prepare/categories/:categoryId",
+    templateUrl: "partials/prepare/catBranch.html",
+    controller: "PrepCatChildCtrl"
   });
 
 });

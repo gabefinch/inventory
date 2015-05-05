@@ -1,0 +1,43 @@
+<h3>
+	<a ui-sref="{{pathBack}}">
+		<
+	</a>
+	{{currentNode.name}}
+	<a ui-sref="home">
+    ^
+  </a>
+</h3>
+
+<ul>
+	<div ng-repeat="item in currentNode.children">
+
+		<li ng-if="item.children.length != 0">
+			<a ui-sref="prepare/categoryChild({categoryId: item.id})">
+				{{item.name}}
+			</a>
+      <span class="badge">
+				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
+			</span>
+		</li>
+	</div>
+	<div ng-repeat="item in currentNode.children" >
+		<li ng-if="item.children.length == 0">
+			<em>
+				<a ui-sref="prepare/category/ingredients({categoryId: item.id})">
+					{{item.name}}
+				</a>
+			</em>
+      <span class="badge">
+				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
+			</span>
+		</li>
+	</div>
+
+	<div ng-repeat="item in ingredients">
+		<li ng-if="item.id == current.node.id">
+			<a ui-sref="#">
+				{{item.name}}
+			</a>
+		</li>
+	</div>
+</ul>

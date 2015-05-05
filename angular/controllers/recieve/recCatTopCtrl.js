@@ -1,4 +1,4 @@
-potluck.controller('CategoryTopCtrl',
+potluck.controller('RecCatTopCtrl',
 	function($scope, $cacheFactory, UtilitiesFactory){
 
 		var cache = $cacheFactory.get('potluck');

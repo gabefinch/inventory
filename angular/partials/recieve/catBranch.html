@@ -4,7 +4,7 @@
 	</a>
 	{{currentNode.name}}
 	<a ui-sref="home">
-    <span class="glyphicon glyphicon-home"></span>
+    ^
   </a>
 </h3>
 
@@ -15,9 +15,6 @@
 			<a ui-sref="categoryChild({categoryId: item.id})">
 				{{item.name}}
 			</a>
-			<span class="badge">
-				{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
-			</span>
 		</li>
 	</div>
 	<div ng-repeat="item in currentNode.children" >
@@ -26,9 +23,6 @@
 				<a ui-sref="store({categoryId: item.id})">
 					{{item.name}}
 				</a>
-				<span class="badge">
-					{{countFromIds(ingredients,selfAndDescendantsIds(item))}}
-				</span>
 			</em>
 		</li>
 	</div>
@@ -40,8 +34,5 @@
 				{{currentNode.name}} Various/Misc.
 			</a>
 		</em>
-		<span class="badge">
-			{{countFromIds(ingredients,[currentNode.id])}}
-		</span>
 	</li>
 </ul>
