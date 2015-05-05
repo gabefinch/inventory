@@ -1,4 +1,4 @@
-potluck.controller('PrepCatTopCtrl',[
+potluck.controller('PrepLocTopCtrl',[
   '$scope',
   '$cacheFactory',
   'UtilitiesFactory',
@@ -9,14 +9,14 @@ potluck.controller('PrepCatTopCtrl',[
 		$scope.pathBack= 'prep';
 
 		$scope.currentNode = {
-			name: 'Categories',
-			children: cache.get('categories')
+			name: 'Locations',
+			children: cache.get('locations')
 		};
 
-		$scope.ingDescCount = function(category) {
-			return UtilitiesFactory.categoryCountFromIds(
+		$scope.ingDescCount = function(location) {
+			return UtilitiesFactory.locationCountFromIds(
 				cache.get('ingredients'),
-				UtilitiesFactory.selfAndDescendantsIds(category));
+				UtilitiesFactory.selfAndDescendantsIds(location));
 		}
 
 		$scope.catIdToName = function(id){
