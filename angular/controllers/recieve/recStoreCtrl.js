@@ -20,4 +20,6 @@ potluck.controller('RecStoreCtrl',
 			return count;
 		};
 
+		$scope.pathBack= 'recieve';
+
 	});
