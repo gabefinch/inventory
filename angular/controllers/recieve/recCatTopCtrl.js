@@ -13,5 +13,7 @@ potluck.controller('RecCatTopCtrl',
 		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
 		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
 
+		$scope.pathBack = 'recieve';
+
 	}
 );
