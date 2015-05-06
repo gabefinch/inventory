@@ -6,7 +6,7 @@ class Api::MainController < ApplicationController
       locations:
         Location.top_level.map { |item| LocationSerializer.new(item)},
       ingredients:
-        Ingredient.all.as_json
+        Ingredient.all.map { |item| IngredientSerializer.new(item)}
     }
   end
 end

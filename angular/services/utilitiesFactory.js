@@ -1,32 +1,43 @@
-potluck.factory('UtilitiesFactory', function() {
-  var factory = {};
+potluck.factory('UtilitiesFactory', ['$cacheFactory',
+  function($cacheFactory) {
+    var factory = {};
+    var cache = $cacheFactory.get('potluck');
 
-
-
-  factory.findById = function(collection, id) {
-    for (var i = 0; i <= collection.length-1; i++) {
-      var currentNode = collection[i]
-          currentId = currentNode.id
-          currentChildren = currentNode.children;
-      if (currentId == id) {
-        return currentNode;
-      }
-      else {
-        var foundDescendant = this.findById(currentChildren, id);
-        if (foundDescendant) {
-          return foundDescendant;
+    factory.findById = function(collection, id) {
+      for (var i = 0; i <= collection.length-1; i++) {
+        var currentNode = collection[i]
+            currentId = currentNode.id
+            currentChildren = currentNode.children;
+        if (currentId == id) {
+          return currentNode;
+        }
+        else {
+          var foundDescendant = this.findById(currentChildren, id);
+          if (foundDescendant) {
+            return foundDescendant;
+          }
         }
       }
-    }
-  };
+    };
 
-factory.findByIdArray = function(collection, id) {
+  factory.findByIdArray = function(collection, id) {
     for (var i = 0; i < collection.length; i++) {
       if (collection[i].id == id) {
         return collection[i];
       }
     }
     return null;
+  };
+
+  factory.findIngsByCat = function(category) {
+    var ingMatches = [];
+    var ingredients = cache.get('ingredients');
+    for (var i = 0; i < ingredients.length; i++) {
+      if (ingredients[i].category_id == category.id) {
+        ingMatches.push(ingredients[i]);
+      }
+    }
+    return ingMatches;
   };
 
   factory.selfAndDescendantsIds = function(startingNode) {
@@ -64,4 +75,5 @@ factory.findByIdArray = function(collection, id) {
   };
 
   return factory;
-});
+
+}]);

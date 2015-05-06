@@ -1,12 +1,33 @@
 var potluck = angular.module('potluck', ['ui.router']);
 
+// Allow Angular UI to log errors
+// potluck.run(($rootScope) => {
+//   $rootScope.$on("$stateChangeError", console.log.bind(console));
+// });
+
+// Load Everything JSON at app load
+potluck.run(function($http,$cacheFactory){
+  var factory = {};
+	var cache = $cacheFactory('potluck');
+	factory.reloadCache =
+		$http.get('http://localhost:3000/api/everything').
+		  success(function(data) {
+		    cache.put('categories', data.categories);
+		    cache.put('locations', data.locations);
+		    cache.put('ingredients', data.ingredients);
+		  }).
+		  error(function(status) {
+				console.log('エラー');
+	  });
+});
+
+
 potluck.config(function($stateProvider) {
 
   $stateProvider
   .state('home', {
     url: "",
-    templateUrl: "partials/home.html",
-    controller: 'HomeCtrl'
+    templateUrl: "partials/home.html"
   })
 
   .state('recieve', {

@@ -39,6 +39,9 @@
 			<small ng-if="item.location_id != null">
 				{{'  (' + locIdToName(item.location_id) + ')'}}
 			</small>
+			<small ng-if="item.location_id == null">
+				(somewhere)
+			</small>
 		</li>
 	</div>
 </ul>
