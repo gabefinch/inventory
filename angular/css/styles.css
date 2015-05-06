@@ -1,9 +1,18 @@
+
 body {
 	text-align: center;
+	background-color: lightgrey;
+	font-family: 'Lora', serif;
+	background-image: url("stripe.png");
+}
+
+h3 {
+	font-family: 'Lora', serif;
 }
 
 ul {
 	padding-left: 0!important;
+	border: 5px;
 }
 
 
@@ -13,7 +22,6 @@ li {
 	font-size: 150%
 }
 
-
 .container-fluid {
   padding: 0;
 }
@@ -21,5 +29,33 @@ li {
 .well {
 	background-color: aliceblue;
 	color: black;
+	margin: 0px;
+	border-bottom: 2px solid lightgrey;
 }
+
+.header {
+	background-color: #96B4FF;
+	margin-top: -1%;
+	font-family: 'Lora', serif;
+}
+
+@media only screen and (max-device-width: 667px) { 
+	.col-xs-12 {
+		height: 250px;
+	}
+	body {
+		font-size: 30px;
+	}
+	h3 {
+		font-size: 45px;
+	}
+	.badge {
+		height:50px;
+		width:50px;
+		font-size: 25px;
+		text-align: center;
+	}
+ }
+
+
 
