@@ -1,5 +1,6 @@
 var potluck = angular.module('potluck', ['ui.router']);
 
+
 potluck.config(function($stateProvider) {
 
   $stateProvider
