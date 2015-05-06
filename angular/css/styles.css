@@ -1,8 +1,11 @@
 body {
 	text-align: center;
 	background-color: lightgrey;
-	background: 
-  /* On "top" */
+	font-family: 'Lora', serif;
+	background-image: url("stripe.png");
+}
+/*
+background: 
   repeating-linear-gradient(
     45deg,
     transparent,
@@ -10,14 +13,11 @@ body {
     #ccc 10px,
     #ccc 20px
   ),
-  /* on "bottom" */
   linear-gradient(
     to bottom,
     #eee,
     #999
-  );
-}
-
+  );*/
 
 
 ul {
@@ -46,5 +46,6 @@ li {
 .header {
 	background-color: #96B4FF;
 	margin-top: -1%;
+	font-family: 'Lora', serif;
 }
 
