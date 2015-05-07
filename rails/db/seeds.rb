@@ -151,7 +151,7 @@ Location.create(name: 'Kitchen', children:[
   ])
 
 Location.create(name: 'Dishwasher Room', children:[
-  Location.create(name: 'Deli Case', children:[
+  Location.create(name: 'Deli Fridge #2', children:[
     Location.create(name: 'Deli Left Door', children:[
       Location.create(name: 'Left Door Top'),
       Location.create(name: 'Left Door Middle'),
@@ -168,7 +168,7 @@ Location.create(name: 'Dishwasher Room', children:[
       Location.create(name: 'Right Door Bottom')
       ])
     ]),
-  Location.create(name: 'White Fridge', children:[
+  Location.create(name: 'Fridge #1', children:[
     Location.create(name: 'Freezer (Left)', children:[
       Location.create(name: 'Door'),
       Location.create(name: 'Top Shelves'),
@@ -184,9 +184,100 @@ Location.create(name: 'Dishwasher Room', children:[
     ])
   ])
 
-Location.create(name: 'Loading Dock')
-Location.create(name: 'Back Hall')
-Location.create(name: 'Back Room')
-Location.create(name: 'Walk-In Fridge')
-Location.create(name: 'Alleyway')
-Location.create(name: 'Basement')
+Location.create(name: 'Loading Dock', children:[
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Shelves')
+  ])
+
+Location.create(name: 'Back Hall', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Fridge #8', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #7', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ])
+  ])
+
+Location.create(name: 'Back Room', children:[
+  Location.create(name: 'Freezer #3', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #4', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #5', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #6', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Shelves', children:[
+    Location.create(name: 'Cove/Closet'),
+    Location.create(name: 'Metal Racks')
+    ]),
+  Location.create(name: 'Table', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Lower Shelf')
+    ]),
+  Location.create(name: 'Floor')
+  ])
+
+Location.create(name: 'Walk-In Fridge', children:[
+  Location.create(name: 'Front', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ])
+    ]),
+  Location.create(name: 'Back', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ])
+    ])
+  ])
+
+Location.create(name: 'Alleyway', children:[
+  Location.create(name: 'Building Side', children: [
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Opposite Side', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ])
+  ])
+
+Location.create(name: 'Basement', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Table'),
+  Location.create(name: 'Floor')
+  ])
