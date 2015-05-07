@@ -1,8 +1,9 @@
 <h3>
 	<a ui-sref="#">
-		<?
+		<
 	</a>
-	{{categoryName(ingredient) + " "}}<span class="badge">{{categoryFraction(ingredient)}}</span>
+	{{categoryName(ingredient) + " "}}
+	<span class="badge">{{categoryFraction(ingredient)}}</span>
 	<a ui-sref="home">
     ^
   </a>
@@ -19,3 +20,13 @@
     {{expireMessage(ingredient)}}
   </li>
 </ul>
+
+<button type="button" class="btn btn-warning btn-lg btn-block">
+	<span class="glyphicon glyphicon-shopping-cart"></span>
+	Add To Basket
+</button>
+
+<button type="button" class="btn btn-danger btn-lg btn-block">
+	<span class="glyphicon glyphicon-remove-circle"></span>
+	Mark As Used
+</button>

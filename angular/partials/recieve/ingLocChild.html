@@ -1,17 +1,45 @@
 <div class="row-fluid">
+
   <div class="header well col-xs-12">
-		<h1>{{locationNode.name}}</h1>
+		<h3>
+      <a ui-sref="{{pathBack}}">
+				<
+			</a>
+      {{locationNode.name}}
+      <a ui-sref="home">
+		    <span class="glyphicon glyphicon-home"></span>
+		  </a>
+    </h3>
 	</div>
-	<li ng-repeat="item in locationNode.children">
-		<div ng-if="item.children.length != 0">
-			<div class="well col-xs-12">
-				<a ui-sref="ingredientLocationChild({ ingredientId: ingredientNode.id, locationId: item.id })">{{item.name}}</a>
-			</div>
-		</div>
-		<div ng-if="item.children.length == 0">
-			<div class=" well col-xs-12">
-				<a ui-sref="unstoredIngredientSummary({ ingredientId: ingredientNode.id, locationId: item.id })">{{item.name}}</a>
-			</div>
-		</div>
-	</li>
+
+  <ul>
+
+    <li ng-repeat="item in locationNode.children"
+    ng-if="item.children.length != 0"
+    class="well col-xs-12">
+    <a ui-sref="ingredientLocationChild({ ingredientId: ingredientNode.id, locationId: item.id })">
+      {{item.name}}
+      <span class="badge">35</span>
+    </a>
+    </li>
+
+    <li ng-repeat="item in locationNode.children"
+    ng-if="item.children.length == 0"
+    class="well col-xs-12">
+    <a ui-sref="unstoredIngredientSummary({ ingredientId: ingredientNode.id, locationId: item.id })">
+      {{item.name}}
+      <span class="badge">35</span>
+      </a>
+    </li>
+
+    <li class="well col-xs-12">
+  		<em>
+  			<a ui-sref="">
+  				{{locationNode.name}}.
+  			</a>
+  		</em>
+  	</li>
+
+  </ul>
+
 </div>
