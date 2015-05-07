@@ -38,6 +38,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     arel (6.0.0)
     builder (3.2.2)
     coderay (1.1.0)
@@ -137,6 +139,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  ancestry
   factory_girl_rails (~> 4.0)
   pg
   pry

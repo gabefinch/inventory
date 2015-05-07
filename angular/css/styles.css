@@ -1,3 +1,20 @@
+.square {
+    float:left;
+    position: relative;
+    width: 30%;
+    padding-bottom: 30%; /* = width for a 1:1 aspect ratio */
+    overflow:hidden;
+
+}
+
+.content {
+		background-color: aliceblue;
+    position:absolute;
+    height:80%; /* = 100% - 2*10% padding */
+    width:90%; /* = 100% - 2*5% padding */
+    padding: 10% 5%;
+}
+
 
 body {
 	text-align: center;
@@ -42,6 +59,7 @@ li {
 @media only screen and (max-device-width: 667px) { 
 	.col-xs-12 {
 		height: 250px;
+		line-height: 250px;
 	}
 	body {
 		font-size: 30px;
