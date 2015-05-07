@@ -21,6 +21,12 @@ potluck.run(function($http,$cacheFactory){
 	  });
 });
 
+// Capture previous state
+// potluck.run(function ($rootScope, $state) {
+//   $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
+//     $state.previous = fromState;
+//   });
+// });
 
 potluck.config(function($stateProvider) {
 

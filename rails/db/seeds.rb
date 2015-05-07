@@ -1,87 +1,283 @@
-proteins = Category.create(name: 'Fresh Proteins', lifespan:30)
-  meats = Category.create(name: 'Meats', parent_id: proteins.id, lifespan:30)
-    chicken = Category.create(name: 'Chicken', parent_id: meats.id, lifespan:30)
-      chicken_whole = Category.create(name: 'Whole Chicken', parent_id: chicken.id, lifespan:30)
-      chicken_breast = Category.create(name: 'Chicken Breast', parent_id: chicken.id, lifespan:30)
-      chicken_legs = Category.create(name: 'Chicken Legs', parent_id: chicken.id, lifespan:30)
-      chicken_drumsticks = Category.create(name: 'Chicken Drumstick', parent_id: chicken.id, lifespan:30)
-      chicken_ground= Category.create(name: 'Ground Chicken', parent_id: chicken.id, lifespan:30)
-    beef = Category.create(name: 'Beef', parent_id: meats.id, lifespan:30)
-      beef_steak = Category.create(name: 'Beef Steak', parent_id: beef.id, lifespan:30)
-      beef_roast = Category.create(name: 'Beef Roast', parent_id: beef.id, lifespan:30)
-      beef_ground = Category.create(name: 'Ground Beef', parent_id: beef.id, lifespan:30)
-    turkey = Category.create(name: 'Turkey', parent_id: meats.id, lifespan:30)
-      turkey_whole = Category.create(name: 'Whole Turkey', parent_id: turkey.id, lifespan:30)
-      turkey_breast = Category.create(name: 'Turkey Breast', parent_id: turkey.id, lifespan:30)
-      turkey_ground= Category.create(name: 'Ground Turkey', parent_id: turkey.id, lifespan:30)
-    pork = Category.create(name: 'Pork', parent_id: meats.id, lifespan:30)
-      pork_chops = Category.create(name: 'Pork Chops', parent_id: pork.id, lifespan:30)
-      pork_roast = Category.create(name: 'Pork Roast', parent_id: pork.id, lifespan:30)
-      pork_ground = Category.create(name: 'Ground Pork', parent_id: pork.id, lifespan:30)
-    buffalo = Category.create(name: 'Buffalo', parent_id: meats.id, lifespan:30)
-      buffalo_steak = Category.create(name: 'Buffalo Steak', parent_id: buffalo.id, lifespan:30)
-      buffalo_roast = Category.create(name: 'Buffalo Roast', parent_id: buffalo.id, lifespan:30)
-      buffalo_ground = Category.create(name: 'Ground Buffalo', parent_id: buffalo.id, lifespan:30)
-    lamb = Category.create(name: 'Lamb', parent_id: meats.id, lifespan:30)
-      lamb_steak = Category.create(name: 'Lamb Steak', parent_id: lamb.id, lifespan:30)
-      lamb_roast = Category.create(name: 'Lamb Roast', parent_id: lamb.id, lifespan:30)
-      lamb_ground = Category.create(name: 'Ground Lamb', parent_id: lamb.id, lifespan:30)
-  seafood = Category.create(name: 'Fresh Seafood', parent_id: proteins.id, lifespan:30)
-    fish = Category.create(name: 'Fish', parent_id: seafood.id, lifespan:30)
-      salmon = Category.create(name: 'Salmon', parent_id: fish.id, lifespan:30)
-        whole_salmon = Category.create(name: 'Whole Salmon', parent_id: salmon.id, lifespan:30)
-        salmon_fillet = Category.create(name: 'Salmon Fillet', parent_id: salmon.id, lifespan:30)
-        salmon_steaks = Category.create(name: 'Salmon Steaks', parent_id: salmon.id, lifespan:30)
-      whitefish = Category.create(name: 'White fish', parent_id: fish.id, lifespan:30)
-        whole_whitefish = Category.create(name: 'Whole Whitefish', parent_id: whitefish.id, lifespan:30)
-        whitefish_fillet = Category.create(name: 'Whitefish Fillet', parent_id: whitefish.id, lifespan:30)
-    shellfish = Category.create(name: 'Shellfish', parent_id: seafood.id, lifespan:30)
-      shrimp = Category.create(name: 'Shrimp', parent_id: shellfish.id, lifespan:30)
-vegetables = Category.create(name: 'Vegetables', lifespan:14)
-  roots = Category.create(name: 'Roots', parent_id: vegetables.id, lifespan:14)
-    potatoes = Category.create(name: 'Potatoes', parent_id: roots.id, lifespan:14)
-    carrots = Category.create(name: 'Carrots', parent_id: roots.id, lifespan:14)
-  leaves = Category.create(name: 'Leaves', parent_id: vegetables.id, lifespan:7)
-    lettuce = Category.create(name: 'Lettuce', parent_id: leaves.id, lifespan:7)
-    collards = Category.create(name: 'Collards', parent_id: leaves.id, lifespan:7)
+Category.create(name: 'Raw Protein', lifespan:30, children:[
+  Category.create(name: 'Meats', lifespan:30, children:[
+    Category.create(name: 'Chicken', lifespan:30, children:[
+      Category.create(name: 'Whole Chicken', lifespan:30),
+      Category.create(name: 'Chicken Breast', lifespan:30),
+      Category.create(name: 'Chicken Legs', lifespan:30),
+      Category.create(name: 'Chicken Drumstick', lifespan:30),
+      Category.create(name: 'Ground Chicken', lifespan:30)
+      ]),
+    Category.create(name: 'Beef', lifespan:30, children:[
+      Category.create(name: 'Beef Steak', lifespan:30),
+      Category.create(name: 'Beef Roast', lifespan:30),
+      Category.create(name: 'Ground Beef', lifespan:30)
+      ]),
+    Category.create(name: 'Turkey', lifespan:30, children:[
+      Category.create(name: 'Whole Turkey', lifespan:30),
+      Category.create(name: 'Turkey Breast', lifespan:30),
+      Category.create(name: 'Ground Turkey', lifespan:30)
+      ]),
+    Category.create(name: 'Pork', lifespan:30, children:[
+      Category.create(name: 'Pork Chops', lifespan:30),
+      Category.create(name: 'Pork Roast', lifespan:30),
+      Category.create(name: 'Ground Pork', lifespan:30)
+      ]),
+    Category.create(name: 'Buffalo', lifespan:30, children:[
+      Category.create(name: 'Buffalo Steak', lifespan:30),
+      Category.create(name: 'Buffalo Roast', lifespan:30),
+      Category.create(name: 'Ground Buffalo', lifespan:30)
+      ]),
+    Category.create(name: 'Lamb', lifespan:30, children:[
+      Category.create(name: 'Lamb Steak', lifespan:30),
+      Category.create(name: 'Lamb Roast', lifespan:30),
+      Category.create(name: 'Ground Lamb', lifespan:30)
+      ])
+    ]),
+  Category.create(name: 'Seafood', lifespan:30, children:[
+    Category.create(name: 'Fish', lifespan:30, children:[
+      Category.create(name: 'Salmon', lifespan:30, children:[
+        Category.create(name: 'Whole Salmon', lifespan:30),
+        Category.create(name: 'Salmon Fillet', lifespan:30),
+        Category.create(name: 'Salmon Steaks', lifespan:30)
+        ]),
+      Category.create(name: 'White fish', lifespan:30, children:[
+        Category.create(name: 'Whole Whitefish', lifespan:30),
+        Category.create(name: 'Whitefish Fillet', lifespan:30)
+        ])
+      ]),
+    Category.create(name: 'Shellfish', lifespan:30, children:[
+      Category.create(name: 'Shrimp', lifespan:30),
+      Category.create(name: 'Clams', lifespan:30),
+      Category.create(name: 'Mussels', lifespan:30)
+      ])
+    ])
+  ])
 
-kitchen = Location.create(name: 'Kitchen')
-  under_counter = Location.create(name: 'Under Counter', parent_id: kitchen.id)
-  spice_rack = Location.create(name: 'Spice Area', parent_id: kitchen.id)
-    spice_top = Location.create(name: 'Spice Top Shelves', parent_id: spice_rack.id)
-    spice_middle = Location.create(name: 'Spice Middle Shelves', parent_id: spice_rack.id)
-    spice_bottom = Location.create(name: 'Spice Bottom Shelves', parent_id: spice_rack.id)
-front_room = Location.create(name: 'Front Room/Dishwash Area')
-  deli_case = Location.create(name: 'Deli Case', parent_id: front_room.id)
-    deli_left = Location.create(name: 'Deli Left Door', parent_id: deli_case.id)
-      deli_left_top = Location.create(name: 'Left Door Top', parent_id: deli_left.id)
-      deli_left_middle = Location.create(name: 'Left Door Middle', parent_id: deli_left.id)
-      deli_left_bottom = Location.create(name: 'Left Door Bottom', parent_id: deli_left.id)
-    deli_middle = Location.create(name: 'Deli Middle Door', parent_id: deli_case.id)
-      deli_middle_top = Location.create(name: 'Middle Door Top', parent_id: deli_middle.id)
-      deli_middle_middle = Location.create(name: 'Middle Door Middle', parent_id: deli_middle.id)
-      deli_middle_bottom = Location.create(name: 'Middle Door Bottom', parent_id: deli_middle.id)
-    deli_right = Location.create(name: 'Deli Right Door', parent_id: deli_case.id)
-      deli_right_top = Location.create(name: 'Right Door Top', parent_id: deli_right.id)
-      deli_right_right = Location.create(name: 'Right Door Middle', parent_id: deli_right.id)
-      deli_right_bottom = Location.create(name: 'Right Door Bottom', parent_id: deli_right.id)
-  white_fridge = Location.create(name: 'White Fridge', parent_id: front_room.id)
-    w_fridge_freezer = Location.create(name: 'Freezer (Left)', parent_id: white_fridge.id)
-      freezer_door = Location.create(name: 'Freezer Door', parent_id: w_fridge_freezer.id)
-      freezer_top = Location.create(name: 'Freezer Top Shelves', parent_id: w_fridge_freezer.id)
-      freezer_middle = Location.create(name: 'Freezer Middle Sheves', parent_id: w_fridge_freezer.id)
-      freezer_bottom = Location.create(name: 'Freezer Bottom Sheves', parent_id: w_fridge_freezer.id)
-    w_fridge_fridge = Location.create(name: 'Fridge (Right)', parent_id: white_fridge.id)
-      fridge_door = Location.create(name: 'Fridge Door', parent_id: w_fridge_fridge.id)
-      fridge_top = Location.create(name: 'Fridge Top Shelves', parent_id: w_fridge_fridge.id)
-      fridge_middle = Location.create(name: 'Fridge Middle Sheves', parent_id: w_fridge_fridge.id)
-      fridge_bottom = Location.create(name: 'Fridge Bottom Sheves', parent_id: w_fridge_fridge.id)
+Category.create(name: 'Raw Fruits/Veggies', lifespan:14, children:[
+  Category.create(name: 'Potatoes', lifespan:14, children:[
+    Category.create(name: 'Russet', lifespan:14),
+    Category.create(name: 'Red', lifespan:14),
+    Category.create(name: 'Yukon', lifespan:14),
+    Category.create(name: 'Sweet/Yams', lifespan:14)
+    ]),
+  Category.create(name: 'Roots', lifespan:14, children:[
+    Category.create(name: 'Carrots', lifespan:14),
+    Category.create(name: 'Radishes', lifespan:14),
+    Category.create(name: 'Beets', lifespan:14),
+    Category.create(name: 'Parsnips', lifespan:14)
+    ]),
+  Category.create(name: 'Green Veg', lifespan:14, children:[
+    Category.create(name: 'Celery', lifespan:14),
+    Category.create(name: 'Cucumber', lifespan:14),
+    Category.create(name: 'Spinach', lifespan:14),
+    Category.create(name: 'Lettuce', lifespan:14)
+    ]),
+  Category.create(name: 'Mushrooms', lifespan:14, children:[
+    Category.create(name: 'White', lifespan:14),
+    Category.create(name: 'Portabello', lifespan:14),
+    Category.create(name: 'Crimini', lifespan:14)
+    ]),
+  Category.create(name: 'Squashes', lifespan:14, children:[
+    Category.create(name: 'Pumpkins', lifespan:14),
+    Category.create(name: 'Acorn Sq.', lifespan:14),
+    Category.create(name: 'Butternut Sq.', lifespan:14),
+    Category.create(name: 'Spaghetti Sq.', lifespan:14)
+    ]),
+  Category.create(name: 'Onions/Garlic', lifespan:60, children:[
+    Category.create(name: 'Yellow On.', lifespan:60),
+    Category.create(name: 'White On.', lifespan:60),
+    Category.create(name: 'Garlic', lifespan:60),
+    Category.create(name: 'Green On.', lifespan:60),
+    Category.create(name: 'Leeks', lifespan:60),
+    Category.create(name: 'Shallots', lifespan:60)
+    ])
+  ])
 
-ingredient1 = Ingredient.create(category_id: chicken_whole.id, location_id: fridge_bottom.id)
-ingredient2 = Ingredient.create(category_id: beef_steak.id, location_id: freezer_bottom.id)
-ingredient3 = Ingredient.create(category_id: carrots.id, location_id: fridge_top.id)
-ingredient4 = Ingredient.create(category_id: lettuce.id, location_id: fridge_top.id)
-ingredient5 = Ingredient.create(category_id: beef_ground.id)
-ingredient6 = Ingredient.create(category_id: carrots.id)
-ingredient7 = Ingredient.create(category_id: shrimp.id)
-ingredient8 = Ingredient.create(category_id: lettuce.id)
+Category.create(name: 'Grains/Beans', lifespan:99, children:[
+  Category.create(name: 'Flour', lifespan:21),
+  Category.create(name: 'Whole Grains', lifespan:30),
+  Category.create(name: 'Beans', lifespan:21)
+  ])
+
+Category.create(name: 'Baked Goods/Sweets', lifespan:365, children:[
+  Category.create(name: 'Bread', lifespan:21),
+  Category.create(name: 'Cake', lifespan:30),
+  Category.create(name: 'Candy', lifespan:21),
+  Category.create(name: 'Pastries', lifespan:21)
+  ])
+
+Category.create(name: 'Seasonings', lifespan:14, children:[
+  Category.create(name: 'Herbs', lifespan:21, children:[
+    Category.create(name: 'Rosemary', lifespan:21),
+    Category.create(name: 'Parsley', lifespan:30),
+    Category.create(name: 'Sage', lifespan:21),
+    Category.create(name: 'Thyme', lifespan:21)
+    ]),
+  Category.create(name: 'Spices', lifespan:30, children:[
+    Category.create(name: 'Cumin', lifespan:21),
+    Category.create(name: 'Paprika', lifespan:30),
+    Category.create(name: 'Coriander', lifespan:21),
+    Category.create(name: 'China 5 Spice', lifespan:21)
+    ]),
+  Category.create(name: 'Salt', lifespan:21)
+  ])
+
+Category.create(name: 'Bottles/Cans/Jars/Bags', lifespan:14, children:[
+  Category.create(name: 'Bottles', lifespan:21, children:[
+    Category.create(name: 'Vinegar', lifespan:21),
+    Category.create(name: 'Oil', lifespan:30),
+    Category.create(name: 'Condiment', lifespan:21),
+    Category.create(name: 'Beverage', lifespan:21)
+    ]),
+  Category.create(name: 'Cans', lifespan:30),
+  Category.create(name: 'Jars', lifespan:21),
+  Category.create(name: 'Bags', lifespan:21)
+  ])
+
+Category.create(name: 'Dairy/Eggs', lifespan:21, children:[
+  Category.create(name: 'Milk', lifespan:21),
+  Category.create(name: 'Eggs', lifespan:30),
+  Category.create(name: 'Butter', lifespan:21),
+  Category.create(name: 'Cream', lifespan:21)
+  ])
+
+Location.create(name: 'Kitchen', children:[
+  Location.create(name: 'Under Counter'),
+  Location.create(name: 'Spice Area', children:[
+    Location.create(name: 'Spice Top Shelves'),
+    Location.create(name: 'Spice Middle Shelves'),
+    Location.create(name: 'Spice Bottom Shelves')
+    ])
+  ])
+
+Location.create(name: 'Dishwasher Room', children:[
+  Location.create(name: 'Deli Fridge #2', children:[
+    Location.create(name: 'Deli Left Door', children:[
+      Location.create(name: 'Left Door Top'),
+      Location.create(name: 'Left Door Middle'),
+      Location.create(name: 'Left Door Bottom')
+      ]),
+    Location.create(name: 'Deli Middle Door', children:[
+      Location.create(name: 'Middle Door Top'),
+      Location.create(name: 'Middle Door Middle'),
+      Location.create(name: 'Middle Door Bottom')
+      ]),
+    Location.create(name: 'Deli Right Door', children:[
+      Location.create(name: 'Right Door Top'),
+      Location.create(name: 'Right Door Middle'),
+      Location.create(name: 'Right Door Bottom')
+      ])
+    ]),
+  Location.create(name: 'Fridge #1', children:[
+    Location.create(name: 'Freezer (Left)', children:[
+      Location.create(name: 'Door'),
+      Location.create(name: 'Top Shelves'),
+      Location.create(name: 'Middle Shelves'),
+      Location.create(name: 'Bottom Shelves')
+      ]),
+    Location.create(name: 'Fridge (Right)', children:[
+      Location.create(name: 'Door'),
+      Location.create(name: 'Top Shelves'),
+      Location.create(name: 'Middle Shelves'),
+      Location.create(name: 'Bottom Shelves')
+      ])
+    ])
+  ])
+
+Location.create(name: 'Loading Dock', children:[
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Shelves')
+  ])
+
+Location.create(name: 'Back Hall', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Floor'),
+  Location.create(name: 'Fridge #8', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #7', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ])
+  ])
+
+Location.create(name: 'Back Room', children:[
+  Location.create(name: 'Freezer #3', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #4', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #5', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Freezer #6', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Shelves', children:[
+    Location.create(name: 'Cove/Closet'),
+    Location.create(name: 'Metal Racks')
+    ]),
+  Location.create(name: 'Table', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Lower Shelf')
+    ]),
+  Location.create(name: 'Floor')
+  ])
+
+Location.create(name: 'Walk-In Fridge', children:[
+  Location.create(name: 'Front', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ])
+    ]),
+  Location.create(name: 'Back', children:[
+    Location.create(name: 'Left', children: [
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ]),
+    Location.create(name: 'Right', children:[
+      Location.create(name: 'Top'),
+      Location.create(name: 'Middle'),
+      Location.create(name: 'Bottom')
+      ])
+    ])
+  ])
+
+Location.create(name: 'Alleyway', children:[
+  Location.create(name: 'Building Side', children: [
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ]),
+  Location.create(name: 'Opposite Side', children:[
+    Location.create(name: 'Top'),
+    Location.create(name: 'Middle'),
+    Location.create(name: 'Bottom')
+    ])
+  ])
+
+Location.create(name: 'Basement', children:[
+  Location.create(name: 'Shelves'),
+  Location.create(name: 'Table'),
+  Location.create(name: 'Floor')
+  ])
