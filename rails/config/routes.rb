@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :ingredients, only: [:index, :show, :create, :update, :destroy]
     resources :locations, only: [:index, :show, :create, :update, :destroy]
   end
+  	resources :categories
 end

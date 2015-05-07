@@ -80,6 +80,17 @@ potluck.config(function($stateProvider) {
     url: "/prepare/ingredients/:ingredientId",
     templateUrl: "partials/prepare/ing.html",
     controller: "PrepIngCtrl"
-  });
+  })
+
+  .state('admin', {
+    url: "admin/categories",
+    templateUrl: "partials/admin/topLevel.html",
+    controller: "AdminCatCtrl"
+  })
+  .state('categories', {
+    url: "admin/categories",
+    templateUrl: "partials/admin/categories.html",
+    controller: "AdminCatCtrl"
+  })
 
 });
