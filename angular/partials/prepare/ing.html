@@ -1,8 +1,8 @@
 <h3>
-	<a ui-sref="{{pathBack}}">
+	<a ui-sref="#">
 		<?
 	</a>
-	{{catIdToCat(ingredient.category_id).name}}
+	{{categoryName(ingredient) + " "}}<span class="badge">{{categoryFraction(ingredient)}}</span>
 	<a ui-sref="home">
     ^
   </a>
@@ -10,9 +10,12 @@
 
 <ul>
 	<li>
-    Location: {{locIdToLoc(ingredient.location_id).name}}
+		{{recievedMessage(ingredient)}}
+	</li>
+	<li>
+    {{locationMessage(ingredient)}}
   </li>
 	<li>
-    Expires: {{catIdToCat(ingredient.category_id).lifespan}}
+    {{expireMessage(ingredient)}}
   </li>
 </ul>
