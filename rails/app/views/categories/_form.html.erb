@@ -1,0 +1,9 @@
+<%= form_for [@category], remote: true do |f| %>
+	<div class="form-group">
+	  <div class="label">
+	  <%= f.label :name, id: "category-name" %>
+	 	</div>
+	  <%= f.text_field :name %>
+	 </div>
+	  <p><%= f.submit %></p>
+	<% end %>

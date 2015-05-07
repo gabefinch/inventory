@@ -1,0 +1,63 @@
+body {
+	text-align: center;
+	font-family: impact;
+	background-image: url("img/background.jpg");
+	background-position: center center;
+  background-repeat: repeat;
+}
+
+.potluckHeader {
+	margin-bottom: 10%;
+	max-width: 100%;
+}
+
+#logo {
+	position: absolute;
+	top: 1%;
+	left: 25%;
+}
+
+#top-cover {
+	 max-height: 250px;
+	 width: 100%;
+   height: auto;
+}
+
+a:link, a:hover, a:visited, a:active {
+	color: black;
+}
+
+.breadcrumbs {
+	position:fixed;
+	top:300px;
+	left:5px;
+}
+
+.right {
+	float: right;
+}
+
+li {
+	list-style: none;
+	margin-left: 0px;
+	color: black!important;
+	border-bottom: dotted 3px;
+	margin-bottom: 30px;
+	font-size: 2.5em;
+}
+
+
+@media only screen and (max-device-width: 667px) { 
+	body {
+		font-size: 2em;
+	}
+	.badge {
+		height:50px;
+		width:50px;
+		font-size: 25px;
+		text-align: center;
+	}
+ }
+
+
+

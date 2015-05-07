@@ -1,33 +1,27 @@
 <div class="row-fluid">
-  <div class="header well col-xs-12">
+  <div class="header col-xs-12">
 			<span><h3>You've Selected The Following: {{categoryNode.name}}</h3>
 			<h4>Do you want to...</h4></span>
 	</div>
 </div>
 <div class="store">
-	<div class="square">
 	<ul>
 		<li class="content">
 			<a ng-click="storeNow(categoryNode.id)">
 				Choose a Storage Location Now
 			</a>
 		</li>
-	</div>
-	<div class="square">
 		<li class="content">
 			<a ng-click="storeLater(categoryNode.id)" ui-sref="home">
 				Store It Later....Not Putting It Away Yet!
 			</a>
 		</li>
 	</ul>
-	</div>
-	<div class="square">
 		<li class="content">
 			<a ng-click="storeLater(categoryNode.id)" ui-sref="home">
 				Store It Later....Not Putting It Away Yet!
 			</a>
 		</li>
 	</ul>
-	</div>
 </div>
 
