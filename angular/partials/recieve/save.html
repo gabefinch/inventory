@@ -1,0 +1,27 @@
+<h3>
+Summary
+</h3>
+<h5>
+  Item: {{selectedCategory.name}}
+</h5>
+<h5>
+  Location: Unassigned
+</h5>
+
+<div class="square">
+  <ul>
+
+		<li class="content">
+			<button ng-click="storeNow(selectedCategory.id)">
+				Assign Location
+			</button>
+		</li>
+
+		<li class="content">
+			<button ng-click="storeLater(selectedCategory.id)">
+			  Save for Later
+			</button>
+		</li>
+
+	</ul>
+</div>

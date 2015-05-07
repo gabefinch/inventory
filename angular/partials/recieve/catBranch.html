@@ -17,7 +17,7 @@
 		<div ng-if="item.children.length != 0">
 			<div class=" well col-xs-12">
 				<li>
-					<a ui-sref="categoryChild({categoryId: item.id})">
+					<a ui-sref="recCatChild({categoryId: item.id})">
 						{{item.name}}
 					</a>
 				</li>
@@ -28,7 +28,7 @@
 		<div ng-if="item.children.length == 0">
 		<div class=" well col-xs-12">
 			<li>
-				<a ui-sref="store({categoryId: item.id})">
+				<a ui-sref="recSave({categoryId: item.id})">
 					{{item.name}}
 				</a>
 			</li>
@@ -38,7 +38,7 @@
 <div class=" well col-xs-12">
 	<li>
 		<em>
-			<a ui-sref="store({categoryId: currentNode.id})">
+			<a ui-sref="recSave({categoryId: currentNode.id})">
 				{{currentNode.name}} Various/Misc.
 			</a>
 		</em>
