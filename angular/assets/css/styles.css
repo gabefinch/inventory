@@ -2,13 +2,6 @@ body {
 	text-align: center;
 	font-family: impact;
 	background-image: url("img/background.jpg");
-	background-position: center center;
-  background-repeat: repeat;
-}
-
-.potluckHeader {
-	margin-bottom: 10%;
-	max-width: 100%;
 }
 
 #logo {
@@ -49,6 +42,7 @@ li {
 
 @media only screen and (max-device-width: 667px) { 
 	body {
+		font-family: impact;
 		font-size: 2em;
 	}
 	.badge {
