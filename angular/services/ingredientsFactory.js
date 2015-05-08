@@ -1,4 +1,4 @@
-potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q, UtilitiesFactory){
+potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q){
 	var factory = {};
 	var cache = $cacheFactory.get('potluck');
 
@@ -6,14 +6,14 @@ potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q, Utiliti
 		var dfr = $q.defer();
 
 		$http.post('http://localhost:3000/api/ingredients', {
-   
+
             "category_id": category_id,
             "location_id": location_id
         }).
 	  success(function(data) {
 	    var ingredients = cache.get('ingredients');
 			ingredients.push(data);
-			cache.put('ingredients',ingredients);	
+			cache.put('ingredients',ingredients);
 			dfr.resolve(data);
 	  }).
 	  error(function(status) {
@@ -27,7 +27,7 @@ potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q, Utiliti
 
 	factory.patchIngredient = function(category_id, location_id, ingredient){
 		$http.patch('http://localhost:3000/api/ingredients/' + ingredient.id, {
-						"ingredient": { 
+						"ingredient": {
             "category_id": category_id,
             "location_id": location_id
 						}
@@ -43,7 +43,7 @@ potluck.factory('IngredientsFactory', function($http, $cacheFactory, $q, Utiliti
 	  				}
 	  		}
 	  		cache.put('ingredients', ingredients);
-	  	
+
 	  }).
 	  error(function(status) {
 			console.log('エラー');

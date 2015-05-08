@@ -41,25 +41,25 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/recieve.html",
     controller: 'RecieveCtrl'
   })
-  .state('categoryTop', {
+  .state('recCatTop', {
     url: "/categories",
     templateUrl: "partials/recieve/catBranch.html",
     controller: "RecCatTopCtrl"
   })
-  .state('categoryChild', {
+  .state('recCatChild', {
     url: "/categories/:categoryId",
     templateUrl: "partials/recieve/catBranch.html",
     controller: 'RecCatChildCtrl'
   })
-  .state('store', {
-    url: "/store/:categoryId",
-    templateUrl: "partials/recieve/store.html",
-    controller: "RecStoreCtrl"
+  .state('recSave', {
+    url: "/save/:categoryId",
+    templateUrl: "partials/recieve/save.html",
+    controller: "RecSaveCtrl"
   })
   .state('unstoredItems', {
     url: "/unstored",
     templateUrl: "partials/recieve/unstoredItems.html",
-    controller: "RecStoreCtrl"
+    controller: "RecQueueCtrl"
   })
   .state('ingredientLocation', {
     url: "/ingredient/:ingredientId/locations",

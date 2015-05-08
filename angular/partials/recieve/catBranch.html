@@ -12,7 +12,7 @@
 		<div ng-if="item.children.length != 0">
 			<div class="right col-xs-8">
 				<li>
-					<a ui-sref="categoryChild({categoryId: item.id})">
+					<a ui-sref="recCatChild({categoryId: item.id})">
 						{{item.name}}
 					</a>
 				</li>
@@ -23,7 +23,7 @@
 	<div ng-repeat="item in currentNode.children">
 		<div ng-if="item.children.length == 0">
 			<li class="right col-xs-8">
-				<a ui-sref="store({categoryId: item.id})">
+				<a ui-sref="recSave({categoryId: item.id})">
 					{{item.name}}
 				</a>
 			</li>
@@ -31,8 +31,8 @@
 	</div>
 
 	<li class="right col-xs-8">
-			<em><a ui-sref="store({categoryId: currentNode.id})">
-				{{currentNode.name}} Various/Misc.
+			<em><a ui-sref="recSave({categoryId: currentNode.id})">
+			  Miscellaneous {{currentNode.name}}
 			</a></em>
 	</li>
 </div>
