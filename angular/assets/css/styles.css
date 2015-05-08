@@ -1,13 +1,27 @@
+@font-face {
+    font-family: Impact;
+    src: url(Impact.ttf);
+}
+
 body {
 	text-align: center;
-	font-family: impact;
+	font-family: Impact;
 	background-image: url("img/background.jpg");
 	color: black;
 }
 
 .potluckHeader {
 	padding: 0;
+/*	position: fixed;*/ /*for some reason position fixed breaks on second view*/
+/*	background:inherit;*/
+/*	z-index:10;*/
 }
+
+/*.home{
+	overflow: auto;
+	padding-top:92px;
+	z-index:5;
+}*/
 
 #logo {
 	position: absolute;
@@ -19,6 +33,22 @@ body {
 	 max-height: 250px;
 	 width: 100%;
    height: auto;
+}
+
+.blankLabel {
+	max-height: 750px;
+	width: 100%;
+	height: auto;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	margin-bottom: 5%;
+}
+
+.options {
+	padding-bottom: 25%;
 }
 
 a:link, a:hover, a:visited, a:active {
