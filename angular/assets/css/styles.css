@@ -12,16 +12,20 @@ body {
 
 .potluckHeader {
 	padding: 0;
-/*	position: fixed;*/ /*for some reason position fixed breaks on second view*/
-/*	background:inherit;*/
-/*	z-index:10;*/
+	position: fixed;
+	background:inherit;
+	z-index: 10;
 }
 
-/*.home{
+.home{
 	overflow: auto;
 	padding-top:92px;
 	z-index:5;
-}*/
+}
+
+.inner {
+	padding-top: 220px;
+}
 
 #logo {
 	position: absolute;
