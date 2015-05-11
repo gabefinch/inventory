@@ -1,32 +1,24 @@
-<img src="assets/css/img/label-blank.png" class="blankLabel">
-  <h5 class="itemToSave">
+<div class="labelPage">
+  <h2 class="itemToSave">
     Item: {{selectedCategory.name}}
-  </h5>
+  </h2>
+  <h2 class="date">
+    Todays Date
+  <span class="expire">
+    {{expireMessage(ingredient)}}
+  </span></h2>
+  <h2 class="unassignedLocation">
+    Location: Unassigned
+  </h2>
+</div>
+
+
 <div class="row-fluid options">
-  <div class="col-xs-4">
-    <img src="assets/css/img/rebox-icon.png">
+  <div class="col-xs-6">
+      <img src="assets/css/img/shelf-icon.png" ng-click="storeNow(selectedCategory.id)">
   </div>
-  <div class="col-xs-4">
-      <img src="assets/css/img/shelf-icon.png">
-  </div>
-  <div class="col-xs-4">
-      <img src="assets/css/img/complete-icon.png">
+  <div class="col-xs-6">
+      <img src="assets/css/img/complete-icon.png" ng-click="storeLater(selectedCategory.id)">
   </div>
 </div>
 
-<!-- 
-<h5>
-  Count: {{categoryFraction()}}
-</h5>
-<h5>
-  Location: Unassigned
-</h5>
-			<button ng-click="storeNow(selectedCategory.id)">
-				Assign Location
-			</button>
-
-			<button ng-click="storeLater(selectedCategory.id)">
-			  Save for Later
-			</button>
-
- -->
