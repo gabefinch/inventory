@@ -5,26 +5,23 @@ potluck.factory('IngredientsFactory',
 			var cache = $cacheFactory.get('potluck');
 
 			factory.postIngredient = function(category_id, location_id){
-				var dfr = $q.defer();
-
+				var defer = $q.defer();
 				$http.post('http://localhost:3000/api/ingredients', {
-
-		            "category_id": category_id,
-		            "location_id": location_id
-		        }).
+		    	"category_id": category_id,
+		   		"location_id": location_id
+		    }).
 			  success(function(data) {
 			    var ingredients = cache.get('ingredients');
 					ingredients.push(data);
 					cache.put('ingredients',ingredients);
-					dfr.resolve(data);
+					defer.resolve(data);
 			  }).
 			  error(function(status) {
 					console.log('エラー');
 					console.log(status);
-					dfr.reject();
+					defer.reject(status);
 			  });
-
-			  return dfr.promise;
+			  return defer.promise;
 			};
 
 			factory.patchIngredient = function(ingredient){
@@ -32,17 +29,11 @@ potluck.factory('IngredientsFactory',
 					'http://localhost:3000/api/ingredients/' + ingredient.id,
 					 {"ingredient": ingredient})
 					.success(function() {
-			  		var ingredients = cache.get('ingredients');
-			  		for (var i = 0; i <= ingredients.length-1; i++) {
-			  			var currentIngredient = ingredients[i]
-			  					currentId = currentIngredient.id
-			  				if (currentId == ingredient.id) {
-			  					currentIngredient.location_id = ingredient.location_id;
-			  					currentIngredient.category_id = ingredient.category_id;
-			  				}
-			  		}
+						var ingredients = cache.get('ingredients');
+						var foundIng = UtilitiesFactory.findByIdArray(ingredients, ingredient.id);
+		  			foundIng.location_id = ingredient.location_id;
+		  			foundIng.category_id = ingredient.category_id;
 			  		cache.put('ingredients', ingredients);
-
 			  }).
 			  error(function(status) {
 					console.log('エラー');
@@ -50,6 +41,22 @@ potluck.factory('IngredientsFactory',
 			  });
 			};
 
+			factory.removeIngredient = function(ingredient){
+				$http.delete(
+					'http://localhost:3000/api/ingredients/' + ingredient.id,
+					 {"ingredient": ingredient})
+					.success(function() {
+						var ingredients = cache.get('ingredients');
+						for(var i = 0; i < ingredients.length; i++) {
+				      if(ingredients[i].id == ingredient.id){ingredients.splice(i,1);}
+						}
+			  		cache.put('ingredients', ingredients);
+			  }).
+			  error(function(status) {
+					console.log('エラー');
+					console.log(status);
+			  });
+			};
 
 			return factory;
 	}]

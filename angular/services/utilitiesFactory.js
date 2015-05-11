@@ -1,7 +1,9 @@
-potluck.factory('UtilitiesFactory', ['$cacheFactory',
+potluck.factory('UtilitiesFactory',
+[
+  '$cacheFactory',
   function($cacheFactory) {
-    var factory = {};
     var cache = $cacheFactory.get('potluck');
+    var factory = {};
 
     factory.findById = function(collection, id) {
       for (var i = 0; i <= collection.length-1; i++) {
@@ -57,9 +59,7 @@ potluck.factory('UtilitiesFactory', ['$cacheFactory',
   factory.categoryCountFromIds = function(collection, ids) {
     var count = 0;
     for (var i=0; i<=collection.length-1; i++) {
-      if (ids.indexOf(collection[i].category_id) != -1) {
-        count = count + 1;
-      }
+      if (ids.indexOf(collection[i].category_id) != -1) {count = count + 1;}
     }
     return count
   };
@@ -67,13 +67,10 @@ potluck.factory('UtilitiesFactory', ['$cacheFactory',
   factory.locationCountFromIds = function(collection, ids) {
     var count = 0;
     for (var i=0; i<=collection.length-1; i++) {
-      if (ids.indexOf(collection[i].location_id) != -1) {
-        count = count + 1;
-      }
+      if (ids.indexOf(collection[i].location_id) != -1) {count = count + 1;}
     }
     return count
   };
 
   return factory;
-
 }]);
