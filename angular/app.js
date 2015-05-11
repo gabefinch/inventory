@@ -61,15 +61,15 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/unstoredItems.html",
     controller: "RecQueueCtrl"
   })
-  .state('ingredientLocation', {
+  .state('recLocTop', {
     url: "/ingredient/:ingredientId/locations",
-    templateUrl: "partials/recieve/ingLoc.html",
-    controller: "RecLocCtrl"
+    templateUrl: "partials/recieve/locBranch.html",
+    controller: "RecLocTopCtrl"
   })
-  .state('ingredientLocationChild', {
+  .state('recLocChild', {
     url: "/ingredients/:ingredientId/locations/:locationId",
-    templateUrl: "partials/recieve/ingLocChild.html",
-    controller: "RecLocCtrl"
+    templateUrl: "partials/recieve/locBranch.html",
+    controller: "RecLocChildCtrl"
   })
   .state('unstoredIngredientSummary', {
     url: "/ingredient/:ingredientId/:locationId",
@@ -106,17 +106,6 @@ potluck.config(function($stateProvider) {
     url: "/prepare/ingredients/:ingredientId",
     templateUrl: "partials/prepare/ing.html",
     controller: "PrepIngCtrl"
-  })
-
-  .state('admin', {
-    url: "admin/categories",
-    templateUrl: "partials/admin/topLevel.html",
-    controller: "AdminCatCtrl"
-  })
-  .state('categories', {
-    url: "admin/categories",
-    templateUrl: "partials/admin/categories.html",
-    controller: "AdminCatCtrl"
   })
 
 });

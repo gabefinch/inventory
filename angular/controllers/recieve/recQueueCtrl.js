@@ -1,4 +1,4 @@
-potluck.controller('RecSaveCtrl',
+potluck.controller('RecQueueCtrl',
 	function($scope, $cacheFactory,$stateParams, $state, UtilitiesFactory, IngredientsFactory){
 
 		var cache = $cacheFactory.get('potluck');
@@ -11,7 +11,7 @@ potluck.controller('RecSaveCtrl',
 			IngredientsFactory.postIngredient(category_id)
 				.then(function(ingredient){
 					$state.go(
-						'ingredientLocation',
+						'recLocTop',
 						{ ingredientId: ingredient.id }
 					);
 			});

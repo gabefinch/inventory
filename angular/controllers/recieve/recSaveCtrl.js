@@ -7,17 +7,16 @@ potluck.controller('RecSaveCtrl',
 			cache.get('categories'),
 			$stateParams.categoryId);
 
-		if ($scope.selectedCategrory.parent_id == null){
-			$scope.pathBack = {'recCatTop'};
-		} else {
-			$scope.pathBack = {'recCatChild', categoryId: $scope.selectedCategory.parent_id};
-		}
+		$scope.categoryFraction = function(){
+			var ings = UtilitiesFactory.findIngsByCat($scope.selectedCategory);
+			return " 1 of " + (ings.length + 1);
+		};
 
 		$scope.storeNow = function(category_id){
 			IngredientsFactory.postIngredient(category_id)
 				.then(function(ingredient){
 					$state.go(
-						'ingredientLocation',
+						'recLocTop',
 						{ ingredientId: ingredient.id }
 					);
 			});
