@@ -7,11 +7,11 @@ potluck.controller('RecSaveCtrl',
 			cache.get('categories'),
 			$stateParams.categoryId);
 
-		if ($scope.selectedCategrory.parent_id == null){
-			$scope.pathBack = {'recCatTop'};
-		} else {
-			$scope.pathBack = {'recCatChild', categoryId: $scope.selectedCategory.parent_id};
-		}
+		// if ($scope.selectedCategrory.parent_id == null){
+		// 	$scope.pathBack = {'recCatTop'};
+		// } else {
+		// 	$scope.pathBack = {'recCatChild', categoryId: $scope.selectedCategory.parent_id};
+		// }
 
 		$scope.storeNow = function(category_id){
 			IngredientsFactory.postIngredient(category_id)
