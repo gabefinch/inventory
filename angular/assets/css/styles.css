@@ -1,12 +1,30 @@
+@font-face {
+    font-family: Impact;
+    src: url(Impact.ttf);
+}
+
 body {
 	text-align: center;
-	font-family: impact;
+	font-family: Impact;
 	background-image: url("img/background.jpg");
 	color: black;
 }
 
 .potluckHeader {
 	padding: 0;
+	position: fixed;
+	background:inherit;
+	z-index: 10;
+}
+
+.home{
+	overflow: auto;
+	padding-top:92px;
+	z-index:5;
+}
+
+.inner {
+	padding-top: 220px;
 }
 
 #logo {
@@ -19,6 +37,10 @@ body {
 	 max-height: 250px;
 	 width: 100%;
    height: auto;
+}
+
+.options {
+	padding-bottom: 25%;
 }
 
 a:link, a:hover, a:visited, a:active {
@@ -60,6 +82,34 @@ li {
 	float: right;
 }
 
+
+/*Save Page*/
+
+.labelPage {
+	background-image: url("img/label-blank.png");
+	background-repeat: no-repeat;
+	background-size: cover; /*if you take this out it might be your best bet*/
+	width: 100%;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-o-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+
+.itemToSave {
+	padding-top: 15%;
+}
+
+.date {
+	padding: 15% 0 0 10%;
+}
+
+.unassignedLocation {
+	margin: 20%;
+	padding-bottom: 10%;
+}
+
 .badge {
 		height:50px;
 		width:50px;
@@ -71,10 +121,33 @@ li {
 	}
 
 
+@media only screen and (max-device-width: 667px) {
+	.itemToSave {
+	padding-top: 10%;
+	}
+
+	.date {
+		padding: 15% 0 0 0;
+	}
+
+	.unassignedLocation {
+		padding-top: 15%; 
+	}
+}
 @media only screen and (max-device-width: 667px) { 
 	body {
-		font-family: impact;
 		font-size: 2em;
+	}
+/*	.itemToSave {
+		padding-top: 15%;
+	}
+	.date {
+		padding-top: 25%;
+	}*/
+
+	I cant figure this out!! 
+	.unassignedLocation {
+		padding-left: 15%;
 	}
  }
 
