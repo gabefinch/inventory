@@ -2,6 +2,11 @@ body {
 	text-align: center;
 	font-family: impact;
 	background-image: url("img/background.jpg");
+	color: black;
+}
+
+.potluckHeader {
+	padding: 0;
 }
 
 #logo {
@@ -20,14 +25,26 @@ a:link, a:hover, a:visited, a:active {
 	color: black;
 }
 
+.homeShelf, .homeStore {
+    float:none;
+    display:block;
+    vertical-align:middle;
+    vertical-align: center;
+    margin: 10% 0 0 30%;
+}
+
 .breadcrumbs {
 	position:fixed;
 	top:300px;
 	left:5px;
 }
 
-.right {
-	float: right;
+.breadcrumbs img {
+	margin-bottom: 10%;
+}
+
+.breadcrumbs li {
+	border-bottom: none;
 }
 
 li {
@@ -39,17 +56,25 @@ li {
 	font-size: 2.5em;
 }
 
+.right {
+	float: right;
+}
+
+.badge {
+		height:50px;
+		width:50px;
+		font-size: 27px;
+		font-family: 'Lora', serif;
+		text-align: center;
+		margin-bottom: 2%;
+		background-color: black;
+	}
+
 
 @media only screen and (max-device-width: 667px) { 
 	body {
 		font-family: impact;
 		font-size: 2em;
-	}
-	.badge {
-		height:50px;
-		width:50px;
-		font-size: 25px;
-		text-align: center;
 	}
  }
 
