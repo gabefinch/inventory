@@ -18,7 +18,7 @@
     <div ng-repeat="item in ingredients">
       <li ng-if="item.location_id == null">
         <div class="col-xs-12">
-  				<a ui-sref="ingredientLocation({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
+  				<a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
         </div>
   		</li>
     </div>
