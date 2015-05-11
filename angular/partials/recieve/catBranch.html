@@ -30,7 +30,7 @@
 		</div>
 	</div>
 
-	<li class="right col-xs-8">
+	<li class="right col-xs-8" ng-if="currentNode.id">
 			<em><a ui-sref="recSave({categoryId: currentNode.id})">
 			  Miscellaneous {{currentNode.name}}
 			</a></em>
