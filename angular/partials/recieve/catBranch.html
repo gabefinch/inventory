@@ -3,7 +3,7 @@
   	<img src="assets/css/img/store-icon.png">
   	<h3>
 			<a ui-sref="{{pathBack}}">
-				{{currentNode.name}}
+				{{currentNode.name | uppercase}}
 			</a>
 		</h3>
 	</div>
@@ -13,7 +13,7 @@
 			<div class="right col-xs-8">
 				<li>
 					<a ui-sref="recCatChild({categoryId: item.id})">
-						{{item.name}}
+						{{item.name | uppercase}}
 					</a>
 				</li>
 			</div>
@@ -24,7 +24,7 @@
 		<div ng-if="item.children.length == 0">
 			<li class="right col-xs-8">
 				<a ui-sref="recSave({categoryId: item.id})">
-					{{item.name}}
+					{{item.name | uppercase}}
 				</a>
 			</li>
 		</div>
@@ -32,7 +32,7 @@
 
 	<li class="right col-xs-8" ng-if="currentNode.id">
 			<em><a ui-sref="recSave({categoryId: currentNode.id})">
-			  Miscellaneous {{currentNode.name}}
+			  MISCELLANEOUS {{currentNode.name | uppercase}}
 			</a></em>
 	</li>
 </div>

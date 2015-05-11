@@ -1,25 +1,28 @@
-<h3>
-	<a ui-sref="#">
-		<
-	</a>
-	{{categoryName(ingredient) + " "}}
-	<span class="badge">{{categoryFraction(ingredient)}}</span>
-	<a ui-sref="home">
-    ^
-  </a>
-</h3>
-
-<ul>
-	<li>
-		{{recievedMessage(ingredient)}}
-	</li>
-	<li>
-    {{locationMessage(ingredient)}}
-  </li>
-	<li>
+<div class="labelPage">
+  <h2 class="itemToSave">
+    {{categoryName(ingredient) + " "}}
+		<span class="badge">{{categoryFraction(ingredient)}}</span>
+  </h2>
+  <h2 class="date">
+    {{recievedMessage(ingredient)}}
+  <span class="expire">
     {{expireMessage(ingredient)}}
-  </li>
-</ul>
+  </span>
+  </h2>
+  <h2 class="unassignedLocation">
+    {{locationMessage(ingredient)}}
+  </h2>
+</div>
+
+<!-- <div class="row-fluid options">
+  <div class="col-xs-6">
+      <img src="assets/css/img/shelf-icon.png" ng-click="storeNow(selectedCategory.id)">
+  </div>
+  <div class="col-xs-6">
+      <img src="assets/css/img/complete-icon.png" ng-click="storeLater(selectedCategory.id)">
+  </div>
+</div>
+ -->
 
 <button type="button" class="btn btn-warning btn-lg btn-block">
 	<span class="glyphicon glyphicon-shopping-cart"></span>
