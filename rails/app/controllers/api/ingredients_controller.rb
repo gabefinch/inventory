@@ -1,7 +1,7 @@
 class Api::IngredientsController < ApplicationController
 
   def index
-    render json: Ingredient.all
+    render json: Ingredient.unused
   end
 
   def show
@@ -23,7 +23,7 @@ class Api::IngredientsController < ApplicationController
 
   def destroy
     ingredient = Ingredient.find(params[:id])
-    if ingredient.destroy
+    if ingredient.update({used_on: Time.now})
       head :no_content, status: :ok
     else
       render json: ingredient.errors, status: :unprocessable_entity
