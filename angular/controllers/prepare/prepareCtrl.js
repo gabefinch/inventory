@@ -1,6 +1,6 @@
-potluck.controller('PrepareCtrl',[
+potluck.controller('PrepareCtrl',
+[
 	'$scope',
 	function($scope){
-		
-	}
-]);
+
+}]);

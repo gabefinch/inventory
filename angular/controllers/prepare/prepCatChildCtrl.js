@@ -1,5 +1,9 @@
-potluck.controller('PrepCatChildCtrl',[
-	'$scope', '$cacheFactory', '$stateParams', 'UtilitiesFactory',
+potluck.controller('PrepCatChildCtrl',
+[
+	'$scope',
+	'$cacheFactory',
+	'$stateParams',
+	'UtilitiesFactory',
 	function($scope, $cacheFactory, $stateParams, UtilitiesFactory){
 
 		var cache = $cacheFactory.get('potluck');

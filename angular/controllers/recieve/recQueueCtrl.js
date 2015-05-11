@@ -1,5 +1,12 @@
 potluck.controller('RecQueueCtrl',
-	function($scope, $cacheFactory,$stateParams, $state, UtilitiesFactory, IngredientsFactory){
+[
+	'$scope',
+	'$cacheFactory',
+	'$stateParams',
+	'$state',
+	'UtilitiesFactory',
+	'IngredientsFactory',
+	function($scope, $cacheFactory, $stateParams, $state, UtilitiesFactory, IngredientsFactory){
 
 		var cache = $cacheFactory.get('potluck');
 
@@ -39,4 +46,4 @@ potluck.controller('RecQueueCtrl',
 			return UtilitiesFactory.findById((cache.get('categories')), category_id);
 		};
 
-	});
+}]);

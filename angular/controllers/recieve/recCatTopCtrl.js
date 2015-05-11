@@ -1,4 +1,8 @@
 potluck.controller('RecCatTopCtrl',
+[
+	'$scope',
+	'$cacheFactory',
+	'UtilitiesFactory',
 	function($scope, $cacheFactory, UtilitiesFactory){
 
 		var cache = $cacheFactory.get('potluck');
@@ -15,5 +19,4 @@ potluck.controller('RecCatTopCtrl',
 
 		$scope.pathBack = 'recieve';
 
-	}
-);
+}]);

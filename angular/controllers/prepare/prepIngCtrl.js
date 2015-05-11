@@ -12,10 +12,6 @@ potluck.controller('PrepIngCtrl',[
 
 		$scope.ingredients = cache.get('ingredients');
 
-		// $scope.back = function(){
-		// 	$state.go($state.previous.name,$state.previous.params);
-		// };
-
 		catIdToCat = function(category_id){
 			return UtilitiesFactory.findById(cache.get('categories'),category_id);
 		};

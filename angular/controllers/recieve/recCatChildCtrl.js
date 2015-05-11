@@ -1,4 +1,5 @@
-potluck.controller('RecCatChildCtrl',[
+potluck.controller('RecCatChildCtrl',
+[
 	'$scope',
 	'$cacheFactory',
 	'$stateParams',

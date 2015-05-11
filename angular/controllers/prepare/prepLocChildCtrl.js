@@ -1,4 +1,5 @@
-potluck.controller('PrepLocChildCtrl',[
+potluck.controller('PrepLocChildCtrl',
+[
 	'$scope',
   '$cacheFactory',
   '$stateParams',
@@ -31,5 +32,4 @@ potluck.controller('PrepLocChildCtrl',[
 			return UtilitiesFactory.findById(cache.get('locations'),location_id).name;
 		};
 
-  }
-]);
+}]);

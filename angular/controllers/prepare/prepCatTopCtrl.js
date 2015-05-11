@@ -1,4 +1,5 @@
-potluck.controller('PrepCatTopCtrl',[
+potluck.controller('PrepCatTopCtrl',
+[
   '$scope',
   '$cacheFactory',
   'UtilitiesFactory',
@@ -28,5 +29,5 @@ potluck.controller('PrepCatTopCtrl',[
 		};
 
 		$scope.ingredients = cache.get('ingredients');
-	}
-]);
+
+}]);

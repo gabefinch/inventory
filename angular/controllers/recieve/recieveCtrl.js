@@ -1,4 +1,7 @@
 potluck.controller('RecieveCtrl',
+[
+	'$scope',
+	'$cacheFactory',
 	function($scope, $cacheFactory){
 
     var cache = $cacheFactory.get('potluck');
@@ -14,4 +17,4 @@ potluck.controller('RecieveCtrl',
 		};
 
 
-});
+}]);

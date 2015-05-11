@@ -1,4 +1,11 @@
 potluck.controller('RecSaveCtrl',
+[
+	'$scope',
+	'$cacheFactory',
+	'$stateParams',
+	'$state',
+	'UtilitiesFactory',
+	'IngredientsFactory',
 	function($scope, $cacheFactory,$stateParams, $state, UtilitiesFactory, IngredientsFactory){
 
 		var cache = $cacheFactory.get('potluck');
@@ -27,4 +34,4 @@ potluck.controller('RecSaveCtrl',
 			$state.go('recCatTop');
 		}
 
-	});
+}]);

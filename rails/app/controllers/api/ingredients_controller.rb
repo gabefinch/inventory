@@ -8,10 +8,6 @@ class Api::IngredientsController < ApplicationController
     render json: Ingredient.find(params[:id])
   end
 
-  # def new
-  #   newCategory = Ingredient.new()
-  # end
-
   def create
     ingredient = Ingredient.new(ingredient_params)
     if ingredient.save
