@@ -1,10 +1,11 @@
 potluck.controller('PrepBasketCtrl',
 [
   '$scope',
+  '$state',
   '$cacheFactory',
   'UtilitiesFactory',
   'IngredientsFactory',
-  function($scope, $cacheFactory, UtilitiesFactory, IngredientsFactory){
+  function($scope, $state, $cacheFactory, UtilitiesFactory, IngredientsFactory){
     var cache = $cacheFactory.get('potluck');
     var ingredients = cache.get('ingredients');
     $scope.basket = function(){
@@ -22,10 +23,21 @@ potluck.controller('PrepBasketCtrl',
       var category = catIdToCat(ingredient.category_id);
       return category.name;
     };
-    $scope.fromBasket = function(ingredient){
-      ingredient.basketed = null;
+    $scope.outOfBasket = function(ingredient){
+      delete ingredient.basketed;
     };
-    $scope.dumpBasket = function(){
-      for(var i = 0; i < ingredients.length; i++){ingredients[i].basketed = null;}
+    $scope.allOutOfBasket = function(){
+      for(var i = 0; i < ingredients.length; i++){
+        delete ingredients[i].basketed;
+      }
+      $state.go('prep');
+    };
+    $scope.allUseBasket = function(){
+      for(var i = 0; i < ingredients.length; i++){
+        if(ingredients[i].basketed == true){
+          IngredientsFactory.removeIngredient(ingredients[i]);
+        }
+      }
+      $state.go('prep');
     };
 }]);

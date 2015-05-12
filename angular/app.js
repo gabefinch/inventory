@@ -15,7 +15,6 @@ potluck.run(function($http,$cacheFactory){
         cache.put('categories', data.categories);
         cache.put('locations', data.locations);
         cache.put('ingredients', data.ingredients);
-        cache.put('basket', []);
       }).
       error(function(status) {
         console.log('エラー');
