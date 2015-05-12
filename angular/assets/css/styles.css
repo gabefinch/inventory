@@ -52,7 +52,7 @@ a:link, a:hover, a:visited, a:active {
     display:block;
     vertical-align:middle;
     vertical-align: center;
-    margin: 10% 0 0 30%;
+    margin: 5% 0 10% 30%;
 }
 
 .breadcrumbs {

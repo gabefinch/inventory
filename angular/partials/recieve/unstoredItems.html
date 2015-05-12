@@ -10,11 +10,9 @@
       </a>
     </h3>
   </div>
-  <ul ng-repeat="item in ingredients">
+  <ul ng-repeat="item in ingredients" class="right col-xs-8">
     <li ng-if="item.location_id == null">
-      <div class="right col-xs-8">
 				<a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name | uppercase}}</a>
-      </div>
 		</li>
   </ul>
 </div>
