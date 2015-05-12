@@ -1,7 +1,7 @@
 <div class="labelPage">
   <h2 class="itemToSave">
     {{categoryName(ingredient) + ": "}}
-		<span>{{categoryFraction(ingredient)}}</span>
+    <span>{{categoryFraction(ingredient)}}</span>
   </h2>
   <h2 class="date">
     {{recievedMessage(ingredient)}}
@@ -24,12 +24,17 @@
 </div> -->
 
 
-<button type="button" class="btn btn-warning btn-lg btn-block">
-	<span class="glyphicon glyphicon-shopping-cart"></span>
-	Add To Basket
+<button class="btn btn-warning btn-lg btn-block" ng-if="ingredient.basketed != true" ng-click="toBasket(ingredient)">
+  <span class="glyphicon glyphicon-shopping-cart"></span>
+  Add To Basket
 </button>
 
-<button type="button" class="btn btn-danger btn-lg btn-block">
-	<span class="glyphicon glyphicon-remove-circle"></span>
-	Mark As Used
+<button class="btn btn-danger btn-lg btn-block" ng-if="ingredient.basketed == true" ng-click="fromBasket(ingredient)">
+  <span class="glyphicon glyphicon-shopping-cart"></span>
+  Remove From Basket
+</button>
+
+<button class="btn btn-danger btn-lg btn-block" ng-click="use(ingredient)">
+  <span class="glyphicon glyphicon-remove-circle"></span>
+  Mark As Used
 </button>

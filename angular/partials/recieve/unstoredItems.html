@@ -5,16 +5,16 @@
     </a>
     <h3>
       <a ui-sref="{{pathBack}}">
-      Unstored Items
-      <span class="badge">
-        {{queueCount()}}
-      </span>
+        Unstored Items
+        <span class="badge">
+          {{queueCount()}}
+        </span>
       </a>
     </h3>
   </div>
   <ul ng-repeat="item in ingredients" class="right col-xs-8">
     <li ng-if="item.location_id == null">
-				<a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name | uppercase}}</a>
-		</li>
+        <a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name | uppercase}}</a>
+    </li>
   </ul>
 </div>

@@ -1,40 +1,40 @@
 <div class="row-fluid">
   <div class="col-xs-4">
-		<a ui-sref="recieve">
-			<img src="/assets/css/img/store-icon.png">
-		</a>
-  	<h3>
-			<a ui-sref="{{pathBack}}">
-				{{currentNode.name | uppercase}}
-			</a>
-		</h3>
-	</div>
+    <a ui-sref="recieve">
+      <img src="/assets/css/img/store-icon.png">
+    </a>
+    <h3>
+      <a ui-sref="{{pathBack}}">
+        {{currentNode.name | uppercase}}
+      </a>
+    </h3>
+  </div>
 
-	<div ng-repeat="item in currentNode.children">
-		<div ng-if="item.children.length != 0">
-			<div class="right col-xs-8">
-				<li>
-					<a ui-sref="recCatChild({categoryId: item.id})">
-						{{item.name | uppercase}}
-					</a>
-				</li>
-			</div>
-		</div>
-	</div>
+  <div ng-repeat="item in currentNode.children">
+    <div ng-if="item.children.length != 0">
+      <div class="right col-xs-8">
+        <li>
+          <a ui-sref="recCatChild({categoryId: item.id})">
+            {{item.name | uppercase}}
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
 
-	<div ng-repeat="item in currentNode.children">
-		<div ng-if="item.children.length == 0">
-			<li class="right col-xs-8">
-				<a ui-sref="recSave({categoryId: item.id})">
-					{{item.name | uppercase}}
-				</a>
-			</li>
-		</div>
-	</div>
+  <div ng-repeat="item in currentNode.children">
+    <div ng-if="item.children.length == 0">
+      <li class="right col-xs-8">
+        <a ui-sref="recSave({categoryId: item.id})">
+          {{item.name | uppercase}}
+        </a>
+      </li>
+    </div>
+  </div>
 
-	<li class="right col-xs-8" ng-if="currentNode.id">
-			<em><a ui-sref="recSave({categoryId: currentNode.id})">
-			  MISCELLANEOUS {{currentNode.name | uppercase}}
-			</a></em>
-	</li>
+  <li class="right col-xs-8" ng-if="currentNode.id">
+      <em><a ui-sref="recSave({categoryId: currentNode.id})">
+        MISCELLANEOUS {{currentNode.name | uppercase}}
+      </a></em>
+  </li>
 </div>
