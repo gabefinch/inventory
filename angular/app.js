@@ -15,6 +15,7 @@ potluck.run(function($http,$cacheFactory){
 		    cache.put('categories', data.categories);
 		    cache.put('locations', data.locations);
 		    cache.put('ingredients', data.ingredients);
+        cache.put('basket', []);
 		  }).
 		  error(function(status) {
 				console.log('エラー');
@@ -107,5 +108,10 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/prepare/ing.html",
     controller: "PrepIngCtrl"
   })
+  .state('prepBasket', {
+    url: "/prepare/basket",
+    templateUrl: "partials/prepare/basket.html",
+    controller: "PrepBasketCtrl"
+  });
 
 });

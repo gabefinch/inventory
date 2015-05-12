@@ -1,0 +1,28 @@
+<h3>
+	<a ui-sref="prep">
+		<
+	</a>
+	Basket
+	<a ui-sref="home">
+    ^
+  </a>
+</h3>
+
+<ul>
+	<li ng-repeat="item in basket()">
+		<span ui-sref="prepIng({ingredientId: item.id})">
+			{{categoryName(item)}}
+		</span>
+		<small ng-click="fromBasket(item)"> remove</small>
+	</li>
+</ul>
+
+<button class="btn btn-warning btn-lg btn-block">
+	<span class="glyphicon glyphicon-remove-circle"></span>
+	Use All Items
+</button>
+
+<button class="btn btn-danger btn-lg btn-block">
+	<span class="glyphicon glyphicon-upload"></span>
+	Return All Items
+</button>

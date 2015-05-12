@@ -9,7 +9,7 @@ potluck.controller('PrepIngCtrl',[
 		var cache = $cacheFactory.get('potluck');
 		$scope.ingredient = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId);
 		$scope.ingredients = cache.get('ingredients');
-		catIdToCat = function(category_id){
+		var catIdToCat = function(category_id){
 			return UtilitiesFactory.findById(cache.get('categories'),category_id);
 		};
 		$scope.categoryName = function(ingredient){
@@ -47,5 +47,14 @@ potluck.controller('PrepIngCtrl',[
 			$state.go('prep');
 		};
 
-  }
-]);
+		$scope.toBasket = function(ingredient){
+			ingredient.basketed = true;
+			$state.go('prep');
+		};
+
+		$scope.fromBasket = function(ingredient){
+			ingredient.basketed = null;
+			$state.go('prep');
+		};
+
+}]);

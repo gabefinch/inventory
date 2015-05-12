@@ -21,12 +21,17 @@
   </li>
 </ul>
 
-<button type="button" class="btn btn-warning btn-lg btn-block">
+<button class="btn btn-warning btn-lg btn-block" ng-if="ingredient.basketed != true" ng-click="toBasket(ingredient)">
 	<span class="glyphicon glyphicon-shopping-cart"></span>
 	Add To Basket
 </button>
 
-<button type="button" class="btn btn-danger btn-lg btn-block" ng-click="use(ingredient)">
+<button class="btn btn-danger btn-lg btn-block" ng-if="ingredient.basketed == true" ng-click="fromBasket(ingredient)">
+	<span class="glyphicon glyphicon-shopping-cart"></span>
+	Remove From Basket
+</button>
+
+<button class="btn btn-danger btn-lg btn-block" ng-click="use(ingredient)">
 	<span class="glyphicon glyphicon-remove-circle"></span>
 	Mark As Used
 </button>
