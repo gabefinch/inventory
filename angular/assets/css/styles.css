@@ -82,6 +82,10 @@ li {
 	float: right;
 }
 
+.item {
+	border: 3px solid;
+}
+
 
 /*Save Page*/
 

@@ -4,7 +4,8 @@ potluck.controller('RecSaveCtrl',[
 	'$state',
   '$stateParams',
   'UtilitiesFactory',
-	function($scope, $cacheFactory, $state, $stateParams, UtilitiesFactory){
+  'IngredientsFactory',
+	function($scope, $cacheFactory, $state, $stateParams, UtilitiesFactory, IngredientsFactory){
 
 		var cache = $cacheFactory.get('potluck');
 
