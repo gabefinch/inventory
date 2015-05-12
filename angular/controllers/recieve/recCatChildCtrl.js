@@ -9,6 +9,10 @@ potluck.controller('RecCatChildCtrl',[
 
 		$scope.currentNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
 
+		$scope.breadcrumbs = UtilitiesFactory.breadcrumbs($scope.currentNode);
+		console.log($scope.breadcrumbs);
+		
+
 		if ($scope.currentNode.parent_id == null){
 			$scope.pathBack = 'recCatTop';
 		} else {
@@ -18,5 +22,7 @@ potluck.controller('RecCatChildCtrl',[
 		$scope.ingredients = cache.get('ingredients')
 
 		$scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
+
 		$scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
+
 }]);

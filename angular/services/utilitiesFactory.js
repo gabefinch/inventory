@@ -74,6 +74,25 @@ potluck.factory('UtilitiesFactory', ['$cacheFactory',
     return count
   };
 
+  factory.breadcrumbs = function(category) {
+    var breadcrumbs = [category];
+    var categories = cache.get('categories');
+    var addParent = function(category) {
+      if (category.parent_id != null) {
+        var parent = factory.findById(categories, category.parent_id);
+        breadcrumbs.push(parent);
+        addParent(parent);
+      }
+      else {
+        return breadcrumbs;
+      }
+      
+    };
+
+    addParent(category);
+  };
+
+
   return factory;
 
 }]);
