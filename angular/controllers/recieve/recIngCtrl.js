@@ -10,8 +10,8 @@ potluck.controller('RecIngCtrl',
     $scope.categories = console.log(cache.get('categories'));
 
     $scope.findCategory = function(category_id){
-  		return UtilitiesFactory.findById((cache.get('categories')), category_id);
-  	};
+      return UtilitiesFactory.findById((cache.get('categories')), category_id);
+    };
 
     $scope.ingredientNode = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId);
 

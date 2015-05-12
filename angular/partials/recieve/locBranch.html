@@ -1,26 +1,26 @@
 <h3>
-	{{category.name}} {{categoryFraction()}}
+  {{category.name}} {{categoryFraction()}}
 </h3>
 <h5>
-	Arrived {{created_at}}
+  Arrived {{created_at}}
 </h5>
 
 <h3>
-	{{locationNode.name}}
+  {{locationNode.name}}
 </h3>
 
   <ul>
 
     <li ng-repeat="location in locationNode.children"
-		ng-if="location.children.length != 0"
-		ui-sref="recLocChild({ ingredientId: ingredient.id, locationId: location.id })">
-			{{location.name}}
+    ng-if="location.children.length != 0"
+    ui-sref="recLocChild({ ingredientId: ingredient.id, locationId: location.id })">
+      {{location.name}}
     </li>
 
-		<li ng-repeat="location in locationNode.children"
-		ng-if="location.children.length == 0"
-		ng-click="patchIngLoc(ingredient,location)">
-			{{location.name}}
+    <li ng-repeat="location in locationNode.children"
+    ng-if="location.children.length == 0"
+    ng-click="patchIngLoc(ingredient,location)">
+      {{location.name}}
     </li>
 
   </ul>

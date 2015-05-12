@@ -15,9 +15,9 @@ potluck.controller('RecLocTopCtrl',
     $scope.created_at = (created.getMonth() + 1) + "/" + created.getDate() + "/" + created.getFullYear();
 
 
-   	$scope.category = UtilitiesFactory.findById(
-       cache.get('categories'),
-       $scope.ingredient.category_id);
+    $scope.category = UtilitiesFactory.findById(
+      cache.get('categories'),
+      $scope.ingredient.category_id);
 
     $scope.categoryFraction = function(){
       var ings = UtilitiesFactory.findIngsByCat($scope.category);

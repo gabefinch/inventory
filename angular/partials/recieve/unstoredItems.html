@@ -1,14 +1,14 @@
 <div class="row-fluid">
   <div class="header col-xs-12">
     <h3>
-    	<a ui-sref="recieve">
-    		<
-    	</a>
+      <a ui-sref="recieve">
+        <
+      </a>
       Unstored Items
       <span class="badge">
         {{queueCount()}}
       </span>
-    	<a ui-sref="home">
+      <a ui-sref="home">
         <span class="glyphicon glyphicon-home"></span>
       </a>
     </h3>
@@ -18,9 +18,9 @@
     <div ng-repeat="item in ingredients">
       <li ng-if="item.location_id == null">
         <div class="col-xs-12">
-  				<a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
+          <a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name}}</a>
         </div>
-  		</li>
+      </li>
     </div>
   </ul>
 </div>

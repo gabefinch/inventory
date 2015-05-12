@@ -1,37 +1,37 @@
 <h3>
-	<a ui-sref="#">
-		<
-	</a>
-	{{categoryName(ingredient) + " "}}
-	<span class="badge">{{categoryFraction(ingredient)}}</span>
-	<a ui-sref="home">
+  <a ui-sref="#">
+    <
+  </a>
+  {{categoryName(ingredient) + " "}}
+  <span class="badge">{{categoryFraction(ingredient)}}</span>
+  <a ui-sref="home">
     ^
   </a>
 </h3>
 
 <ul>
-	<li>
-		{{recievedMessage(ingredient)}}
-	</li>
-	<li>
+  <li>
+    {{recievedMessage(ingredient)}}
+  </li>
+  <li>
     {{locationMessage(ingredient)}}
   </li>
-	<li>
+  <li>
     {{expireMessage(ingredient)}}
   </li>
 </ul>
 
 <button class="btn btn-warning btn-lg btn-block" ng-if="ingredient.basketed != true" ng-click="toBasket(ingredient)">
-	<span class="glyphicon glyphicon-shopping-cart"></span>
-	Add To Basket
+  <span class="glyphicon glyphicon-shopping-cart"></span>
+  Add To Basket
 </button>
 
 <button class="btn btn-danger btn-lg btn-block" ng-if="ingredient.basketed == true" ng-click="fromBasket(ingredient)">
-	<span class="glyphicon glyphicon-shopping-cart"></span>
-	Remove From Basket
+  <span class="glyphicon glyphicon-shopping-cart"></span>
+  Remove From Basket
 </button>
 
 <button class="btn btn-danger btn-lg btn-block" ng-click="use(ingredient)">
-	<span class="glyphicon glyphicon-remove-circle"></span>
-	Mark As Used
+  <span class="glyphicon glyphicon-remove-circle"></span>
+  Mark As Used
 </button>

@@ -1,47 +1,47 @@
 <h3>
-	<a ui-sref="{{pathBack}}">
-		<
-	</a>
-	{{currentNode.name}}
-	<a ui-sref="home">
+  <a ui-sref="{{pathBack}}">
+    <
+  </a>
+  {{currentNode.name}}
+  <a ui-sref="home">
     ^
   </a>
 </h3>
 
 <ul class="list-group">
-	<div ng-repeat="item in currentNode.children">
+  <div ng-repeat="item in currentNode.children">
 
-		<li ng-if="item.children.length != 0 && ingDescCount(item) > 0">
-			<a ui-sref="prepLocChild({locationId: item.id})">
-				{{item.name}}
-			</a>
+    <li ng-if="item.children.length != 0 && ingDescCount(item) > 0">
+      <a ui-sref="prepLocChild({locationId: item.id})">
+        {{item.name}}
+      </a>
       <span class="badge">
-				{{ingDescCount(item)}}
-			</span>
-		</li>
-	</div>
-	<div ng-repeat="item in currentNode.children" >
-		<li ng-if="item.children.length == 0 && ingDescCount(item) > 0">
-					<a ui-sref="prepLocChild({locationId: item.id})">
-						{{item.name}}
-					</a>
+        {{ingDescCount(item)}}
+      </span>
+    </li>
+  </div>
+  <div ng-repeat="item in currentNode.children" >
+    <li ng-if="item.children.length == 0 && ingDescCount(item) > 0">
+          <a ui-sref="prepLocChild({locationId: item.id})">
+            {{item.name}}
+          </a>
       <span class="badge">
-				{{ingDescCount(item)}}
-			</span>
-		</li>
-	</div>
+        {{ingDescCount(item)}}
+      </span>
+    </li>
+  </div>
 
-	<div ng-repeat="item in ingredients" style="background-color: #A3FFFF;">
-		<li ng-if="item.location_id != null && item.location_id == currentNode.id">
-			<a ui-sref="prepIng({ingredientId: item.id})">
-				Item: {{catIdToName(item.category_id)}}
-			</a>
-			<small ng-if="item.location_id != null">
-				{{'  (' + locIdToName(item.location_id) + ')'}}
-			</small>
-			<small ng-if="item.location_id == null">
-				(somewhere)
-			</small>
-		</li>
-	</div>
+  <div ng-repeat="item in ingredients" style="background-color: #A3FFFF;">
+    <li ng-if="item.location_id != null && item.location_id == currentNode.id">
+      <a ui-sref="prepIng({ingredientId: item.id})">
+        Item: {{catIdToName(item.category_id)}}
+      </a>
+      <small ng-if="item.location_id != null">
+        {{'  (' + locIdToName(item.location_id) + ')'}}
+      </small>
+      <small ng-if="item.location_id == null">
+        (somewhere)
+      </small>
+    </li>
+  </div>
 </ul>
