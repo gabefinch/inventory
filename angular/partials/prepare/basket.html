@@ -1,6 +1,6 @@
 <div class="row-fluid">
   <div class="col-xs-4">
-    <a ui-sref="prepare">
+    <a ui-sref="prep">
       <img src="/assets/css/img/rebox-icon.png">
     </a>
     <h3>
@@ -14,7 +14,7 @@
         <span ui-sref="prepIng({ingredientId: item.id})">
           {{categoryName(item)}}
         </span>
-        <small ng-click="outOfBasket(item)"> remove</small>
+        <small ng-click="outOfBasket(item)" class="removeItem"> remove</small>
       </li>
     </ul>
 
