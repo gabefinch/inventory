@@ -90,6 +90,24 @@ potluck.factory('UtilitiesFactory',
     return breadcrumbs.reverse();
   };
 
+factory.locBreadcrumbs = function(location) {
+    var breadcrumbs = [location];
+    var locations = cache.get('locations');
+    var addParent = function(location) {
+      if (location.parent_id != null) {
+        var parent = factory.findById(locations, location.parent_id);
+        breadcrumbs.push(parent);
+        addParent(parent);
+      }
+      else {
+        return breadcrumbs;
+      }
+      
+    };
+    addParent(location);
+    return breadcrumbs.reverse();
+  };
+
 
   return factory;
 }]);

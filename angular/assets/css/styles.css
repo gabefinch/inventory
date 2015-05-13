@@ -70,7 +70,11 @@ a:link, a:hover, a:visited, a:active {
 }
 
 .currentNode {
-	text-decoration: underline;
+	color: red;
+}
+
+.glyphicon-menu-down {
+	margin-bottom: 5%;
 }
 
 li {
@@ -133,6 +137,12 @@ li {
 		margin-bottom: 2%;
 		background-color: black;
 	}
+
+	/*Prep Basket Page*/
+
+.removeItem {
+	border: solid 1px;
+}
 
 
 @media only screen and (max-device-width: 667px) {

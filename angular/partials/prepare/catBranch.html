@@ -4,15 +4,14 @@
         <img src="/assets/css/img/shelf-icon.png">
       </a>
     <h3>
-      <a ui-sref="{{pathBack}}">
-        {{currentNode.name | uppercase}}
-      </a>
+      <a ui-sref="recCatTop"> CATEGORIES </a>
     </h3>
-    <h5 ng-repeat="item in breadcrumbs">
-      <a>
-      {{item.name}}
-      </a>
-    </h5>
+    <h3 ng-repeat="item in breadcrumbs">
+      <div ng-if="item==currentNode" ng-style='{"color": "red";}'>
+      </div>
+      <span class="glyphicon glyphicon-menu-down"></span></br>
+      <a ui-sref="prepCatChild({categoryId: item.id})"> {{item.name | uppercase}} </a>
+    </h3>
   </div>
 
 
