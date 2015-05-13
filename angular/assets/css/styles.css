@@ -70,7 +70,11 @@ a:link, a:hover, a:visited, a:active {
 }
 
 .currentNode {
-	text-decoration: underline;
+	color: red;
+}
+
+.glyphicon-menu-down {
+	margin-bottom: 5%;
 }
 
 li {

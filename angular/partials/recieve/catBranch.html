@@ -3,17 +3,15 @@
     <a ui-sref="recieve">
       <img src="/assets/css/img/store-icon.png">
     </a>
-    <h4>
+    <h3>
       <a ui-sref="recCatTop"> CATEGORIES </a>
-    </h4>
-    <h4 ng-repeat="item in breadcrumbs">
-      <div ng-if="item==currentNode" class="currentNode">
-   
+    </h3>
+    <h3 ng-repeat="item in breadcrumbs">
+      <div ng-if="item==currentNode" ng-style="{'color':'red'}">
       </div>
+      <span class="glyphicon glyphicon-menu-down"></span></br>
       <a ui-sref="recCatChild({categoryId: item.id})"> {{item.name | uppercase}} </a>
-    </h4>
-
-
+    </h3>
   </div>
 
   <div ng-repeat="item in currentNode.children">
