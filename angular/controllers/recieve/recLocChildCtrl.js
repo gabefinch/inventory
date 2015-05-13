@@ -28,6 +28,8 @@ potluck.controller('RecLocChildCtrl',
     $scope.locationNode = UtilitiesFactory.findById(
       cache.get('locations'),
       $stateParams.locationId);
+    
+    $scope.breadcrumbs = UtilitiesFactory.breadcrumbs($scope.locationNode);
 
     $scope.patchIngLoc = function(ingredient, location){
       ingredient.location_id = location.id;

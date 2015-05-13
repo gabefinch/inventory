@@ -138,6 +138,12 @@ li {
 		background-color: black;
 	}
 
+	/*Prep Basket Page*/
+
+.removeItem {
+	border: solid 1px;
+}
+
 
 @media only screen and (max-device-width: 667px) {
 	body {
