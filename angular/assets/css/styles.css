@@ -69,6 +69,10 @@ a:link, a:hover, a:visited, a:active {
 	border-bottom: none;
 }
 
+.currentNode {
+	text-decoration: underline;
+}
+
 li {
 	list-style: none;
 	margin-left: 0px;

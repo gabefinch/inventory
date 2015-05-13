@@ -86,8 +86,8 @@ potluck.factory('UtilitiesFactory',
       }
       
     };
-
     addParent(category);
+    return breadcrumbs.reverse();
   };
 
 
