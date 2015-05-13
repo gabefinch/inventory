@@ -1,28 +1,38 @@
-<h3>
-  <a ui-sref="prep">
-    <
-  </a>
-  Basket
-  <a ui-sref="home">
-    ^
-  </a>
-</h3>
+<div class="row-fluid">
 
-<ul>
-  <li ng-repeat="item in basket()">
-    <span ui-sref="prepIng({ingredientId: item.id})">
-      {{categoryName(item)}}
-    </span>
-    <small ng-click="outOfBasket(item)"> remove</small>
-  </li>
-</ul>
+  <div class="col-xs-4">
+    <a ui-sref="prep">
+      <img src="/assets/css/img/shelf-icon.png">
+    </a>
+    <h3>
+      BASKET
+    </h3>
+  </div>
 
-<button class="btn btn-warning btn-lg btn-block" ng-click="allUseBasket()">
-  <span class="glyphicon glyphicon-remove-circle"></span>
-  Use All Items
-</button>
+  <div class="right col-xs-8" ng-if="basket().length != 0">
+    <ul>
+      <li ng-repeat="item in basket()">
+        <span ui-sref="prepIng({ingredientId: item.id})">
+          {{categoryName(item)}}
+        </span>
+        <small ng-click="outOfBasket(item)"> remove</small>
+      </li>
+    </ul>
 
-<button class="btn btn-danger btn-lg btn-block" ng-click="allOutOfBasket()">
-  <span class="glyphicon glyphicon-upload"></span>
-  Return All Items
-</button>
+    <button class="btn btn-warning btn-lg btn-block" ng-click="allUseBasket()">
+      <span class="glyphicon glyphicon-remove-circle"></span>
+      Use All Items
+    </button>
+
+    <button class="btn btn-danger btn-lg btn-block" ng-click="allOutOfBasket()">
+      <span class="glyphicon glyphicon-upload"></span>
+      Return All Items
+    </button>
+  </div>
+
+  <div class="right col-xs-8" ng-if="basket().length == 0">
+    <ul>
+      <li>EMPTY</li>
+    </ul>
+  </div>
+</div>

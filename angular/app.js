@@ -111,6 +111,11 @@ potluck.config(function($stateProvider) {
     url: "/prepare/basket",
     templateUrl: "partials/prepare/basket.html",
     controller: "PrepBasketCtrl"
+  })
+  .state('prepExpiring', {
+    url: "/prepare/expiring",
+    templateUrl: "partials/prepare/expiring.html",
+    controller: "PrepExpiringCtrl"
   });
 
 });

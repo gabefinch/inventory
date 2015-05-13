@@ -1,0 +1,22 @@
+<div class="row-fluid">
+
+  <div class="col-xs-4">
+    <a ui-sref="prep">
+      <img src="/assets/css/img/shelf-icon.png">
+    </a>
+    <h3>
+      USE FIRST
+    </h3>
+  </div>
+
+
+  <div ng-repeat="item in ingredients">
+    <li class="right col-xs-8">
+      <a ui-sref="prepIng({ingredientId: item.id})">
+        {{catIdToCat(catIdToCat(item.category_id).parent_id).name | uppercase}}-{{catIdToCat(item.category_id).name | uppercase}}
+
+      </a>
+    </li>
+  </div>
+
+</div>

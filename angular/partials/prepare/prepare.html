@@ -3,19 +3,27 @@
     <img src="/assets/css/img/shelf-icon.png">
   </div>
   <ul class="right col-xs-8">
+
     <li>
-      <a ui-sref="#">Expiring Soon</a>
+      <a ui-sref="prepExpiring">USE FIRST</a>
     </li>
-    <li>
-      <a ui-sref="prepBasket">My Basket</a>
+
+    <li ng-if="basketCount() != 0">
+      <a ui-sref="prepBasket">BASKET</a>
       <span class="badge">
         {{basketCount()}}
       </span>
     </li>
-    <li>
-      <a ui-sref="prepCatTop">Find by Category</a>
+    <li ng-if="basketCount() == 0">
+      BASKET
     </li>
+
     <li>
-      <a ui-sref="prepLocTop">Find by Location</a>
+      <a ui-sref="prepCatTop">SEARCH CATEGORIES</a>
     </li>
+
+    <li>
+      <a ui-sref="prepLocTop">SEARCH LOCATIONS</a>
+    </li>
+
 </ul>
