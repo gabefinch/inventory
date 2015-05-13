@@ -9,26 +9,38 @@
 
     function IngredientsFactory($http, $cacheFactory, $q, UtilitiesFactory){
         var cache = $cacheFactory.get('potluck');
+        var ingredients = cache.get('ingredients');
 
         var factory = {
-          ingredients: ingredients
-          find: find,
-          postIngredient: postIngredient,
-          patchIngredient: patchIngredient,
-          removeIngredient: removeIngredient
+            ingredients: ingredients,
+            basket: returnBasket(),
+            find: find,
+            postIngredient: postIngredient,
+            patchIngredient: patchIngredient,
+            removeIngredient: removeIngredient
         };
-        
         return factory;
 
-        var ingredients = cache.get('ingredients');
+
+        function returnBasket() {
+          var basket = [];
+          for(var i = 0; i < ingredients.length; i++) {
+            if(ingredients[i].basketed == true) {
+              basket.push(ingredients[i]);
+            }
+          }
+          return basket;
+        }
 
         function find(id) {
           for (var i = 0; i < ingredients.length; i++) {
-            if (ingredients[i].id == id)
-              {return ingredients[i];}
+            if (ingredients[i].id == id) {
+              return ingredients[i];
+            }
           }
           return null;
         }
+
         function postIngredient(category_id, location_id){
           // make arg for this an ingredient object
           var defer = $q.defer();
@@ -45,6 +57,7 @@
             });
           return defer.promise;
         }
+
         function patchIngredient(ingredient){
           $http.patch( 'http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
@@ -54,8 +67,11 @@
               foundIng.category_id = ingredient.category_id;
               cache.put('ingredients', ingredients);
             })
-            .error(function(status) {console.log('エラー: ' + status);});
+            .error(function(status) {
+              console.log('エラー: ' + status);
+            });
         }
+
         function removeIngredient(ingredient){
           $http.delete('http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
@@ -64,9 +80,9 @@
               }
               cache.put('ingredients', ingredients);
             })
-            .error(function(status) {console.log('エラー: ' + status);});
+            .error(function(status) {
+              console.log('エラー: ' + status);
+            });
         }
-
     }
-
 })();
