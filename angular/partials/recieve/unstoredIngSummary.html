@@ -1,9 +1,0 @@
-  <h1>Summary:</h1>
-  <h3>You are about to store {{findCategory(ingredientNode.category_id).name}} in the {{locationNode.name}}</h3>
-      <h4>This item must be used within: </h4>
-      <span ng-repeat="item in categories">
-        {{item.lifespan}}
-      </span>
-      <h4>days.</h4>
-
-      <button ng-click="patchIngredient(categoryNode.id, locationNode.id, ingredientNode)" ui-sref="home">Done!</button>

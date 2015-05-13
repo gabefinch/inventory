@@ -1,26 +1,31 @@
-<h3>
-  {{category.name}} {{categoryFraction()}}
-</h3>
-<h5>
-  Arrived {{created_at}}
-</h5>
-
-<h3>
-  {{locationNode.name}}
-</h3>
-
-  <ul>
+<div class="row-fluid">
+  <div class="col-xs-4">
+      <a ui-sref="prep">
+        <img src="/assets/css/img/shelf-icon.png">
+      </a>
+    <h3>
+      <a ui-sref="recLocTop"> LOCATIONS </a>
+    </h3>
+    <h3 ng-repeat="item in breadcrumbs">
+      <span class="glyphicon glyphicon-menu-down"></span></br>
+      <a ui-sref="recLocChild({locationId: item.id})"> {{item.name | uppercase}} </a>
+    </h3>
+  </div>
+  <h2 class="col-xs-8">Storing Options For {{category.name}}</h2>
+  <ul class="col-xs-8 right">
 
     <li ng-repeat="location in locationNode.children"
     ng-if="location.children.length != 0"
     ui-sref="recLocChild({ ingredientId: ingredient.id, locationId: location.id })">
-      {{location.name}}
+      {{location.name | uppercase}}
     </li>
 
     <li ng-repeat="location in locationNode.children"
     ng-if="location.children.length == 0"
     ng-click="patchIngLoc(ingredient,location)">
-      {{location.name}}
+      {{location.name | uppercase}}
     </li>
 
   </ul>
+
+</div>
