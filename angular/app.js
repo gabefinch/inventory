@@ -70,7 +70,7 @@ potluck.config(function($stateProvider) {
     controller: "RecLocChildCtrl"
   })
   .state('completeIng', {
-    url:"complete/ingredients/:ingredientId",
+    url:"/ingredients/:ingredientId/locations/:locationId/save",
     templateUrl: "partials/recieve/complete.html",
     controller: "RecCompleteCtrl"
   })

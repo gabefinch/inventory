@@ -22,8 +22,7 @@
 
     <li ng-repeat="location in locationNode.children"
     ng-if="location.children.length == 0"
-    ng-click="patchIngLoc(ingredient,location)"
-    ui-sref="completeIng({ ingredientId: ingredient.id })">
+    ui-sref="completeIng({ ingredientId: ingredient.id, locationId: location.id})">
       {{location.name | uppercase}}
     </li>
 
