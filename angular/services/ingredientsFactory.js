@@ -73,16 +73,20 @@
         }
 
         function removeIngredient(ingredient){
+          var defer = $q.defer();
           $http.delete('http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
               for(var i = 0; i < ingredients.length; i++) {
                 if(ingredients[i].id == ingredient.id) {ingredients.splice(i,1);}
               }
               cache.put('ingredients', ingredients);
+              defer.resolve();
             })
             .error(function(status) {
               console.log('エラー: ' + status);
+              defer.reject(status);
             });
+          return defer.promise;
         }
 
         function allCat(category) {

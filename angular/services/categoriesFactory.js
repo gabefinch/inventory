@@ -1,25 +1,22 @@
-(function() {
+;(function() {
     'use strict';
 
     angular
         .module('potluck')
-        .factory('categoriesFactory', categoriesFactory);
+        .factory('CategoriesFactory', CategoriesFactory);
 
-    categoriesFactory.$inject = '$cacheFactory', 'UtilitiesFactory'];
+    CategoriesFactory.$inject = ['$cacheFactory', 'UtilitiesFactory'];
 
-    function categoriesFactory($cacheFactory, UtilitiesFactory) {
-
-      var cache = $cacheFactory.get('potluck');
-      var categories = cache.get('categories');
+    function CategoriesFactory($cacheFactory, UtilitiesFactory) {
+        var cache = $cacheFactory.get('potluck');
+        var categories = cache.get('categories');
         var factory = {
             find: find,
-
         };
-
         return factory;
 
         function find(id) {
-          return UtilitiesFactory.findById(categories,id);
+          return UtilitiesFactory.findById(categories, id);
         }
     }
 })();

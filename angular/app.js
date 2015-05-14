@@ -50,7 +50,7 @@ potluck.config(function($stateProvider) {
     controller: 'RecCatChildCtrl'
   })
   .state('recSave', {
-    url: "/save/:categoryId",
+    url: "/categories/:categoryId/save",
     templateUrl: "partials/recieve/save.html",
     controller: "RecSaveCtrl"
   })
