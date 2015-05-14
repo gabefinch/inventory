@@ -69,6 +69,11 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/locBranch.html",
     controller: "RecLocChildCtrl"
   })
+  .state('completeIng', {
+    url:"complete/ingredients/:ingredientId",
+    templateUrl: "partials/recieve/complete.html",
+    controller: "RecCompleteCtrl"
+  })
   .state('prep', {
     url: "/prepare",
     templateUrl: "partials/prepare/prepare.html",

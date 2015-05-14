@@ -52,7 +52,7 @@ a:link, a:hover, a:visited, a:active {
     display:block;
     vertical-align:middle;
     vertical-align: center;
-    margin: 5% 0 10% 30%;
+    margin: 7% 0 10% 30%;
 }
 
 .breadcrumbs {
@@ -67,6 +67,11 @@ a:link, a:hover, a:visited, a:active {
 
 .breadcrumbs li {
   border-bottom: none;
+}
+
+.breadcrumb {
+	font-size: 1.2em;
+	background: inherit;
 }
 
 .currentNode {
@@ -91,7 +96,9 @@ li {
 }
 
 .right {
-  float: right;
+	margin-top: 2%;
+	float: right;
+	text-align: left;
 }
 
 .item {
@@ -133,14 +140,18 @@ li {
 }
 
 .badge {
-    height:50px;
-    width:50px;
-    font-size: 27px;
-    font-family: 'Lora', serif;
-    text-align: center;
-    margin-bottom: 2%;
-    background-color: black;
-  }
+		height:50px;
+		width:50px;
+		font-size: 27px;
+		font-family: 'Lora', serif;
+		text-align: center;
+		background-color: black;
+		color: white;
+		margin-bottom: 1%;
+		text-decoration: none;
+		display: block;
+	}
+
 
   /*Prep Basket Page*/
 
@@ -148,6 +159,16 @@ li {
   border: solid 2px;
 }
 
+
+/*UnstoredItems pag*/
+.unstoredItems {
+	float: right;
+	text-align: left;
+}
+
+#unstoredBadge {
+	margin-left: 40%;
+}
 
 @media only screen and (max-device-width: 667px) {
   body {

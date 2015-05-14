@@ -1,15 +1,15 @@
 <div class="row-fluid">
 
-  <div class="col-xs-4">
+  <div class="col-xs-5">
     <a ui-sref="prep">
-      <img src="/assets/css/img/shelf-icon.png">
+      <img src="/assets/css/img/shelf-icon.png" class="homeShelf">
     </a>
-    <h3>USE FIRST</h3> <!-- should this go somewhere else on page? Placement is awkward here -->
+    <h1>USE FIRST</h1> <!-- should this go somewhere else on page? Placement is awkward here -->
   </div>
 
 
   <div ng-repeat="item in ingredients">
-    <li class="right col-xs-8">
+    <li class="right col-xs-7">
       <a ui-sref="prepIng({ingredientId: item.id})">
         {{catIdToCat(catIdToCat(item.category_id).parent_id).name | uppercase}}-{{catIdToCat(item.category_id).name | uppercase}}
 
