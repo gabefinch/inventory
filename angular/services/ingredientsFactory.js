@@ -13,25 +13,18 @@
 
         var factory = {
             ingredients: ingredients,
-            basket: basket,
             find: find,
+            allCat : allCat,
             postIngredient: postIngredient,
             patchIngredient: patchIngredient,
             removeIngredient: removeIngredient,
-            allCat : allCat
+            basket: basket,
+            basketUseAll: basketUseAll,
+            basketRemoveAll: basketRemoveAll
         };
         return factory;
 
 
-        function basket() {
-          var basket = [];
-          for(var i = 0; i < ingredients.length; i++) {
-            if(ingredients[i].basketed == true) {
-              basket.push(ingredients[i]);
-            }
-          }
-          return basket;
-        }
 
         function find(id) {
           for (var i = 0; i < ingredients.length; i++) {
@@ -40,6 +33,17 @@
             }
           }
           return null;
+        }
+
+        function allCat(category) {
+          var ingMatches = [];
+          var ingredients = cache.get('ingredients');
+          for (var i = 0; i < ingredients.length; i++) {
+            if (ingredients[i].category_id == category.id) {
+              ingMatches.push(ingredients[i]);
+            }
+          }
+          return ingMatches;
         }
 
         function postIngredient(category_id, location_id){
@@ -89,15 +93,30 @@
           return defer.promise;
         }
 
-        function allCat(category) {
-          var ingMatches = [];
-          var ingredients = cache.get('ingredients');
-          for (var i = 0; i < ingredients.length; i++) {
-            if (ingredients[i].category_id == category.id) {
-              ingMatches.push(ingredients[i]);
+        function basket() {
+          var basket = [];
+          for(var i = 0; i < ingredients.length; i++) {
+            if(ingredients[i].basketed == true) {
+              basket.push(ingredients[i]);
             }
           }
-          return ingMatches;
+          return basket;
         }
+
+        function basketUseAll(){
+          for(var i = 0; i < ingredients.length; i++){
+            if(ingredients[i].basketed == true){
+              delete ingredients[i].basketed;
+              removeIngredient(ingredients[i]);
+            }
+          }
+        }
+
+        function basketRemoveAll(){
+          for(var i = 0; i < ingredients.length; i++){
+            delete ingredients[i].basketed;
+          }
+        }
+
     }
 })();
