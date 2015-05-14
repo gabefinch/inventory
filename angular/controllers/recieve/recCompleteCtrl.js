@@ -7,8 +7,12 @@ potluck.controller('RecCompleteCtrl',[
   'IngredientsFactory',
   function($scope, $cacheFactory, $state, $stateParams, UtilitiesFactory, IngredientsFactory){
     var cache = $cacheFactory.get('potluck');
-    $scope.ingredient = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId);
+
+    $scope.ingredient = IngredientsFactory.find($stateParams.ingredientId);
+    $scope.location = UtilitiesFactory.findById(cache.get('locations'), $stateParams.locationId);
+
     $scope.ingredients = cache.get('ingredients');
+
     var catIdToCat = function(category_id){
       return UtilitiesFactory.findById(cache.get('categories'),category_id);
     };
@@ -20,12 +24,18 @@ potluck.controller('RecCompleteCtrl',[
       var created_at = new Date(ingredient.created_at);
       return "Arrived " + created_at.toLocaleDateString();
     };
+
     $scope.locationMessage = function(ingredient){
       var location = UtilitiesFactory.findById(
         cache.get('locations'),
-        ingredient.location_id);
+        $stateParams.locationId);
       if (location == null) {return "Location unknown";}
       else {return location.name;}
+    };
+    $scope.patchIngLoc = function(ingredient, location){
+      ingredient.location_id = location.id;
+      IngredientsFactory.patchIngredient(ingredient);
+      $state.go('recieve');
     };
     $scope.expireMessage = function(ingredient) {
       var lifespan = catIdToCat(ingredient.category_id).lifespan;
