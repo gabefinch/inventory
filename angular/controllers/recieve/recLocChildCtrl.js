@@ -9,9 +9,7 @@ potluck.controller('RecLocChildCtrl',
   function($scope, $state, $stateParams, $cacheFactory, UtilitiesFactory, IngredientsFactory){
     var cache = $cacheFactory.get('potluck');
 
-    $scope.ingredient = UtilitiesFactory.findByIdArray(
-      cache.get('ingredients'),
-      $stateParams.ingredientId);
+    $scope.ingredient = IngredientsFactory.find($stateParams.ingredientId);
 
     var created = new Date($scope.ingredient.created_at)
     $scope.created_at = (created.getMonth() + 1) + "/" + created.getDate() + "/" + created.getFullYear();
@@ -28,7 +26,7 @@ potluck.controller('RecLocChildCtrl',
     $scope.locationNode = UtilitiesFactory.findById(
       cache.get('locations'),
       $stateParams.locationId);
-    
+
     $scope.breadcrumbs = UtilitiesFactory.locBreadcrumbs($scope.locationNode);
 
     $scope.patchIngLoc = function(ingredient, location){

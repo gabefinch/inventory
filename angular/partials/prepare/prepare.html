@@ -8,15 +8,15 @@
       <a ui-sref="prepExpiring">USE FIRST</a>
     </li>
 
-    <li ng-if="basket.length != 0">
+    <li ng-if="basketSize != 0">
       <a ui-sref="prepBasket">
         BASKET
       </a>
       <span class="badge">
-        {{basket.length}}
+        {{basketSize}}
       </span>
     </li>
-    <li ng-if="basket.length == 0">
+    <li ng-if="basketSize == 0" class="inactive">
       BASKET
     </li>
 

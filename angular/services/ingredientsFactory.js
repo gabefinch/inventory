@@ -13,16 +13,17 @@
 
         var factory = {
             ingredients: ingredients,
-            basket: returnBasket(),
+            basket: basket,
             find: find,
             postIngredient: postIngredient,
             patchIngredient: patchIngredient,
-            removeIngredient: removeIngredient
+            removeIngredient: removeIngredient,
+            allCat : allCat
         };
         return factory;
 
 
-        function returnBasket() {
+        function basket() {
           var basket = [];
           for(var i = 0; i < ingredients.length; i++) {
             if(ingredients[i].basketed == true) {
@@ -61,8 +62,7 @@
         function patchIngredient(ingredient){
           $http.patch( 'http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
-              // reference local findByIdArray?
-              var foundIng = UtilitiesFactory.findByIdArray(ingredients, ingredient.id);
+              var foundIng = find(ingredient.id);
               foundIng.location_id = ingredient.location_id;
               foundIng.category_id = ingredient.category_id;
               cache.put('ingredients', ingredients);
@@ -83,6 +83,17 @@
             .error(function(status) {
               console.log('エラー: ' + status);
             });
+        }
+
+        function allCat(category) {
+          var ingMatches = [];
+          var ingredients = cache.get('ingredients');
+          for (var i = 0; i < ingredients.length; i++) {
+            if (ingredients[i].category_id == category.id) {
+              ingMatches.push(ingredients[i]);
+            }
+          }
+          return ingMatches;
         }
     }
 })();

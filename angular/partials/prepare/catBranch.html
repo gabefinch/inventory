@@ -7,7 +7,7 @@
       <a ui-sref="recCatTop"> CATEGORIES </a>
     </h3>
     <h3 ng-repeat="item in breadcrumbs">
-      <div ng-if="item==currentNode" ng-style='{"color": "red";}'>
+      <div ng-if="item==currentNode">
       </div>
       <span class="glyphicon glyphicon-menu-down"></span></br>
       <a ui-sref="prepCatChild({categoryId: item.id})"> {{item.name | uppercase}} </a>

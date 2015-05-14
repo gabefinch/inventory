@@ -40,7 +40,7 @@ potluck.controller('RecQueueCtrl',
     $scope.pathBack= 'recieve';
 
     $scope.ingredients = cache.get('ingredients');
-    $scope.ingredientNode = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId);
+    $scope.ingredientNode = IngredientsFactory.find($stateParams.ingredientId);
 
     $scope.findCategory = function(category_id){
       return UtilitiesFactory.findById((cache.get('categories')), category_id);

@@ -4,6 +4,6 @@ potluck.controller('PrepareCtrl',
   'IngredientsFactory',
   function($scope, IngredientsFactory){
 
-    $scope.basket = IngredientsFactory.basket;
+    $scope.basketSize = IngredientsFactory.basket().length;
 
 }]);

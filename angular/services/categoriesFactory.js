@@ -12,13 +12,13 @@
       var cache = $cacheFactory.get('potluck');
       var categories = cache.get('categories');
         var factory = {
-            catById: catById,
-            
+            find: find,
+
         };
 
         return factory;
 
-        function catById(id) {
+        function find(id) {
           return UtilitiesFactory.findById(categories,id);
         }
     }

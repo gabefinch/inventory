@@ -7,7 +7,7 @@ potluck.controller('PrepIngCtrl',[
   'IngredientsFactory',
   function($scope, $cacheFactory, $state, $stateParams, UtilitiesFactory, IngredientsFactory){
     var cache = $cacheFactory.get('potluck');
-    $scope.ingredient = UtilitiesFactory.findByIdArray(cache.get('ingredients'), $stateParams.ingredientId);
+    $scope.ingredient = IngredientsFactory.find($stateParams.ingredientId);
     $scope.ingredients = cache.get('ingredients');
     var catIdToCat = function(category_id){
       return UtilitiesFactory.findById(cache.get('categories'),category_id);
