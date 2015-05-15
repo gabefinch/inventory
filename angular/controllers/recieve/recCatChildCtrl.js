@@ -1,26 +1,13 @@
 potluck.controller('RecCatChildCtrl',
 [
   '$scope',
-  '$cacheFactory',
   '$stateParams',
-  'UtilitiesFactory',
-  function($scope, $cacheFactory, $stateParams, UtilitiesFactory){
+  'IngredientsFactory',
+  'CategoriesFactory',
+  function($scope, $stateParams, IngredientsFactory, CategoriesFactory){
+    $scope.currentCategory = CategoriesFactory.find($stateParams.categoryId);
 
-    var cache = $cacheFactory.get('potluck');
+    $scope.breadcrumbs = CategoriesFactory.breadcrumbs($scope.currentCategory);
 
-    $scope.currentNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
-
-    $scope.breadcrumbs = UtilitiesFactory.breadcrumbs($scope.currentNode);
-
-    if ($scope.currentNode.parent_id == null){
-      $scope.pathBack = 'recCatTop';
-    } else {
-      $scope.pathBack = 'recCatChild({categoryId: ' + $scope.currentNode.parent_id + '})';
-    }
-
-    $scope.ingredients = cache.get('ingredients')
-
-    $scope.flatBranchIds = UtilitiesFactory.flatBranchIds;
-
-    $scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
+    $scope.ingredients = IngredientsFactory.ingredients;
 }]);

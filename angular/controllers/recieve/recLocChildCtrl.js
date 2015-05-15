@@ -3,31 +3,26 @@ potluck.controller('RecLocChildCtrl',
   '$scope',
   '$state',
   '$stateParams',
-  '$cacheFactory',
-  'UtilitiesFactory',
   'IngredientsFactory',
-  function($scope, $state, $stateParams, $cacheFactory, UtilitiesFactory, IngredientsFactory){
-    var cache = $cacheFactory.get('potluck');
-
+  'CategoriesFactory',
+  'LocationsFactory',
+  function($scope, $state, $stateParams, IngredientsFactory, CategoriesFactory, LocationsFactory){
     $scope.ingredient = IngredientsFactory.find($stateParams.ingredientId);
 
     var created = new Date($scope.ingredient.created_at)
-    $scope.created_at = (created.getMonth() + 1) + "/" + created.getDate() + "/" + created.getFullYear();
+    $scope.created_at = (created.getMonth() + 1) + "/"
+    + created.getDate() + "/" + created.getFullYear();
 
-     $scope.category = UtilitiesFactory.findById(
-       cache.get('categories'),
-       $scope.ingredient.category_id);
+    $scope.category = CategoriesFactory.find($scope.ingredient.category_id);
 
     $scope.categoryFraction = function(){
-      var ings = UtilitiesFactory.findIngsByCat($scope.category);
+      var ings = IngredientsFactory.fromCategory($scope.category);
       return " 1 of " + (ings.length);
     };
 
-    $scope.locationNode = UtilitiesFactory.findById(
-      cache.get('locations'),
-      $stateParams.locationId);
+    $scope.currentLocation = LocationsFactory.find($stateParams.locationId);
 
-    $scope.breadcrumbs = UtilitiesFactory.locBreadcrumbs($scope.locationNode);
+    $scope.breadcrumbs = LocationsFactory.breadcrumbs($scope.currentLocation);
 
     $scope.patchIngLoc = function(ingredient, location){
       ingredient.location_id = location.id;

@@ -1,22 +1,14 @@
 potluck.controller('RecCatTopCtrl',
 [
   '$scope',
-  '$cacheFactory',
-  'UtilitiesFactory',
-  function($scope, $cacheFactory, UtilitiesFactory){
-
-    var cache = $cacheFactory.get('potluck');
-
-    $scope.currentNode = {
+  'IngredientsFactory',
+  'CategoriesFactory',
+  function($scope, IngredientsFactory, CategoriesFactory){
+    $scope.currentCategory = {
       name: 'Categories',
-      children: cache.get('categories')
+      children: CategoriesFactory.categories
     };
 
-    $scope.ingredients = cache.get('ingredients')
-
-    $scope.flatBranchIds = UtilitiesFactory.flatBranchIds;
-    $scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
-
-    $scope.pathBack = 'recieve';
+    $scope.ingredients = IngredientsFactory.ingredients;
 
 }]);

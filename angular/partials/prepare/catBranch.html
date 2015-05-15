@@ -21,43 +21,46 @@
 
   </div>
 
-  <div ng-repeat="item in ingredients">
-    <li ng-if="item.category_id == currentCategory.id"
-    class="item right col-xs-7">
-      <a ui-sref="prepIng({ingredientId: item.id})">
-        1X {{catIdToName(item.category_id) | uppercase }}
-      </a>
-      <small ng-if="item.location_id != null">
-        {{'  (' + locIdToName(item.location_id) + ')' | uppercase }}
-      </small>
-      <small ng-if="item.location_id == null">
-        (SOMEWEHRE)
-      </small>
-    </li>
-  </div>
+  <h3>
 
-  <div ng-repeat="item in currentCategory.children">
-
-      <li ng-if="ingredientsBelow(item) > 0"
-        class="right col-xs-7">
-        <a ui-sref="prepCatChild({categoryId: item.id})">
-          {{item.name | uppercase}}
+    <div ng-repeat="item in ingredients">
+      <li ng-if="item.category_id == currentCategory.id"
+      class="item right col-xs-7">
+        <a ui-sref="prepIng({ingredientId: item.id})">
+          1X {{catIdToName(item.category_id) | uppercase }}
         </a>
-        <span class="badge">
-          {{ingredientsBelow(item)}}
-        </span>
+        <small ng-if="item.location_id != null">
+          {{'  (' + locIdToName(item.location_id) + ')' | uppercase }}
+        </small>
+        <small ng-if="item.location_id == null">
+          (SOMEWEHRE)
+        </small>
       </li>
+    </div>
 
-      <li ng-if="ingredientsBelow(item) == 0"
-      class="right col-xs-7" >
-        <span style="color: hsla(0,0%,0%,0.35);">
-          {{item.name | uppercase}}
-        </span>
-        <span class="badge">
-          {{ingredientsBelow(item)}}
-        </span>
-      </li>
+    <div ng-repeat="item in currentCategory.children">
 
-  </div>
+        <li ng-if="ingredientsBelow(item) > 0"
+          class="right col-xs-7">
+          <a ui-sref="prepCatChild({categoryId: item.id})">
+            {{item.name | uppercase}}
+          </a>
+          <span class="badge">
+            {{ingredientsBelow(item)}}
+          </span>
+        </li>
 
+        <li ng-if="ingredientsBelow(item) == 0"
+        class="right col-xs-7" >
+          <span style="color: hsla(0,0%,0%,0.35);">
+            {{item.name | uppercase}}
+          </span>
+          <span class="badge">
+            {{ingredientsBelow(item)}}
+          </span>
+        </li>
+
+    </div>
+  </h3>
+  
 </div>

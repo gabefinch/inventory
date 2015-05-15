@@ -1,44 +1,39 @@
 <div class="row-fluid">
   <div class="col-xs-5">
     <a ui-sref="recieve">
-      <img src="/assets/css/img/store-icon.png" class="homeStore"> 
+      <img src="/assets/css/img/store-icon.png" class="homeStore">
     </a>
     <h1>
       <a ui-sref="recCatTop" class="breadcrumb"> CATEGORIES </a>
     </h1>
     <h1 ng-repeat="item in breadcrumbs">
-      <div ng-if="item==currentNode" class="currentNode">
-      </div>
-      <span class="glyphicon glyphicon-menu-down"></span></br>
-      <a ui-sref="recCatChild({categoryId: item.id})" class="breadcrumb"> {{item.name | uppercase}} </a>
+      <span class="glyphicon glyphicon-menu-down"></span>
+      </br>
+      <a ui-sref="recCatChild({categoryId: item.id})"
+      class="breadcrumb">
+        {{item.name | uppercase}}
+      </a>
     </h1>
   </div>
 
-  <div ng-repeat="item in currentNode.children">
-    <div ng-if="item.children.length != 0">
-      <div class="right col-xs-7">
-        <li>
-          <a ui-sref="recCatChild({categoryId: item.id})">
-            {{item.name | uppercase}}
-          </a>
-        </li>
-      </div>
-    </div>
+  <div class="right col-xs-7"
+  ng-repeat="item in currentCategory.children">
+    <a ng-if="item.children.length != 0"
+    ui-sref="recCatChild({categoryId: item.id})">
+      {{item.name | uppercase}}
+    </a>
+    <a ng-if="item.children.length == 0"
+    ui-sref="recSave({categoryId: item.id})"
+    style="color: #692324;">
+      {{item.name | uppercase}}
+    </a>
   </div>
 
-  <div ng-repeat="item in currentNode.children">
-    <div ng-if="item.children.length == 0">
-      <li class="right col-xs-7">
-        <a ui-sref="recSave({categoryId: item.id})">
-          {{item.name | uppercase}}
-        </a>
-      </li>
-    </div>
+  <div class="right col-xs-7" ng-if="currentCategory.id">
+      <a ui-sref="recSave({categoryId: currentCategory.id})"
+      style="color: #692324;">
+        MISC {{currentCategory.name | uppercase}}
+      </a>
   </div>
 
-  <li class="right col-xs-7" ng-if="currentNode.id">
-      <em><a ui-sref="recSave({categoryId: currentNode.id})">
-        MISCELLANEOUS {{currentNode.name | uppercase}}
-      </a></em>
-  </li>
 </div>

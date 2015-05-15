@@ -34,7 +34,7 @@
             }
 
           };
-          addParent(category);
+          addParent(location);
           return breadcrumbs.reverse();
         }
 

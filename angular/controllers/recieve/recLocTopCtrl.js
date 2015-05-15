@@ -2,28 +2,26 @@ potluck.controller('RecLocTopCtrl',
 [
   '$scope',
   '$stateParams',
-  '$cacheFactory',
-  'UtilitiesFactory',
   'IngredientsFactory',
-  function($scope, $stateParams, $cacheFactory, UtilitiesFactory, IngredientsFactory){
-    var cache = $cacheFactory.get('potluck');
-
+  'CategoriesFactory',
+  'LocationsFactory',
+  function($scope, $stateParams, IngredientsFactory, CategoriesFactory, LocationsFactory){
     $scope.ingredient = IngredientsFactory.find($stateParams.ingredientId);
 
     var created = new Date($scope.ingredient.created_at)
-    $scope.created_at = (created.getMonth() + 1) + "/" + created.getDate() + "/" + created.getFullYear();
+    $scope.created_at = (created.getMonth() + 1) + "/"
+    + created.getDate() + "/" + created.getFullYear();
 
-
-    $scope.category = UtilitiesFactory.findById(
-      cache.get('categories'),
-      $scope.ingredient.category_id);
+    $scope.category = CategoriesFactory.find($scope.ingredient.category_id);
 
     $scope.categoryFraction = function(){
-      var ings = UtilitiesFactory.findIngsByCat($scope.category);
+      var ings = IngredientsFactory.fromCategory($scope.category);
       return " 1 of " + (ings.length);
     };
 
-    $scope.locationNode = {
+    $scope.currentLocation = {
       name: "Locations",
-      children: cache.get('locations')};
+      children: LocationsFactory.locations
+    };
+
 }]);
