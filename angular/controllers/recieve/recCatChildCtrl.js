@@ -20,7 +20,7 @@ potluck.controller('RecCatChildCtrl',
 
     $scope.ingredients = cache.get('ingredients')
 
-    $scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
+    $scope.flatBranchIds = UtilitiesFactory.flatBranchIds;
 
     $scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
 }]);

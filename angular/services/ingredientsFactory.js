@@ -14,7 +14,9 @@
         var factory = {
             ingredients: ingredients,
             find: find,
-            allCat : allCat,
+            fromCategory : fromCategory,
+            belowCategory: belowCategory,
+            belowLocation: belowLocation,
             postIngredient: postIngredient,
             patchIngredient: patchIngredient,
             removeIngredient: removeIngredient,
@@ -35,7 +37,7 @@
           return null;
         }
 
-        function allCat(category) {
+        function fromCategory(location) {
           var ingMatches = [];
           var ingredients = cache.get('ingredients');
           for (var i = 0; i < ingredients.length; i++) {
@@ -44,6 +46,28 @@
             }
           }
           return ingMatches;
+        }
+
+        function belowCategory(category) {
+          var nodeIds = UtilitiesFactory.flatBranchIds(category);
+          var ingsBelow = [];
+          for (var i=0; i<=ingredients.length-1; i++) {
+            if (nodeIds.indexOf(ingredients[i].category_id) != -1) {
+              ingsBelow.push(ingredients[i]);
+            }
+          }
+          return ingsBelow
+        }
+
+        function belowLocation(location) {
+          var nodeIds = UtilitiesFactory.flatBranchIds(location);
+          var ingsBelow = [];
+          for (var i=0; i<=ingredients.length-1; i++) {
+            if (nodeIds.indexOf(ingredients[i].location_id) != -1) {
+              ingsBelow.push(ingredients[i]);
+            }
+          }
+          return ingsBelow
         }
 
         function postIngredient(category_id, location_id){

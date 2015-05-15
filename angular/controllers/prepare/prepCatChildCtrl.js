@@ -1,37 +1,27 @@
 potluck.controller('PrepCatChildCtrl',
 [
   '$scope',
-  '$cacheFactory',
   '$stateParams',
-  'UtilitiesFactory',
-  function($scope, $cacheFactory, $stateParams, UtilitiesFactory){
+  'IngredientsFactory',
+  'CategoriesFactory',
+  'LocationsFactory',
+  function($scope, $stateParams, IngredientsFactory, CategoriesFactory, LocationsFactory){
+    $scope.currentCategory = CategoriesFactory.find($stateParams.categoryId);
 
-    var cache = $cacheFactory.get('potluck');
+    $scope.breadcrumbs = CategoriesFactory.breadcrumbs($scope.currentCategory);
 
-    $scope.currentNode = UtilitiesFactory.findById(cache.get('categories'), $stateParams.categoryId);
-    $scope.breadcrumbs = UtilitiesFactory.breadcrumbs($scope.currentNode);
+    $scope.ingredients = IngredientsFactory.ingredients;
 
-
-    if ($scope.currentNode.parent_id == null){
-      $scope.pathBack = 'prepCatTop';
-    } else {
-      $scope.pathBack = 'prepCatChild({categoryId: ' + $scope.currentNode.parent_id + '})';
-    }
-
-    $scope.ingredients = cache.get('ingredients');
-
-    $scope.ingDescCount = function(category) {
-      return UtilitiesFactory.categoryCountFromIds(
-        cache.get('ingredients'),
-        UtilitiesFactory.selfAndDescendantsIds(category));
+    $scope.ingredientsBelow = function(category) {
+      return IngredientsFactory.belowCategory(category).length;
     }
 
     $scope.catIdToName = function(category_id){
-      return UtilitiesFactory.findById(cache.get('categories'),category_id).name;
+      return CategoriesFactory.find(category_id).name;
     };
 
     $scope.locIdToName = function(location_id){
-      return UtilitiesFactory.findById(cache.get('locations'),location_id).name;
+      return LocationsFactory.find(location_id).name;
     };
 
 }]);

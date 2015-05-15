@@ -14,7 +14,7 @@ potluck.controller('RecCatTopCtrl',
 
     $scope.ingredients = cache.get('ingredients')
 
-    $scope.selfAndDescendantsIds = UtilitiesFactory.selfAndDescendantsIds;
+    $scope.flatBranchIds = UtilitiesFactory.flatBranchIds;
     $scope.countFromIds = UtilitiesFactory.categoryCountFromIds;
 
     $scope.pathBack = 'recieve';

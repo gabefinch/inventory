@@ -1,5 +1,6 @@
 <div class="row-fluid">
   <div class="col-xs-5">
+
     <a ui-sref="recieve">
       <img src="/assets/css/img/store-icon.png" class="homeStore">
     </a>
@@ -11,10 +12,17 @@
         </p>
       </a>
     </h1>
+
   </div>
-  <ul ng-repeat="item in ingredients" class="unstoredItems col-xs-7">
-    <li ng-if="item.location_id == null">
-        <a ui-sref="recLocTop({ ingredientId: item.id })">{{findCategory(item.category_id).name | uppercase}}</a>
+
+  <ul ng-repeat="item in ingredients" class=" unstoredItems col-xs-7">
+    <li ng-if="item.location_id == null"
+      <a ui-sref="recLocTop({ ingredientId: item.id })">
+        1X {{findCategory(item.category_id).name | uppercase}}
+      </a>
+      <small ng-if="item.location_id == null">
+        (SOMEWHERE)
+      </small>
     </li>
   </ul>
 </div>

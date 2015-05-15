@@ -1,57 +1,63 @@
 <div class="row-fluid">
   <div class="col-xs-5">
-      <a ui-sref="prep">
-        <img src="/assets/css/img/shelf-icon.png" class="homeShelf">
-      </a>
+
+    <a ui-sref="prep">
+      <img src="/assets/css/img/shelf-icon.png" class="homeShelf">
+    </a>
+
     <h3>
-      <a ui-sref="recCatTop" class="breadcrumb"> CATEGORIES </a>
+      <a ui-sref="prepCatTop" class="breadcrumb">
+        CATEGORIES
+      </a>
     </h3>
     <h3 ng-repeat="item in breadcrumbs">
-      <div ng-if="item==currentNode">
-      </div>
-      <span class="glyphicon glyphicon-menu-down"></span></br>
-      <a ui-sref="prepCatChild({categoryId: item.id})" class="breadcrumb"> {{item.name | uppercase}} </a>
+      <span class="glyphicon glyphicon-menu-down"></span>
+      </br>
+      <a ui-sref="prepCatChild({categoryId: item.id})"
+      class="breadcrumb">
+        {{item.name | uppercase}}
+      </a>
     </h3>
-  </div>
 
-
-  <div ng-repeat="item in currentNode.children">
-    <div ng-if="item.children.length != 0 && ingDescCount(item) > 0">
-      <li class="right col-xs-7">
-          <a ui-sref="prepCatChild({categoryId: item.id})">
-            {{item.name | uppercase}}
-          </a>
-          <span class="badge">
-            {{ingDescCount(item) | uppercase}}
-          </span>
-        </li>
-    </div>
-  </div>
-
-  <div ng-repeat="item in currentNode.children">
-    <div ng-if="item.children.length == 0 && ingDescCount(item) > 0">
-      <li class="right col-xs-7">
-          <a ui-sref="prepCatChild({categoryId: item.id})">
-            {{item.name | uppercase}}
-          </a>
-          <span class="badge">
-            {{ingDescCount(item) | uppercase}}
-          </span>
-      </li>
-    </div>
   </div>
 
   <div ng-repeat="item in ingredients">
-    <li ng-if="item.category_id == currentNode.id" class="item right col-xs-7">
+    <li ng-if="item.category_id == currentCategory.id"
+    class="item right col-xs-7">
       <a ui-sref="prepIng({ingredientId: item.id})">
-        Item: {{catIdToName(item.category_id) | uppercase }}
+        1X {{catIdToName(item.category_id) | uppercase }}
       </a>
       <small ng-if="item.location_id != null">
         {{'  (' + locIdToName(item.location_id) + ')' | uppercase }}
       </small>
       <small ng-if="item.location_id == null">
-        (somewhere)
+        (SOMEWEHRE)
       </small>
     </li>
   </div>
-</ul>
+
+  <div ng-repeat="item in currentCategory.children">
+
+      <li ng-if="ingredientsBelow(item) > 0"
+        class="right col-xs-7">
+        <a ui-sref="prepCatChild({categoryId: item.id})">
+          {{item.name | uppercase}}
+        </a>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+
+      <li ng-if="ingredientsBelow(item) == 0"
+      class="right col-xs-7" >
+        <span style="color: hsla(0,0%,0%,0.35);">
+          {{item.name | uppercase}}
+        </span>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+
+  </div>
+
+</div>

@@ -12,7 +12,7 @@
         var service = {
           findById: findById,
           findIngsByCat: findIngsByCat,
-          selfAndDescendantsIds: selfAndDescendantsIds,
+          flatBranchIds: flatBranchIds,
           categoryCountFromIds: categoryCountFromIds,
           locationCountFromIds: locationCountFromIds,
           breadcrumbs: breadcrumbs,
@@ -32,7 +32,7 @@
             }
           }
         }
-        // deprecated try to point to IngredientsFactory.allCat and eventually remove
+        // deprecated try to point to IngredientsFactory.fromCategory and eventually remove
         function findIngsByCat(category) {
           var ingMatches = [];
           var ingredients = cache.get('ingredients');
@@ -44,7 +44,7 @@
           return ingMatches;
         }
 
-        function selfAndDescendantsIds(startingNode) {
+        function flatBranchIds(node) {
           var nodeIds =  [];
           var pushId = function(node) {
             nodeIds.push(node.id);
@@ -54,7 +54,7 @@
               }
             }
           };
-          pushId(startingNode);
+          pushId(node);
           return nodeIds;
         }
 

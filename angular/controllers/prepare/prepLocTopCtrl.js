@@ -1,33 +1,27 @@
 potluck.controller('PrepLocTopCtrl',
 [
   '$scope',
-  '$cacheFactory',
-  'UtilitiesFactory',
-  function($scope, $cacheFactory, UtilitiesFactory){
-
-    var cache = $cacheFactory.get('potluck');
-
-    $scope.pathBack= 'prep';
-
-    $scope.currentNode = {
+  'IngredientsFactory',
+  'CategoriesFactory',
+  'LocationsFactory',
+  function($scope, IngredientsFactory, CategoriesFactory, LocationsFactory){
+    $scope.currentLocation = {
       name: 'Locations',
-      children: cache.get('locations')
+      children: LocationsFactory.locations
     };
 
-    $scope.ingDescCount = function(location) {
-      return UtilitiesFactory.locationCountFromIds(
-        cache.get('ingredients'),
-        UtilitiesFactory.selfAndDescendantsIds(location));
+    $scope.ingredientsBelow = function(location) {
+      return IngredientsFactory.belowLocation(location).length;
     }
 
     $scope.catIdToName = function(id){
-      return UtilitiesFactory.findById(cache.get('categories'),id).name;
+      return CategoriesFactory.find(id).name;
     };
 
     $scope.locIdToName = function(id){
-      return UtilitiesFactory.findById(cache.get('locations'),id).name;
+      return LocationsFactory.find(id).name;
     };
 
-    $scope.ingredients = cache.get('ingredients');
+    $scope.ingredients = IngredientsFactory.ingredients;
 
 }]);
