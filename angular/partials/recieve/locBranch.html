@@ -26,6 +26,7 @@
     </h1>
 
   </div>
+
   <ul class="col-xs-7 right">
 
     <li ng-repeat="location in currentLocation.children"
@@ -36,7 +37,9 @@
 
     <li ng-repeat="location in currentLocation.children"
     ng-if="location.children.length == 0"
-    ui-sref="completeIng({ ingredientId: ingredient.id, locationId: location.id})"
+    ui-sref="recSummary({
+      ingredient: ingredientComposite(ingredient, location)
+      })"
     style="color: #692324;">
       {{location.name | uppercase}}
     </li>

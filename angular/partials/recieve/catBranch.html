@@ -23,14 +23,14 @@
       {{item.name | uppercase}}
     </a>
     <a ng-if="item.children.length == 0"
-    ui-sref="recSave({categoryId: item.id})"
+    ui-sref="recSummary({ingredient: {category_id: item.id}})"
     style="color: #692324;">
       {{item.name | uppercase}}
     </a>
   </div>
 
   <div class="right col-xs-7" ng-if="currentCategory.id">
-      <a ui-sref="recSave({categoryId: currentCategory.id})"
+      <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
       style="color: #692324;">
         MISC {{currentCategory.name | uppercase}}
       </a>

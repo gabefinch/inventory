@@ -39,6 +39,17 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/recieve.html",
     controller: 'RecieveCtrl'
   })
+  .state('unstoredItems', {
+    url: "/unstored",
+    templateUrl: "partials/recieve/queue.html",
+    controller: "RecQueueCtrl"
+  })
+  .state('recSummary', {
+    url:"/recieve/summary",
+    params: {ingredient: null},
+    templateUrl: "partials/recieve/summary.html",
+    controller: "RecSummaryCtrl"
+  })
   .state('recCatTop', {
     url: "/categories",
     templateUrl: "partials/recieve/catBranch.html",
@@ -48,16 +59,6 @@ potluck.config(function($stateProvider) {
     url: "/categories/:categoryId",
     templateUrl: "partials/recieve/catBranch.html",
     controller: 'RecCatChildCtrl'
-  })
-  .state('recSave', {
-    url: "/categories/:categoryId/save",
-    templateUrl: "partials/recieve/save.html",
-    controller: "RecSaveCtrl"
-  })
-  .state('unstoredItems', {
-    url: "/unstored",
-    templateUrl: "partials/recieve/unstoredItems.html",
-    controller: "RecQueueCtrl"
   })
   .state('recLocTop', {
     url: "/ingredient/:ingredientId/locations",
@@ -69,12 +70,10 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/locBranch.html",
     controller: "RecLocChildCtrl"
   })
-  .state('completeIng', {
-    url:"/ingredients/:ingredientId/locations/:locationId/save",
-    templateUrl: "partials/recieve/complete.html",
-    controller: "RecCompleteCtrl"
-  })
-  
+
+
+
+
   .state('prep', {
     url: "/prepare",
     templateUrl: "partials/prepare/prepare.html",

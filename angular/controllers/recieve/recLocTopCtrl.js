@@ -24,4 +24,9 @@ potluck.controller('RecLocTopCtrl',
       children: LocationsFactory.locations
     };
 
+    $scope.ingredientComposite = function(ingredient, location) {
+      ingredient.location_id = location.id;
+      return ingredient;
+    };
+
 }]);

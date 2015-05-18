@@ -15,8 +15,9 @@
 
   </div>
 
-  <ul ng-repeat="item in ingredients" class=" unstoredItems col-xs-7">
-    <li ng-if="item.location_id == null"
+  <ul class=" unstoredItems col-xs-7">
+    <li ng-repeat="item in ingredients"
+    ng-if="item.location_id == null">
       <a ui-sref="recLocTop({ ingredientId: item.id })">
         1X {{findCategory(item.category_id).name | uppercase}}
       </a>

@@ -37,7 +37,7 @@
           return null;
         }
 
-        function fromCategory(location) {
+        function fromCategory(category) {
           var ingMatches = [];
           var ingredients = cache.get('ingredients');
           for (var i = 0; i < ingredients.length; i++) {
@@ -70,10 +70,9 @@
           return ingsBelow
         }
 
-        function postIngredient(category_id, location_id){
-          // make arg for this an ingredient object
+        function postIngredient(ingredient){
           var defer = $q.defer();
-          $http.post('http://localhost:3000/api/ingredients', {"category_id": category_id, "location_id": location_id})
+          $http.post('http://localhost:3000/api/ingredients', ingredient)
             .success(function(data) {
               ingredients.push(data);
               // is cache.put necessary?
@@ -93,6 +92,7 @@
               var foundIng = find(ingredient.id);
               foundIng.location_id = ingredient.location_id;
               foundIng.category_id = ingredient.category_id;
+              // unecessary?
               cache.put('ingredients', ingredients);
             })
             .error(function(status) {

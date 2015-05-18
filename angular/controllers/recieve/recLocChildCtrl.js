@@ -24,10 +24,9 @@ potluck.controller('RecLocChildCtrl',
 
     $scope.breadcrumbs = LocationsFactory.breadcrumbs($scope.currentLocation);
 
-    $scope.patchIngLoc = function(ingredient, location){
+    $scope.ingredientComposite = function(ingredient, location) {
       ingredient.location_id = location.id;
-      IngredientsFactory.patchIngredient(ingredient);
-      $state.go('recieve');
+      return ingredient;
     };
 
 }]);

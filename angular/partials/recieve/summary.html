@@ -1,0 +1,26 @@
+<div class="labelPage">
+  <h2 class="itemToSave">
+    1X {{category.name | uppercase}}
+     - {{categoryFraction()}}
+  </h2>
+  <h2 class="date">
+    {{recievedMessage()}}
+    <span class="expire">
+      {{expireMessage()}}
+    </span>
+  </h2>
+  <h2 class="unassignedLocation">
+    {{locationMessage}}
+  </h2>
+</div>
+
+<div class="row-fluid options" >
+  <div class="col-xs-6" ng-if="!hasLocation">
+      <img src="/assets/css/img/shelf-icon.png"
+      ng-click="store()">
+  </div>
+  <div class="col-xs-6">
+      <img src="/assets/css/img/complete-icon.png"
+      ng-click="save()">
+  </div>
+</div>
