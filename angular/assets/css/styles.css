@@ -24,7 +24,7 @@ body {
 }
 
 .inner {
-  padding-top: 220px;
+  padding-top: 260px;
 }
 
 #logo {
@@ -45,6 +45,10 @@ body {
 
 a:link, a:hover, a:visited, a:active {
   color: black;
+}
+
+.listItem {
+  font-size: 2.5em;
 }
 
 .homeShelf, .homeStore {
@@ -91,18 +95,22 @@ li {
   font-size: 2.5em;
 }
 
-.inactive {
-  /*hsla(0, 0%, 0%, 0.56);*/
-}
-
 .right {
   margin-top: 2%;
   float: right;
   text-align: left;
+
 }
 
 .item {
   border: 3px solid;
+}
+
+li .blankItem {
+  margin: 0!important;
+  margin-bottom: none!important;
+  padding: 0!important;
+  border-bottom: none!important;
 }
 
 
@@ -153,6 +161,7 @@ li {
   }
 
 
+
   /*Prep Basket Page*/
 
 .removeItem {
@@ -161,10 +170,6 @@ li {
 
 
 /*UnstoredItems pag*/
-.unstoredItems {
-  float: right;
-  text-align: left;
-}
 
 #unstoredBadge {
   margin-left: 40%;
