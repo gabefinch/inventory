@@ -71,9 +71,6 @@ potluck.config(function($stateProvider) {
     controller: "RecLocChildCtrl"
   })
 
-
-
-
   .state('prep', {
     url: "/prepare",
     templateUrl: "partials/prepare/prepare.html",

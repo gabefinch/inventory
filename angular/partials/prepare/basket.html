@@ -8,13 +8,13 @@
     </h3>
   </div>
 
-  <div class="right col-xs-8" ng-if="basket.length != 0">
+  <div class="right col-xs-7" ng-if="basket.length != 0">
     <ul>
       <li ng-repeat="item in basket">
         <a ui-sref="prepIng({ingredientId: item.id})">
           {{categoryName(item)}}
         </a>
-        <small ng-click="basketRemove(item)" class="removeItem"> remove</small>
+        <small ng-click="basketRemove(item)" class="removeItem">remove</small>
       </li>
     </ul>
 

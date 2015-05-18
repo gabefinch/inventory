@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="col-xs-5">
     <a ui-sref="prep">
-      <img src="/assets/css/img/shelf-icon.png" class="homeShelf">>
+      <img src="/assets/css/img/shelf-icon.png" >
     </a>
     <h3>
       <a ui-sref="recLocTop"> LOCATIONS </a>
@@ -13,42 +13,42 @@
     </h3>
   </div>
 
-  <div ng-repeat="item in ingredients">
-    <li ng-if="item.location_id != null
-    && item.location_id == currentLocation.id" class="item">
-      <a ui-sref="prepIng({ingredientId: item.id})">
-        1X {{catIdToName(item.category_id) | uppercase }}
-      </a>
-      <small ng-if="item.location_id != null">
-        {{'  (' + locIdToName(item.location_id) + ')' | uppercase}}
-      </small>
-      <small ng-if="item.location_id == null">
-        (SOMEWHERE)
-      </small>
-    </li>
+  <div class="col-xs-7 right">
+    
+    <div ng-repeat="item in ingredients">
+      <li ng-if="item.location_id != null
+      && item.location_id == currentLocation.id" class="item">
+        <a ui-sref="prepIng({ingredientId: item.id})">
+          1X {{catIdToName(item.category_id) | uppercase }}
+        </a>
+        <small ng-if="item.location_id != null">
+          {{'  (' + locIdToName(item.location_id) + ')' | uppercase}}
+        </small>
+        <small ng-if="item.location_id == null">
+          (SOMEWHERE)
+        </small>
+      </li>
+    </div>
+
+    <div ng-repeat="item in currentLocation.children">
+
+      <li ng-if="ingredientsBelow(item) > 0">
+        <a ui-sref="prepLocChild({locationId: item.id})">
+          {{item.name | uppercase }}
+        </a>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+
+      <li ng-if="ingredientsBelow(item) == 0">
+        <span style="color: hsla(0,0%,0%,0.35);">
+          {{item.name | uppercase}}
+        </span>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+    </div>
   </div>
-
-  <div ng-repeat="item in currentLocation.children">
-
-    <li ng-if="ingredientsBelow(item) > 0"
-    class="right col-xs-7">
-      <a ui-sref="prepLocChild({locationId: item.id})">
-        {{item.name | uppercase }}
-      </a>
-      <span class="badge">
-        {{ingredientsBelow(item)}}
-      </span>
-    </li>
-
-    <li ng-if="ingredientsBelow(item) == 0"
-    class="right col-xs-7">
-      <span style="color: hsla(0,0%,0%,0.35);">
-        {{item.name | uppercase}}
-      </span>
-      <span class="badge">
-        {{ingredientsBelow(item)}}
-      </span>
-    </li>
-  </div>
-
 </div>

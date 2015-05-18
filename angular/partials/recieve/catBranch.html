@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="col-xs-5">
     <a ui-sref="recieve">
-      <img src="/assets/css/img/store-icon.png" class="homeStore">
+      <img src="/assets/css/img/store-icon.png">
     </a>
     <h1>
       <a ui-sref="recCatTop" class="breadcrumb"> CATEGORIES </a>
@@ -19,21 +19,24 @@
   <div class="right col-xs-7"
   ng-repeat="item in currentCategory.children">
     <a ng-if="item.children.length != 0"
-    ui-sref="recCatChild({categoryId: item.id})">
+    ui-sref="recCatChild({categoryId: item.id})"
+    class="listItem">
       {{item.name | uppercase}}
     </a>
     <a ng-if="item.children.length == 0"
     ui-sref="recSummary({ingredient: {category_id: item.id}})"
-    style="color: #692324;">
+    style="color: #692324;"
+    class="listItem">
       {{item.name | uppercase}}
     </a>
   </div>
 
   <div class="right col-xs-7" ng-if="currentCategory.id">
-      <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
-      style="color: #692324;">
-        MISC {{currentCategory.name | uppercase}}
-      </a>
+    <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
+    style="color: #692324;"
+    class="listItem">
+      MISC {{currentCategory.name | uppercase}}
+    </a>
   </div>
 
 </div>

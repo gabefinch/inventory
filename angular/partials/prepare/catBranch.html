@@ -1,10 +1,8 @@
 <div class="row-fluid">
   <div class="col-xs-5">
-
     <a ui-sref="prep">
-      <img src="/assets/css/img/shelf-icon.png" class="homeShelf">
+      <img src="/assets/css/img/shelf-icon.png" >
     </a>
-
     <h3>
       <a ui-sref="prepCatTop" class="breadcrumb">
         CATEGORIES
@@ -18,14 +16,12 @@
         {{item.name | uppercase}}
       </a>
     </h3>
-
   </div>
 
-  <h3>
-
+  <div class="col-xs-7 right">
     <div ng-repeat="item in ingredients">
       <li ng-if="item.category_id == currentCategory.id"
-      class="item right col-xs-7">
+      class="item">
         <a ui-sref="prepIng({ingredientId: item.id})">
           1X {{catIdToName(item.category_id) | uppercase }}
         </a>
@@ -39,28 +35,23 @@
     </div>
 
     <div ng-repeat="item in currentCategory.children">
+      <li ng-if="ingredientsBelow(item) > 0">
+        <a ui-sref="prepCatChild({categoryId: item.id})">
+          {{item.name | uppercase}}
+        </a>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
 
-        <li ng-if="ingredientsBelow(item) > 0"
-          class="right col-xs-7">
-          <a ui-sref="prepCatChild({categoryId: item.id})">
-            {{item.name | uppercase}}
-          </a>
-          <span class="badge">
-            {{ingredientsBelow(item)}}
-          </span>
-        </li>
-
-        <li ng-if="ingredientsBelow(item) == 0"
-        class="right col-xs-7" >
-          <span style="color: hsla(0,0%,0%,0.35);">
-            {{item.name | uppercase}}
-          </span>
-          <span class="badge">
-            {{ingredientsBelow(item)}}
-          </span>
-        </li>
-
+      <li ng-if="ingredientsBelow(item) == 0">
+        <span style="color: hsla(0,0%,0%,0.35);">
+          {{item.name | uppercase}}
+        </span>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
     </div>
-  </h3>
-  
+  </div>
 </div>

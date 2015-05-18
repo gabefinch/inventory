@@ -23,8 +23,12 @@ body {
   z-index:5;
 }
 
+.container-fluid {
+  margin-bottom: 10%;
+}
+
 .inner {
-  padding-top: 220px;
+  padding-top: 260px;
 }
 
 #logo {
@@ -45,6 +49,10 @@ body {
 
 a:link, a:hover, a:visited, a:active {
   color: black;
+}
+
+.listItem {
+  font-size: 2.5em;
 }
 
 .homeShelf, .homeStore {
@@ -74,10 +82,6 @@ a:link, a:hover, a:visited, a:active {
   background: inherit;
 }
 
-.currentNode {
-  color: red;
-}
-
 .glyphicon-menu-down {
   margin-bottom: 5%;
 }
@@ -91,18 +95,22 @@ li {
   font-size: 2.5em;
 }
 
-.inactive {
-  /*hsla(0, 0%, 0%, 0.56);*/
-}
-
 .right {
   margin-top: 2%;
   float: right;
   text-align: left;
+
 }
 
 .item {
   border: 3px solid;
+}
+
+.blankItem {
+  margin: -2%!important;
+  margin-bottom: none!important;
+  padding: -2%!important;
+  border-bottom: none!important;
 }
 
 
@@ -135,7 +143,7 @@ li {
 }
 
 .unassignedLocation {
-  margin: 20%;
+  margin: 20% 20% 5% 20%;
   padding-bottom: 10%;
 }
 
@@ -153,6 +161,7 @@ li {
   }
 
 
+
   /*Prep Basket Page*/
 
 .removeItem {
@@ -161,10 +170,6 @@ li {
 
 
 /*UnstoredItems pag*/
-.unstoredItems {
-  float: right;
-  text-align: left;
-}
 
 #unstoredBadge {
   margin-left: 40%;
