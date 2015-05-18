@@ -23,6 +23,10 @@ body {
   z-index:5;
 }
 
+.container-fluid {
+  margin-bottom: 10%;
+}
+
 .inner {
   padding-top: 260px;
 }
@@ -78,10 +82,6 @@ a:link, a:hover, a:visited, a:active {
   background: inherit;
 }
 
-.currentNode {
-  color: red;
-}
-
 .glyphicon-menu-down {
   margin-bottom: 5%;
 }
@@ -106,10 +106,10 @@ li {
   border: 3px solid;
 }
 
-li .blankItem {
-  margin: 0!important;
+.blankItem {
+  margin: -2%!important;
   margin-bottom: none!important;
-  padding: 0!important;
+  padding: -2%!important;
   border-bottom: none!important;
 }
 
@@ -143,7 +143,7 @@ li .blankItem {
 }
 
 .unassignedLocation {
-  margin: 20%;
+  margin: 20% 20% 5% 20%;
   padding-bottom: 10%;
 }
 

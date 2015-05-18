@@ -25,7 +25,7 @@
 
     <div ng-repeat="item in ingredients">
       <li ng-if="item.category_id == currentCategory.id"
-      class="item right col-xs-7">
+      class="right col-xs-7 item">
         <a ui-sref="prepIng({ingredientId: item.id})">
           1X {{catIdToName(item.category_id) | uppercase }}
         </a>
