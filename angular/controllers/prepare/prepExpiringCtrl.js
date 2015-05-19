@@ -5,21 +5,14 @@
     .module('potluck')
     .controller('PrepExpiringCtrl', PrepExpiringCtrl);
 
-  PrepExpiringCtrl.$inject = ['$scope', '$cacheFactory', 'UtilitiesFactory'];
+  PrepExpiringCtrl.$inject = ['$scope', 'IngredientsFactory', 'CategoriesFactory'];
 
-  function PrepExpiringCtrl($scope,$cacheFactory, UtilitiesFactory){
-    var cache = $cacheFactory.get('potluck');
-    $scope.ingredients = cache.get('ingredients');
+  function PrepExpiringCtrl($scope, IngredientsFactory, CategoriesFactory){
+    $scope.ingredients = IngredientsFactory.ingredients;
 
-    var expiringFirst= function(ingredients){
-      
-    };
-
-    $scope.catIdToCat = function(category_id){
-        return UtilitiesFactory.findById(cache.get('categories'),category_id);
+    $scope.name = function(category_id){
+        return CategoriesFactory.find(category_id).name;
       };
   }
-
-
 
 })();
