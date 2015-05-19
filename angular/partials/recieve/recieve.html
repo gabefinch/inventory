@@ -5,16 +5,21 @@
   <ul class="right col-xs-7">
     <li>
       <a ui-sref="recCatTop">
-        INPUT NEW ITEM
+        NEW ITEM
       </a>
     </li>
-    <li>
-      <a ui-sref="unstoredItems">
-        UNSTORED ITEMS
+    <li ng-if="queueCount() != 0">
+      <a ui-sref="recQueue">
+        UNSHELVED ITEMS
       </a>
       <p class="badge">
         {{queueCount()}}
       </p>
+    </li>
+    <li ng-if="queueCount() == 0"
+    class="disabled"
+    style="color: hsla(0,0%,0%,0.5)">
+      UNSHELVED ITEMS
     </li>
   </ul>
 </div>

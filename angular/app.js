@@ -39,7 +39,7 @@ potluck.config(function($stateProvider) {
     templateUrl: "partials/recieve/recieve.html",
     controller: 'RecieveCtrl'
   })
-  .state('unstoredItems', {
+  .state('recQueue', {
     url: "/unstored",
     templateUrl: "partials/recieve/queue.html",
     controller: "RecQueueCtrl"
