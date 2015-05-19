@@ -1,16 +1,16 @@
 <div class="labelPage">
   <h2 class="itemToSave">
-    {{categoryName(ingredient) + ": "}}
-    <span>{{categoryFraction(ingredient)}}</span>
+    {{name + ": "}}
+    <span>{{categoryFraction()}}</span>
   </h2>
   <h2 class="date">
-    {{recievedMessage(ingredient)}}
+    {{recievedMessage()}}
   <span class="expire">
-    {{expireMessage(ingredient)}}
+    {{expireMessage()}}
   </span>
   </h2>
   <h2 class="unassignedLocation">
-    {{locationMessage(ingredient)}}
+    {{locationMessage()}}
   </h2>
 </div>
 
@@ -24,17 +24,22 @@
 </div> -->
 
 
-<button class="btn btn-warning btn-lg btn-block" ng-if="ingredient.basketed != true" ng-click="toBasket(ingredient)">
+<button class="btn btn-warning btn-lg btn-block"
+  ng-if="!basketed"
+  ng-click="toBasket()">
   <span class="glyphicon glyphicon-shopping-cart"></span>
   Add To Basket
 </button>
 
-<button class="btn btn-danger btn-lg btn-block" ng-if="ingredient.basketed == true" ng-click="fromBasket(ingredient)">
+<button class="btn btn-danger btn-lg btn-block"
+  ng-if="basketed"
+  ng-click="fromBasket()">
   <span class="glyphicon glyphicon-shopping-cart"></span>
   Remove From Basket
 </button>
 
-<button class="btn btn-danger btn-lg btn-block" ng-click="use(ingredient)">
+<button class="btn btn-danger btn-lg btn-block"
+  ng-click="use()">
   <span class="glyphicon glyphicon-remove-circle"></span>
   Mark As Used
 </button>
