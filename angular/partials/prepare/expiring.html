@@ -8,7 +8,7 @@
   </div>
 
 
-  <div ng-repeat="item in ingredients">
+  <div ng-repeat="item in ingredients | orderBy: 'days_remaining'">
     <li class="right col-xs-7 item">
       <a ui-sref="prepIng({ingredientId: item.id})">
         {{catIdToCat(catIdToCat(item.category_id).parent_id).name | uppercase}}-{{catIdToCat(item.category_id).name | uppercase}}
