@@ -51,5 +51,4 @@ potluck.controller('PrepIngCtrl',[
     } else {
       $scope.basketed = false;
     }
-    debugger;
 }]);
