@@ -1,12 +1,10 @@
 potluck.controller('RecieveCtrl',
 [
   '$scope',
-  '$cacheFactory',
-  function($scope, $cacheFactory){
+  'IngredientsFactory',
+  function($scope, IngredientsFactory){
 
-    var cache = $cacheFactory.get('potluck');
-
-    var ingredients = cache.get('ingredients');
+    var ingredients = IngredientsFactory.ingredients;
 
     $scope.queueCount = function() {
       var count = 0;

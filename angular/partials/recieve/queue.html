@@ -5,7 +5,7 @@
       <img src="/assets/css/img/store-icon.png">
     </a>
     <h1>
-      <a ui-sref="{{pathBack}}" class="breadcrumb">
+      <a ui-sref="recieve" class="breadcrumb">
         UNSTORED ITEMS
         <p class="badge" id="unstoredBadge">
           {{queueCount()}}
@@ -18,7 +18,7 @@
   <ul class="right col-xs-7">
     <li ng-repeat="item in ingredients" class="item" ng-if="item.location_id == null">
       <a ui-sref="recSummary({ ingredient: item })">
-        1X {{findCategory(item.category_id).name | uppercase}}
+        1X {{name(item) | uppercase}}
       </a>
       <small ng-if="item.location_id == null">
         (SOMEWHERE)

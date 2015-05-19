@@ -1,33 +1,11 @@
 potluck.controller('RecQueueCtrl',
 [
   '$scope',
-  '$cacheFactory',
-  '$stateParams',
-  '$state',
-  'UtilitiesFactory',
   'IngredientsFactory',
-  function($scope, $cacheFactory, $stateParams, $state, UtilitiesFactory, IngredientsFactory){
+  'CategoriesFactory',
+  function($scope, IngredientsFactory, CategoriesFactory){
 
-    var cache = $cacheFactory.get('potluck');
-
-    $scope.categoryNode = UtilitiesFactory.findById(
-      cache.get('categories'),
-      $stateParams.categoryId);
-
-    $scope.storeNow = function(category_id){
-      IngredientsFactory.postIngredient(category_id)
-        .then(function(ingredient){
-          $state.go(
-            'recLocTop',
-            { ingredientId: ingredient.id }
-          );
-      });
-    };
-
-    $scope.storeLater = function(category_id){
-      IngredientsFactory.postIngredient(category_id);
-      $state.go('recCatTop');
-    }
+    $scope.ingredients = IngredientsFactory.ingredients;
 
     $scope.queueCount = function() {
       var count = 0;
@@ -37,13 +15,8 @@ potluck.controller('RecQueueCtrl',
       return count;
     };
 
-    $scope.pathBack= 'recieve';
-
-    $scope.ingredients = cache.get('ingredients');
-    $scope.ingredientNode = IngredientsFactory.find($stateParams.ingredientId);
-
-    $scope.findCategory = function(category_id){
-      return UtilitiesFactory.findById((cache.get('categories')), category_id);
+    $scope.name = function(ingredient){
+      return CategoriesFactory.find(ingredient.category_id).name;
     };
 
 }]);
