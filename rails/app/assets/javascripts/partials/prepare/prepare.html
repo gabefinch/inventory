@@ -1,0 +1,33 @@
+<div class="row-fluid">
+  <div class="breadcrumbs col-xs-5">
+    <img src="/assets/shelf-icon.png" >
+  </div>
+  <ul class="right col-xs-7">
+
+    <li>
+      <a ui-sref="prepExpiring">USE FIRST</a>
+    </li>
+
+    <li ng-if="basketSize != 0">
+      <a ui-sref="prepBasket">
+        BASKET
+      </a>
+      <span class="badge">
+        {{basketSize}}
+      </span>
+    </li>
+    <li ng-if="basketSize == 0"
+    class="disabled"
+    style="color: hsla(0,0%,0%,0.5);">
+      BASKET
+    </li>
+
+    <li>
+      <a ui-sref="prepCatTop">SEARCH CATEGORIES</a>
+    </li>
+
+    <li>
+      <a ui-sref="prepLocTop">SEARCH LOCATIONS</a>
+    </li>
+
+</ul>

@@ -1,0 +1,28 @@
+<div class="row-fluid">
+  <div class="col-xs-5">
+
+    <a ui-sref="recieve">
+      <img src="/assets/store-icon.png">
+    </a>
+    <h1>
+      <a ui-sref="recieve" class="breadcrumb">
+        UNSTORED ITEMS
+        <p class="badge" id="unstoredBadge">
+          {{queueCount()}}
+        </p>
+      </a>
+    </h1>
+
+  </div>
+
+  <ul class="right col-xs-7">
+    <li ng-repeat="item in ingredients" class="item" ng-if="item.location_id == null">
+      <a ui-sref="recSummary({ ingredient: item })">
+        1X {{name(item) | uppercase}}
+      </a>
+      <small ng-if="item.location_id == null">
+        (SOMEWHERE)
+      </small>
+    </li>
+  </ul>
+</div>

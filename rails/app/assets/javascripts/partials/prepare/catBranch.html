@@ -1,0 +1,57 @@
+<div class="row-fluid">
+  <div class="col-xs-5">
+    <a ui-sref="prep">
+      <img src="/assets/shelf-icon.png" >
+    </a>
+    <h3>
+      <a ui-sref="prepCatTop" class="breadcrumb">
+        CATEGORIES
+      </a>
+    </h3>
+    <h3 ng-repeat="item in breadcrumbs">
+      <span class="glyphicon glyphicon-menu-down"></span>
+      </br>
+      <a ui-sref="prepCatChild({categoryId: item.id})"
+      class="breadcrumb">
+        {{item.name | uppercase}}
+      </a>
+    </h3>
+  </div>
+
+  <div class="col-xs-7 right">
+    <div ng-repeat="item in ingredients">
+      <li ng-if="item.category_id == currentCategory.id"
+      class="item">
+        <a ui-sref="prepIng({ingredientId: item.id})">
+          1X {{catIdToName(item.category_id) | uppercase }}
+        </a>
+        <small ng-if="item.location_id != null">
+          {{'  (' + locIdToName(item.location_id) + ')' | uppercase }}
+        </small>
+        <small ng-if="item.location_id == null">
+          (SOMEWEHRE)
+        </small>
+      </li>
+    </div>
+
+    <div ng-repeat="item in currentCategory.children">
+      <li ng-if="ingredientsBelow(item) > 0">
+        <a ui-sref="prepCatChild({categoryId: item.id})">
+          {{item.name | uppercase}}
+        </a>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+
+      <li ng-if="ingredientsBelow(item) == 0">
+        <span style="color: hsla(0,0%,0%,0.35);">
+          {{item.name | uppercase}}
+        </span>
+        <span class="badge">
+          {{ingredientsBelow(item)}}
+        </span>
+      </li>
+    </div>
+  </div>
+</div>

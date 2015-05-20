@@ -1,0 +1,49 @@
+<div class="row-fluid">
+  <div class="col-xs-5">
+
+    <a ui-sref="prep">
+      <img src="/assets/shelf-icon.png" >
+    </a>
+
+    <h3>
+      <a ui-sref="#" class="breadcrumb"
+      style="color: #692324;">
+        {{category.name | uppercase}}
+      </a>
+    </h3>
+    <hr>
+
+    <h3>
+      <a ui-sref="recLocTop" class="breadcrumb"> LOCATIONS </a>
+    </h3>
+
+    <h1 ng-repeat="item in breadcrumbs">
+      <span class="glyphicon glyphicon-menu-down"></span>
+      </br>
+      <a ui-sref="recLocChild({locationId: item.id})">
+        {{item.name | uppercase}}
+      </a>
+    </h1>
+
+  </div>
+
+  <ul class="col-xs-7 right">
+
+    <li ng-repeat="location in currentLocation.children"
+    ng-if="location.children.length != 0"
+    ui-sref="recLocChild({ ingredientId: ingredient.id, locationId: location.id })">
+      {{location.name | uppercase}}
+    </li>
+
+    <li ng-repeat="location in currentLocation.children"
+    ng-if="location.children.length == 0"
+    ui-sref="recSummary({
+      ingredient: ingredientComposite(ingredient, location)
+      })"
+    style="color: #692324;">
+      {{location.name | uppercase}}
+    </li>
+
+  </ul>
+
+</div>

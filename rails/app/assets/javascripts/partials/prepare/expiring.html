@@ -1,0 +1,20 @@
+<div class="row-fluid">
+
+  <div class="col-xs-5">
+    <a ui-sref="prep">
+      <img src="/assets/shelf-icon.png" >
+    </a>
+    <h1>USE FIRST</h1> <!-- should this go somewhere else on page? Placement is awkward here -->
+  </div>
+
+
+  <div ng-repeat="item in ingredients | orderBy: 'days_remaining'">
+    <li class="right col-xs-7 item">
+      <a ui-sref="prepIng({ingredientId: item.id})">
+        1X {{name(item.category_id) | uppercase}}
+        - EXP: {{item.days_remaining}} DAYS
+      </a>
+    </li>
+  </div>
+
+</div>

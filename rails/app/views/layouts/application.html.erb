@@ -1,16 +1,13 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Potluck</title>
-  <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-	<div class="container">
-		<%= yield %>
-	</div>
-</body>
+<html lang="en" ng-app="potluck">
+  <head>
+    <meta charset="UTF-8">
+    <title>Potluck</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+      <%= yield %>
+  </body>
 </html>

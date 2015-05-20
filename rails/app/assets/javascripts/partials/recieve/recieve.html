@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <div class="breadcrumbs col-xs-5">
+    <img src="/assets/store-icon.png">
+  </div>
+  <ul class="right col-xs-7">
+    <li>
+      <a ui-sref="recCatTop">
+        NEW ITEM
+      </a>
+    </li>
+    <li ng-if="queueCount() != 0">
+      <a ui-sref="recQueue">
+        UNSHELVED ITEMS
+      </a>
+      <p class="badge">
+        {{queueCount()}}
+      </p>
+    </li>
+    <li ng-if="queueCount() == 0"
+    class="disabled"
+    style="color: hsla(0,0%,0%,0.5)">
+      UNSHELVED ITEMS
+    </li>
+  </ul>
+</div>

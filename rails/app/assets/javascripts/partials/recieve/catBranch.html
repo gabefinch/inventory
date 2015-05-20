@@ -1,0 +1,42 @@
+<div class="row-fluid">
+  <div class="col-xs-5">
+    <a ui-sref="recieve">
+      <img src="/assets/store-icon.png">
+    </a>
+    <h1>
+      <a ui-sref="recCatTop" class="breadcrumb"> CATEGORIES </a>
+    </h1>
+    <h1 ng-repeat="item in breadcrumbs">
+      <span class="glyphicon glyphicon-menu-down"></span>
+      </br>
+      <a ui-sref="recCatChild({categoryId: item.id})"
+      class="breadcrumb">
+        {{item.name | uppercase}}
+      </a>
+    </h1>
+  </div>
+
+  <div class="right col-xs-7"
+  ng-repeat="item in currentCategory.children">
+    <a ng-if="item.children.length != 0"
+    ui-sref="recCatChild({categoryId: item.id})"
+    class="listItem">
+      {{item.name | uppercase}}
+    </a>
+    <a ng-if="item.children.length == 0"
+    ui-sref="recSummary({ingredient: {category_id: item.id}})"
+    style="color: #692324;"
+    class="listItem">
+      {{item.name | uppercase}}
+    </a>
+  </div>
+
+  <div class="right col-xs-7" ng-if="currentCategory.id">
+    <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
+    style="color: #692324;"
+    class="listItem">
+      MISC {{currentCategory.name | uppercase}}
+    </a>
+  </div>
+
+</div>
