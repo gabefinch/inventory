@@ -1,35 +1,30 @@
 <div class="row-fluid">
-  <div class="col-xs-5">
-    <a ui-sref="prep">
-      <img src="/assets/rebox-icon.png">
-    </a>
-    <h3>
-      BASKET
-    </h3>
+  <div class="col-xs-12 basket">
+    <p>
+      YOUR BASKET
+    </p>
   </div>
-
-  <div class="right col-xs-7" ng-if="basket.length != 0">
+  <div class="col-xs-12" ng-if="basket.length != 0">
     <ul>
       <li ng-repeat="item in basket">
-        <a ui-sref="prepIng({ingredientId: item.id})">
-          {{categoryName(item)}}
+        <a class="basketItem" ui-sref="prepIng({ingredientId: item.id})">
+          {{categoryName(item) | uppercase}}
         </a>
-        <small ng-click="basketRemove(item)" class="removeItem">remove</small>
       </li>
     </ul>
-
-    <button class="btn btn-warning btn-lg btn-block" ng-click="basketUseAll()">
-      <span class="glyphicon glyphicon-remove-circle"></span>
-      Use All Items
-    </button>
-
-    <button class="btn btn-danger btn-lg btn-block" ng-click="basketRemoveAll()">
-      <span class="glyphicon glyphicon-upload"></span>
-      Return All Items
-    </button>
+    <div class="row-fluid options" >
+      <div class="col-xs-6">
+          <img src="/assets/empty-icon.png"
+          ng-click="basketRemoveAll()">
+      </div>
+      <div class="col-xs-6">
+          <img src="/assets/use-all-icon.png"
+          ng-click="basketUseAll()">
+      </div>
+    </div>
   </div>
 
-  <div class="right col-xs-8" ng-if="basket.length == 0">
+  <div class="col-xs-7" ng-if="basket.length == 0">
     <ul>
       <li>EMPTY</li>
     </ul>

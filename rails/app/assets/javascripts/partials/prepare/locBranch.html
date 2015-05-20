@@ -1,7 +1,7 @@
 <div class="row-fluid">
   <div class="col-xs-5">
     <a ui-sref="prep">
-      <img src="/assets/shelf-icon.png" >
+      <img src="/assets/prepare-icon.png" >
     </a>
     <h3>
       <a ui-sref="recLocTop"> LOCATIONS </a>
@@ -14,7 +14,7 @@
   </div>
 
   <div class="col-xs-7 right">
-
+    
     <div ng-repeat="item in ingredients">
       <li ng-if="item.location_id != null
       && item.location_id == currentLocation.id" class="item">
