@@ -8,8 +8,8 @@
     CategoriesFactory.$inject = ['$cacheFactory'];
 
     function CategoriesFactory($cacheFactory) {
-        var ingredients = cache.get('ingredients');
         var cache = $cacheFactory.get('potluck');
+        var ingredients = cache.get('ingredients');
         var categories = cache.get('categories');
         var factory = {
             categories: categories,

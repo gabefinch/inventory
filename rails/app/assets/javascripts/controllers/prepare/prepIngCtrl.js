@@ -17,6 +17,17 @@ potluck.controller('PrepIngCtrl',[
       var created_at = new Date(ingredient.created_at);
       return "Arrived " + created_at.toLocaleDateString();
     };
+    $scope.store = function(){
+          if (ingredient.id) {
+            IngredientsFactory.patchIngredient(ingredient)
+            $state.go('recLocTop',{ ingredientId: ingredient.id });
+          } else {
+            IngredientsFactory.postIngredient(ingredient)
+            .then(function(returned){
+              $state.go('recLocTop',{ ingredientId: returned.id });
+            });
+          }
+        };
     $scope.locationMessage = function(){
       var location = LocationsFactory.find(ingredient.location_id);
       if (location == null) {
