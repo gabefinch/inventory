@@ -1,7 +1,7 @@
-var admin = angular.module('admin', ['ui.router']);
+var admin = angular.module('admin', ['ui.router', 'ui.tree']);
 
 admin.run(function($http,$cacheFactory){
-  var cache = $cacheFactory('potluck'); //this should still be called Potluck, right?? 
+  var cache = $cacheFactory('potluck');
   $http.get('http://localhost:3000/api/everything').
     success(function(data) {
       cache.put('categories', data.categories);

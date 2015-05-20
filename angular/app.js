@@ -1,4 +1,4 @@
-var potluck = angular.module('potluck', ['ui.router', 'ui.tree']);
+var potluck = angular.module('potluck', ['ui.router']);
 
 // Allow Angular UI to log errors
 // potluck.run(($rootScope) => {
