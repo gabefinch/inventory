@@ -58,7 +58,7 @@ a:link, a:hover, a:visited, a:active {
   color: black;
 }
 
-.homeShelf, .homeStore {
+.homeStore, .homePrep {
     float:none;
     display:block;
     vertical-align:middle;
@@ -160,8 +160,18 @@ li {
 
 /*Prep Basket Page*/
 
-.removeItem {
-  border: solid 2px;
+.removeImg {
+  max-height: 100px;
+}
+
+.basket {
+  font-size: 4em;
+  text-decoration: underline;
+  margin-bottom: 3%;
+}
+
+.basketItem {
+  font-size: .7em;
 }
 
 
