@@ -10,22 +10,16 @@
         <a class="basketItem" ui-sref="prepIng({ingredientId: item.id})">
           {{categoryName(item) | uppercase}}
         </a>      
-          <img src="/assets/css/img/remove-icon.png"
-          ng-click="basketRemove(item)" class="removeImg">
       </li>
     </ul>
     <div class="row-fluid options" >
-      <div class="col-xs-4">
+      <div class="col-xs-6">
           <img src="/assets/css/img/empty-icon.png"
           ng-click="basketRemoveAll()">
       </div>
-      <div class="col-xs-4">
+      <div class="col-xs-6">
           <img src="/assets/css/img/use-all-icon.png"
           ng-click="basketUseAll()">
-      </div>
-      <div class="col-xs-4">
-          <img src="/assets/css/img/cancel-icon.png"
-          ui-sref="prep">
       </div>
     </div>
   </div>
