@@ -14,32 +14,21 @@
   </h2>
 </div>
 
-<!-- <div class="row-fluid options">
-  <div class="col-xs-6">
-      <img src="assets/css/img/shelf-icon.png" ng-click="storeNow(selectedCategory.id)">
+<div class="row-fluid options" >
+  <div class="col-xs-4" ng-if="!basketed">
+      <img src="/assets/css/img/add-icon.png"
+      ng-click="toBasket()">
   </div>
-  <div class="col-xs-6">
-      <img src="assets/css/img/complete-icon.png" ng-click="storeLater(selectedCategory.id)">
+  <div class="col-xs-4" ng-if="basketed">
+      <img src="/assets/css/img/remove-icon.png"
+      ng-click="fromBasket()">
   </div>
-</div> -->
-
-
-<button class="btn btn-warning btn-lg btn-block"
-  ng-if="!basketed"
-  ng-click="toBasket()">
-  <span class="glyphicon glyphicon-shopping-cart"></span>
-  Add To Basket
-</button>
-
-<button class="btn btn-danger btn-lg btn-block"
-  ng-if="basketed"
-  ng-click="fromBasket()">
-  <span class="glyphicon glyphicon-shopping-cart"></span>
-  Remove From Basket
-</button>
-
-<button class="btn btn-danger btn-lg btn-block"
-  ng-click="use()">
-  <span class="glyphicon glyphicon-remove-circle"></span>
-  Mark As Used
-</button>
+  <div class="col-xs-4">
+      <img src="/assets/css/img/use-icon.png"
+      ng-click="use()">
+  </div>
+  <div class="col-xs-4">
+      <img src="/assets/css/img/cancel-icon.png"
+      ui-sref="prep">
+  </div>
+</div>
