@@ -2,13 +2,12 @@
     'use strict';
 
     angular
-        .module('potluck')
+        .module('admin')
         .factory('UtilitiesFactory', UtilitiesFactory);
 
     UtilitiesFactory.$inject = [];
 
     function UtilitiesFactory() {
-        var cache = $cacheFactory.get('potluck');
         var service = {
           findById: findById,
           flatBranchIds: flatBranchIds

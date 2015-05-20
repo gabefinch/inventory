@@ -1,0 +1,42 @@
+hello inventory
+
+<table class="table">
+  <thead>
+    <tr>
+      <td>
+        id
+      </td>
+      <td>
+        category_id
+      </td>
+      <td>
+        location_id
+      </td>
+      <td>
+        created_at
+      </td>
+      <td>
+        days_remaining
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in ingredients">
+      <td>
+        {{item.id}}
+      </td>
+      <td>
+        {{item.category_id}}
+      </td>
+      <td>
+        {{item.location_id}}
+      </td>
+      <td>
+        {{item.created_at}}
+      </td>
+      <td>
+        {{item.days_remaining}}
+      </td>
+    </tr>
+  </tbody>
+</table>
