@@ -8,7 +8,6 @@ potluck.controller('RecCatTopCtrl',
       name: 'Categories',
       children: CategoriesFactory.categories
     };
-
     $scope.ingredients = IngredientsFactory.ingredients;
 
 }]);

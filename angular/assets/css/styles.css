@@ -43,16 +43,19 @@ body {
    height: auto;
 }
 
+#bottom-cover {
+  max-height: 200px;
+  margin-bottom: -15%;
+  padding: 0;
+  min-width:100%;
+}
+
 .options {
   padding-bottom: 25%;
 }
 
 a:link, a:hover, a:visited, a:active {
   color: black;
-}
-
-.listItem {
-  font-size: 2.5em;
 }
 
 .homeShelf, .homeStore {
@@ -92,7 +95,7 @@ li {
   color: black;
   border-bottom: dotted 3px;
   margin-bottom: 30px;
-  font-size: 2.5em;
+  font-size: 4em;
 }
 
 .right {
@@ -104,13 +107,6 @@ li {
 
 .item {
   border: 3px solid;
-}
-
-.blankItem {
-  margin: -2%!important;
-  margin-bottom: none!important;
-  padding: -2%!important;
-  border-bottom: none!important;
 }
 
 
@@ -162,7 +158,7 @@ li {
 
 
 
-  /*Prep Basket Page*/
+/*Prep Basket Page*/
 
 .removeItem {
   border: solid 2px;

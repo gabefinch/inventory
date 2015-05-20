@@ -16,7 +16,7 @@
     </h1>
   </div>
 
-  <div class="right col-xs-7"
+  <li class="right col-xs-7"
   ng-repeat="item in currentCategory.children">
     <a ng-if="item.children.length != 0"
     ui-sref="recCatChild({categoryId: item.id})"
@@ -29,14 +29,12 @@
     class="listItem">
       {{item.name | uppercase}}
     </a>
-  </div>
-
-  <div class="right col-xs-7" ng-if="currentCategory.id">
-    <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
-    style="color: #692324;"
-    class="listItem">
-      MISC {{currentCategory.name | uppercase}}
-    </a>
-  </div>
-
+  </li>
+  <li class="right col-xs-7" ng-if="currentCategory.id">
+      <a ui-sref="recSummary({ ingredient: {category_id: currentCategory.id}})"
+      style="color: #692324;"
+      class="listItem">
+        MISC {{currentCategory.name | uppercase}}
+      </a>
+  </li>
 </div>

@@ -32,7 +32,7 @@ Then launch a browser and enter the url `localhost:8000`
 
 Motivation
 --------
->- To Assist Potluck in The Park in Organizing Inventory <
+>- To Assist Potluck in The Park in Organizing Inventory
 
 Authors
 ------
