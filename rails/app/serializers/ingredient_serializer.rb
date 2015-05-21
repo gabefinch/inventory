@@ -1,5 +1,5 @@
 class IngredientSerializer < ActiveModel::Serializer
-  attributes :category_id, :location_id, :created_at, :id, :days_remaining
+  attributes :category_id, :location_id, :created_at, :id, :days_remaining, :used_on
 
 
   def days_remaining
@@ -13,4 +13,9 @@ class IngredientSerializer < ActiveModel::Serializer
   def updated_at
     object.updated_at.to_f * 1000
   end
+
+  def used_on
+    object.used_on.to_f * 1000
+  end
+
 end

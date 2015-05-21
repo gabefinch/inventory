@@ -111,42 +111,42 @@
 </form>
 
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <td>
-        id
+        #
       </td>
       <td>
-        category_id
+        Item
       </td>
       <td>
-        location_id
+        Location
       </td>
       <td>
-        created_at
+        Recieved
       </td>
       <td>
-        days_remaining
+        Expiration
       </td>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="item in ingredients">
       <td>
-        {{item.id}}
+        {{$index + 1}}
       </td>
       <td>
         {{category(item).name}}
       </td>
       <td>
-        {{item.location_id}}
+        {{location(item).name}}
       </td>
       <td>
-        {{item.created_at}}
+        {{niceDate(item.created_at)}}
       </td>
       <td>
-        {{item.days_remaining}}
+        <span ng-if="item.used_at == 0"></span>
       </td>
     </tr>
   </tbody>
