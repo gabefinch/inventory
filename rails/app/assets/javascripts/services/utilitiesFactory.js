@@ -13,7 +13,7 @@
           flatBranchIds: flatBranchIds
         };
         return service;
-        // rename treeFind
+
         function findById(collection, id) {
           for (var i = 0; i <= collection.length-1; i++) {
             if (collection[i].id == id) {

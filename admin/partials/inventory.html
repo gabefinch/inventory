@@ -129,6 +129,9 @@
       <td>
         Expiration
       </td>
+      <td>
+        Used
+      </td>
     </tr>
   </thead>
   <tbody>
@@ -146,7 +149,11 @@
         {{niceDate(item.created_at)}}
       </td>
       <td>
-        <span ng-if="item.used_at == 0"></span>
+        <span ng-if="item.used_on == 0">{{item.days_remaining}} days</span>
+        <span ng-if="item.used_on != 0">Used</span>
+      </td>
+      <td>
+        <span ng-if="item.used_on != 0">{{niceDate(item.used_on)}}</span>
       </td>
     </tr>
   </tbody>

@@ -2,7 +2,7 @@ var admin = angular.module('admin', ['ui.router', 'ui.tree']);
 
 admin.run(function($http,$cacheFactory){
   var cache = $cacheFactory('potluck');
-  $http.get('http://localhost:3000/api/everything').
+  $http.get('http://localhost:3000/api/admin').
     success(function(data) {
       cache.put('categories', data.categories);
       cache.put('locations', data.locations);
