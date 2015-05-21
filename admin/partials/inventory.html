@@ -1,4 +1,115 @@
-hello inventory
+<form class="form-horizontal">
+  <fieldset>
+    <legend>Inventory</legend>
+    <div class="form-group row">
+      <label class="col-xs-2 control-label">Time</label>
+      <div>
+        <div class="col-xs-10 radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            All
+          </label>
+        </div>
+        <div class="col-xs-10 col-xs-offset-2 radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Year
+            <div>
+              <select class="form-control" id="select">
+                <option>1</option>
+                <option>2</option>
+              </select>
+              <br>
+            </div>
+          </label>
+        </div>
+        <div class="col-xs-10 col-xs-offset-2 radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
+            Month
+            <div>
+              <select class="form-control" id="select">
+                <option>May 2015</option>
+                <option>Apr 2015</option>
+                <option>Mar 2015</option>
+                <option>Feb 2015</option>
+                <option>Jan 2015</option>
+              </select>
+              <br>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Use</label>
+      <div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            All
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Only unused
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
+            Only used
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Expiration</label>
+      <div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            All
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Only unexpired
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios3" value="option2">
+            Only expired
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="select" class="control-label">Category</label>
+      <div>
+        <select class="form-control" id="select">
+          <option>All</option>
+          <option>2</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="select" class="control-label">Location</label>
+      <div>
+        <select class="form-control" id="select">
+          <option>All</option>
+          <option>2</option>
+        </select>
+        <br>
+      </div>
+    </div>
+  </fieldset>
+</form>
+
 
 <table class="table">
   <thead>
@@ -26,7 +137,7 @@ hello inventory
         {{item.id}}
       </td>
       <td>
-        {{item.category_id}}
+        {{category(item).name}}
       </td>
       <td>
         {{item.location_id}}

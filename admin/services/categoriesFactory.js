@@ -5,15 +5,20 @@
         .module('admin')
         .factory('CategoriesFactory', CategoriesFactory);
 
-    CategoriesFactory.$inject = ['$cacheFactory'];
+    CategoriesFactory.$inject = ['$cacheFactory', 'UtilitiesFactory'];
 
-    function CategoriesFactory($cacheFactory) {
-        var cache = $cacheFactory.get('potluck');
-        var ingredients = cache.get('ingredients');
-        var categories = cache.get('categories');
-        var factory = {
-            categories: categories,
-        };
-        return factory;
-            }
+    function CategoriesFactory( $cacheFactory, UtilitiesFactory) {
+      var cache = $cacheFactory.get('potluck');
+      var categories = cache.get('categories');
+      var factory = {
+          categories: categories,
+          find: find
+      };
+      return factory;
+
+      function find(id) {
+        return UtilitiesFactory.findById(categories, id);
+      }
+
+    }
 })();
