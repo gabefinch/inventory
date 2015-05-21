@@ -23,4 +23,14 @@ admin.config(function($stateProvider) {$stateProvider
             templateUrl: "partials/inventory.html",
             controller: "InventoryCtrl"
           })
+          .state('categories', {
+            url: "/categories",
+            templateUrl: "partials/categories.html",
+            controller: "CategoriesCtrl"
+          })
+          .state('locations', {
+            url: "/locations",
+            templateUrl: "partials/locations.html",
+            controller: "LocationsCtrl"
+          })
 });
