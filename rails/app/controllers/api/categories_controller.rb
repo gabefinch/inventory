@@ -8,8 +8,13 @@ class Api::CategoriesController < ApplicationController
     render json: Category.find(params[:id])
   end
 
-  def update_all
-    cats = params[:categories]
+  def destroy
+    cat = Category.find(params[:id])
+    if cat.destroy
+      head :no_content, status: :ok
+    else
+      render json: cat.errors, status: :unprocessable_entity
+    end
   end
 
 private

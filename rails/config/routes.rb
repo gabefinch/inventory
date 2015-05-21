@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   namespace :api, defaults: {format: :json} do
     get 'everything', to: 'main#everything'
     get 'admin', to: 'main#everything_admin'
-    patch 'categories', to: 'categories#update_all'
     resources :categories, only: [:index, :show, :create, :update, :destroy]
     resources :ingredients, only: [:index, :show, :create, :update, :destroy]
     resources :locations, only: [:index, :show, :create, :update, :destroy]

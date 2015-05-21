@@ -13,9 +13,10 @@ admin.controller('CategoriesCtrl',
     CategoriesFactory.saveAll($scope.categories);
     };
 
-  $scope.delete = function(category) {
-    console.log(category);
-    remove(category);
+  $scope.deleteCategory = function(category) {
+    var catId = category.$parent.$modelValue.id;
+    console.log(catId)
+    CategoriesFactory.erase(catId);
   };
   
 }]);

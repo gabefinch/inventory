@@ -13,7 +13,7 @@
       var factory = {
           categories: categories,
           find: find,
-          saveAll: saveAll
+          erase: erase
       };
       return factory;
 
@@ -21,10 +21,10 @@
         return UtilitiesFactory.findById(categories, id);
       }
 
-      function saveAll(categories) {
-        $http.patch('http://localhost:3000/api/categories', {"categories": categories})
+      function erase(id) {
+        $http.delete('http://localhost:3000/api/categories/' + id)
         .success(function() {
-          alert("saved successfully!");
+          alert("deleting successfully!");
         })
         .error(function(status) {
           console.log('エラー: ' + status);
