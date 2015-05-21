@@ -8,7 +8,6 @@
     UtilitiesFactory.$inject = [];
 
     function UtilitiesFactory() {
-        var cache = $cacheFactory.get('potluck');
         var service = {
           findById: findById,
           flatBranchIds: flatBranchIds
