@@ -8,5 +8,14 @@ admin.controller('CategoriesCtrl',
       children: CategoriesFactory.categories
     };
   $scope.categories = CategoriesFactory.categories;
-  $scope.ingredients = CategoriesFactory.ingredients;
+
+  $scope.save = function() {
+    CategoriesFactory.saveAll($scope.categories);
+    };
+
+  $scope.delete = function(category) {
+    console.log(category);
+    remove(category);
+  };
+  
 }]);

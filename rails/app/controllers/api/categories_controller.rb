@@ -8,6 +8,10 @@ class Api::CategoriesController < ApplicationController
     render json: Category.find(params[:id])
   end
 
+  def update_all
+    cats = params[:categories]
+  end
+
 private
   def category_params
     params.require(:category).permit(
