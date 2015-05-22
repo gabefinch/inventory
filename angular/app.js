@@ -8,7 +8,7 @@ var potluck = angular.module('potluck', ['ui.router']);
 // Load Everything JSON at app load
 potluck.run(function($http,$cacheFactory){
   var cache = $cacheFactory('potluck');
-  $http.get('http://localhost:3000/api/everything').
+  $http.get('/api/everything').
     success(function(data) {
       cache.put('categories', data.categories);
       cache.put('locations', data.locations);

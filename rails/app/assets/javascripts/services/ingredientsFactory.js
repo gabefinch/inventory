@@ -72,7 +72,7 @@
 
         function postIngredient(ingredient){
           var defer = $q.defer();
-          $http.post('http://localhost:3000/api/ingredients', ingredient)
+          $http.post('/api/ingredients', ingredient)
             .success(function(data) {
               ingredients.push(data);
               // is cache.put necessary?
@@ -87,7 +87,7 @@
         }
 
         function patchIngredient(ingredient){
-          $http.patch( 'http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
+          $http.patch( '/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
               var foundIng = find(ingredient.id);
               foundIng.location_id = ingredient.location_id;
@@ -102,7 +102,7 @@
 
         function removeIngredient(ingredient){
           var defer = $q.defer();
-          $http.delete('http://localhost:3000/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
+          $http.delete('/api/ingredients/' + ingredient.id, {"ingredient": ingredient})
             .success(function() {
               for(var i = 0; i < ingredients.length; i++) {
                 if(ingredients[i].id == ingredient.id) {ingredients.splice(i,1);}

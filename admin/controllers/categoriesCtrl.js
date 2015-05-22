@@ -3,20 +3,18 @@ admin.controller('CategoriesCtrl',
   '$scope',
   'CategoriesFactory',
   function($scope, CategoriesFactory){
-    $scope.currentCategory = {
-      name: 'Categories',
-      children: CategoriesFactory.categories
-    };
-  $scope.categories = CategoriesFactory.categories;
 
-  $scope.save = function() {
-    CategoriesFactory.saveAll($scope.categories);
+    $scope.categories = CategoriesFactory.categories;
+
+    $scope.deleteCategory = function(object) {
+      if (confirm("Are you sure? This will delete all sub-categories, as well as all ingredients that belong to these categories.")) {
+        var catId = object.$parent.$modelValue.id;
+        CategoriesFactory.erase(catId);
+      }
     };
 
-  $scope.deleteCategory = function(category) {
-    var catId = category.$parent.$modelValue.id;
-    console.log(catId)
-    CategoriesFactory.erase(catId);
-  };
-  
+    $scope.test = function() {
+      $scope.categories.push({name:"blahblah", parent_id: null});
+    };
+
 }]);
