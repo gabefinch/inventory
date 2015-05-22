@@ -16,5 +16,5 @@ admin.controller('CategoriesCtrl',
     $scope.test = function() {
       $scope.categories.push({name:"blahblah", parent_id: null});
     };
-
 }]);
+
