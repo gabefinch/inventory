@@ -1,12 +1,12 @@
-Potluck
+Inventory
 ==============
 
-#### Potluck is an inventory organization system targeted towards soup kitchens and food banks that receive, store, and prepare a large amount of food at a time.
+#### Inventory is an inventory organization system.
 
 Installation and Usage
 ------------
 
-This app will be live soon. For now, to run the app clone this repository and in your terminal run
+To run the app clone this repository and in your terminal run
 ```
 $ postgres
 ```
@@ -30,12 +30,8 @@ $ python -m SimpleHTTPServer
 Then launch a browser and enter the url `localhost:8000`
 
 
-Motivation
---------
->- To Assist Potluck in The Park in Organizing Inventory
 
 Authors
 ------
 
 Gabe Finch & Lizzie Koehler 
-at EyeCue Lab
